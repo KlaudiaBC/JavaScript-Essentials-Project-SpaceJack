@@ -26,7 +26,7 @@ body {
     height: 30px;
 }
 
-/* css for html1 */
+/* css for html-one */
 .container {
     margin: auto;
     padding: 0;
@@ -47,10 +47,45 @@ body {
     text-align: center;
 }
 
+/* css for html-two */
+.player-side {
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 25px;
+    width: 60%;
+}
+
+.score-area {
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px;
+    border-radius: 25px;
+    width: 60%;
+}
+
+.title {
+    text-align: center;
+}
+
+.card-img {
+    border: 2px whitesmoke;
+    border-radius: 5px;
+    width: 80px;
+    height: 100px;
+}
 
 /* media query */
 @media (max-width: 750px) {
-    #background-video { display: none; }
     body {
       background-size: cover;
     }
