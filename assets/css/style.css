@@ -1,0 +1,35 @@
+/* video in the background */
+#myVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1; 
+}
+
+body {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.heading {
+    font-family: 'Syne Tactile', cursive;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* media query */
+@media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background-size: cover;
+    }
+}

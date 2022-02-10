@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="SpaceJack">
     <meta name="keywords" content="blackjack, game, kids, math, space, fun, learn">
     <meta name="author" content="Klaudia BC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel ="stylesheet" href="assets/css/style.css">
+
+    <!-- font awesome and google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <title>SpaceJack</title>
+
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="index-one.html">Intro</a></li>
-            <li><a href="index-two.html">Game</a></li>
-        </ul>
-    </nav>
-    <script scr="assets/js/script.js"></script>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/video/pexels-mr-borys-9860820xsm.mp4" type="video/mp4">
+    </video>
+    <header>
+        <nav>
+            <h1 class="heading"><img class="logo" src="assets/images/alien.png" alt="logo"> SpaceJack</h1>
+            <ul>
+                <li><a href="index-one.html">Intro</a></li>
+                <li><a href="index-two.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="game area">
+    <div>
+    <p>Player vs Alien</p>
+    <p class="score">Score: <span id="score">0</span></p>
+ </div>
+ <div>
+    <p>Alien</p>
+    <img src="https://via.placeholder.com/100">
+    <img src="https://via.placeholder.com/100">
+</div>
+<div>
+    <img src="https://via.placeholder.com/150">
+</div>
+<div>
+    <p>Player</p>
+    <img src="https://via.placeholder.com/100">
+    <img src="https://via.placeholder.com/100">
+</div>
+</div>
+
+    <div class="score-area">
+            <button>Start</button>
+            <button>Draw</button>
+            <button>Check</button>
+        </div>
+
+    <footer></footer>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
