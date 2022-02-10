@@ -16,14 +16,43 @@ body {
     font-family: 'Orbitron', sans-serif;
 }
 
-.heading {
+.navbar-brand {
     font-family: 'Syne Tactile', cursive;
 }
 
 .logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
+
+/* css for html1 */
+.wrapper {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    opacity: 0.4;
+    border: .5rem;
+    border-color: aliceblue;
+  }
+  
+  .typing-demo {
+    width: 237ch;
+    animation: typing 60s steps(237), blink 60s step-end infinite alternate;
+    overflow: hidden;
+    font-size: 1em;
+    opacity: 1;
+    color: black;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+
 
 
 /* media query */
