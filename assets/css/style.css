@@ -14,16 +14,27 @@
 body {
     color: white;
     font-family: 'Orbitron', sans-serif;
+    margin: auto;
+    width: auto;
 }
 
 .navbar-brand {
     font-family: 'Syne Tactile', cursive;
     font-size: 40px;
+    padding: 1rem;
 }
 
 .logo {
     width: 30px;
     height: 30px;
+}
+
+.modal-content {
+    color: black;
+}
+
+.modal-content h2,p {
+    margin: 1rem;
 }
 
 /* css for html-one */
@@ -48,6 +59,14 @@ body {
 }
 
 /* css for html-two */
+.modals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem;
+}
+
 .player-side {
     margin: auto;
     padding: 0;
@@ -58,6 +77,10 @@ body {
     padding: 10px;
     border-radius: 25px;
     width: 60%;
+}
+
+.player {
+    text-align: center;
 }
 
 .score-area {
@@ -77,16 +100,56 @@ body {
     text-align: center;
 }
 
-.card-img {
-    border: 2px whitesmoke;
-    border-radius: 5px;
-    width: 80px;
-    height: 100px;
+
+/* card element */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    border: solid #fff;
+    border-radius: .2rem;
+    width: 5rem;
+    height: 6.5rem;
+    background-color: rgb(226, 226, 217);
 }
 
+.suite, .card-img {
+    display: flex;
+    flex-direction: row;
+}
+
+.suite-img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.suite-left {
+    justify-content: flex-start;
+    margin-top: .15rem;
+    margin-left: .15rem;
+}
+
+.suite-right {
+    justify-content: flex-end;
+    margin-bottom: .15rem;
+    margin-right: .15rem;
+}
+
+.card-img {
+    justify-content: center;
+}
+
+.card-img img {
+    width: 2.8rem;
+    height: 3.4rem;
+}
+
+
+
 /* media query */
-@media (max-width: 750px) {
-    body {
-      background-size: cover;
+@media (min-width: 40em) {
+.modals {
+    float: right;
     }
 }
