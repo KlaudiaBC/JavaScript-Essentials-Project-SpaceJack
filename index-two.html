@@ -109,7 +109,7 @@
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
                 </div>
                 <div class="card-img">
-                    <img src="assets/images/img2-temp.jpg" alt="card-actor">
+                    <img id="cardOne-p1" src="assets/images/img2-temp.jpg" alt="card-actor">
                 </div>
                 <div class="suite suite-right">
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
@@ -120,7 +120,7 @@
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
                 </div>
                 <div class="card-img">
-                    <img src="assets/images/img2-temp.jpg" alt="card-actor">
+                    <img id="cardTwo-p1" src="assets/images/img2-temp.jpg" alt="card-actor">
                 </div>
                 <div class="suite suite-right">
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
@@ -131,7 +131,7 @@
             <p>Here goes some pic to shuffle the cards</p>
         </div>
         <div class="player">
-            <p>Human + name</p>
+            <p id="player-name"></p>
         </div>
         <div class="player-side">
             <div class="card">
@@ -139,7 +139,7 @@
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
                 </div>
                 <div class="card-img">
-                    <img src="assets/images/img2-temp.jpg" alt="card-actor">
+                    <img class="cardOne-p2" src="assets/images/img2-temp.jpg" alt="card-actor">
                 </div>
                 <div class="suite suite-right">
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
@@ -150,7 +150,7 @@
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
                 </div>
                 <div class="card-img">
-                    <img src="assets/images/img2-temp.jpg" alt="card-actor">
+                    <img class="cardTwo-p2" src="assets/images/img2-temp.jpg" alt="card-actor">
                 </div>
                 <div class="suite suite-right">
                     <img class="suite-img" src="assets/images/img1-temp.jpg" alt="card-suite">
@@ -164,9 +164,9 @@
             <p class="score">Score: <span id="score">0</span></p>
         </div>
         <div>
-            <button class="btn btn--big btn--big">Start</button>
-            <button class="btn btn--big btn--big">Draw</button>
-            <button class="btn btn--big btn--big">Check</button>
+            <button class="btn btn--big btn--big" id="start-btn" onclick="startGame()">Start</button>
+            <button class="btn btn--big btn--big" id="draw-btn" onclick="drawNewCard()">Draw</button>
+            <button class="btn btn--big btn--big" id="check-btn" onClick="checkScore()">Check</button>
         </div>
     </div>
 
