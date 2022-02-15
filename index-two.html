@@ -35,43 +35,66 @@
 
         <!-- navbar / modals -->
         <div class="modals">
-        <button type="button" class="btn btn-success" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Rules</button>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <h2>Game rules</h2>
-                    <p>some rules hdjkfkjcncljaijmdczxnjdzk;xsxnmzj nzkjshejMX\ KXCBJ</p>
-                </div>
-            </div>
-        </div>
-
-        <button type="button" class="btn btn-success" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Mission</button>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <h2>Game rules</h2>
-                    <p>some rules hdjkfkjcncljaijmdczxnjdzk;xsxnmzj nzkjshejMX\ KXCBJ</p>
-                </div>
-            </div>
-        </div>
-
-        <button type="button" class="btn btn-success" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Scores</button>
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <h2>Game rules</h2>
-                    <p>some rules hdjkfkjcncljaijmdczxnjdzk;xsxnmzj nzkjshejMX\ KXCBJ</p>
-                </div>
-            </div>
-        </div>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">Rules</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">Mission</button>
+            <button type="button" class="btn btn-info"><a class="link-nav" href="index-one.html">Intro</a></button>
         </div>
     </header>
+
+    <!-- rules modal -->
+    <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">HOW TO PLAY?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>OBJECT OF THE GAME</h3>
+                    <p>A Human can save the Earth by collecting 10 magic stars. To do so, he shall attempt to beat Alien in SpaceJack by getting a count as close to 21 as possible, without going over 21.</p>
+                    <h3>WINS AND LOSES</h3>
+                    <p>The winner is a player whose total value of cards is closer or equal 21. After each game the Human will: receive 1 star if won or lose 1 star if defeated. Human have 5 stars in the beginning of the game. The goal is to collect 10 stars in total.</p>
+                    <h3>CARD VALUES</h3>
+                    <p>Face cards have a value of 10 and any other card is its number value. It is up to each individual player if an ace is worth 1 or 11.</p>
+                    <h3>THE HUMAN'S PLAY</h3>
+                    <p>The Human goes first and must decide whether to "check" (end the set by comparing the results with Alien's score) or "draw" (ask for another card in an attempt to get closer to a count of 21, or even hit 21 exactly).</p>
+                    <h3>THE ALIEN'S PLAY</h3>
+                    <p>When the Alien has served cards for a Human, his second card is face-down. If the total value of Alien's cards is 17 or more, it must stand. If the total is 16 or under, he must take a card. Alien must continue to take cards until the total is 17 or more.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mission modal -->
+    <div class="modal fade" id="mission" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">OUR MISSION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>This SpaceJack game is based on the rules of the popular casino game: Blackjack. The layout and
+                        rules are simplified to a child level. The goal is to make learning of first math actions fun.
+                    </p>
+                    <p>The game is taking your child on the journey to space with a very special assignment to save the
+                        Earth. The value of the cards is shown below but the sum is hidden so your child has to sum it
+                        in order to make a right decision between ending a game (check) or adding another card in case
+                        the sum is too small.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- game area -->
     <div class="game area">

@@ -67,6 +67,11 @@ body {
     padding: 1rem;
 }
 
+.link-nav {
+    text-decoration: none;
+    color: #fff;
+}
+
 .player-side {
     margin: auto;
     padding: 0;
