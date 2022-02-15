@@ -119,38 +119,85 @@ body {
     background-color: rgb(226, 226, 217);
 }
 
-.suite, .card-img {
+.suite {
     display: flex;
     flex-direction: row;
-}
-
-.suite-img {
     width: 1.2rem;
     height: 1.2rem;
 }
 
 .suite-left {
-    justify-content: flex-start;
+    display: flex;
+    align-self: flex-start;
     margin-top: .15rem;
     margin-left: .15rem;
 }
 
 .suite-right {
-    justify-content: flex-end;
+    display: flex;
+    align-self: flex-end;
     margin-bottom: .15rem;
     margin-right: .15rem;
 }
 
-.card-img {
-    justify-content: center;
-}
-
-.card-img img {
+.suite-middle {
+    display: flex;
+    align-self: center;
     width: 2.8rem;
     height: 3.4rem;
 }
 
+/* card images - suite */
+.suite-img-a {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-b {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-c {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-d {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
 
+/* card images - actor */
+.suite-img-2 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-3 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-4 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-5 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-6 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-7 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-8 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-9 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-king {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-queen {
+    background-image: url('/assets/images/card-queen.png');
+}
+.suite-img-jack {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.suite-img-ace {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
 
 /* media query */
 @media (min-width: 40em) {

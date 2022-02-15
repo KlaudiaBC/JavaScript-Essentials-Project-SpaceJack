@@ -1,21 +1,50 @@
 // array with card figures:
-const cards = [
-    {'card-ace.png': 11},
-    {'card-gueen.png' : 10},
-    {'card-king.png': 10},
-    {'card-jack.png': 10},
-    {'card-nine.png': 9},
-    {'card-eight.png': 8},
-    {'card-seven.png': 7},
-    {'card-six.png': 6},
-    {'card-five.png': 5},
-    {'card-four.png': 4},
-    {'card-three.png': 3},
-    {'card-two.png': 2}
-];
 
 // array with suite figures:
 const suite = ['suite-a.png', 'suite-b.png', 'suite-c.png', 'suite-d.png']
+
+// render random img:
+function display_random_image() 
+{
+     let cards = [{
+        src: 'aassets/images/card-queen.png',
+        value: '10'
+    }, {
+        src: 'assets/images/card_five.png',
+        value: '5'
+    }, {
+        src: 'assets/images/card_ace.png',
+        value: '11'
+    }];
+}
+
+// // Shuffle cards before each game
+// let figShuffle;
+// function shuffle() {
+    // figShuffle = figures.slice();
+    // let cardNum = 14;
+    // if (gameLevel === "easy") {
+    //    cardNum = 6;
+   // } else if (gameLevel === "medium") {
+   //     cardNum = 10;
+    //}
+    //let i;
+    //let j;
+    //let temp;
+    //for (i = cardNum; i > 0; i--) {
+    //    j = Math.floor(Math.random() * (i + 1));
+    //    temp = figShuffle[i];
+    //    figShuffle[i] = figShuffle[j];
+    //    figShuffle[j] = temp;
+ //   }
+//    return figShuffle;
+//}
+//
+
+    function choosePic() {
+    let randomNum = Math.floor(Math.random() * cards.length);
+         document.getElementById("card-oneEl").src = cards[randomNum];}
+
 
 // variabels:
 let firstCardPlayer1 = 11;
@@ -62,15 +91,3 @@ if (sumPlayer1 < 21 && sumPlayer2 < 21) {
 let playerName = document.getElementById("player-name");
 let nameEl = ""
 playerName.textContent = "Human " + nameEl;
-
-// render cards
-let cardOne = document.getElementsByClassName("card-el");
-
-//render random img
-function choosePic() {
-    var randomCard = Math.floor(Math.random() * cards.length);
-    document.getElementById("cardOne-p1").src = cards[randomCard];
-    document.getElementById("cardTwo-p1").src = cards[randomCard];
-    document.getElementById("cardOne-p2").src = cards[randomCard];
-    document.getElementById("cardTwo-p2").src = cards[randomCard]
-}
