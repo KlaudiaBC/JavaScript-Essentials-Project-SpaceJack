@@ -162,42 +162,45 @@ body {
 }
 
 /* card images - actor */
-.suite-img-2 {
+.figure-img-1 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-3 {
+.figure-img-2 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-4 {
+.figure-img-3 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-5 {
+.figure-img-4 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-6 {
+.figure-img-5 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-7 {
+.figure-img-6 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-8 {
+.figure-img-7 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-9 {
+.figure-img-8 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-king {
+.figure-img-9 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-queen {
+.figure-img-10 {
+    background-image: url('/assets/images/img1-temp.jpg');
+}
+.figure-img-11 {
     background-image: url('/assets/images/card-queen.png');
 }
-.suite-img-jack {
+.figure-img-12 {
     background-image: url('/assets/images/img1-temp.jpg');
 }
-.suite-img-ace {
+.figure-img-13 {
     background-image: url('/assets/images/img1-temp.jpg');
-}
+};
 
 /* media query */
 @media (min-width: 40em) {

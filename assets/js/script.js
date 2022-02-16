@@ -1,84 +1,82 @@
-// array with card figures:
+// array with suite:
+const suite = ['.suite-img-a', '.suite-img-b', '.suite-img-c', '.suite-img-d']
 
-// array with suite figures:
-const suite = ['suite-a.png', 'suite-b.png', 'suite-c.png', 'suite-d.png']
+let cardsArray = [];
+let player1Cards = []
 
-// render random img:
-function display_random_image() 
-{
-     let cards = [{
-        src: 'aassets/images/card-queen.png',
-        value: '10'
-    }, {
-        src: 'assets/images/card_five.png',
-        value: '5'
-    }, {
-        src: 'assets/images/card_ace.png',
-        value: '11'
-    }];
+function buildCardsArray() {
+    for (let i = 0; i < suite.length; i++) {
+        let suiteValue = suite[i];
+        for (let x = 0; x <= 12; x++) {
+            let expectedValue = x + 1;
+            //   if (expectedValue > 10) {
+            //        expectedValue = 10
+            //  }
+            cardsArray.push({
+                value: expectedValue,
+                suite: suiteValue,
+                suiteClass: 'figure-img-' + (x + 1)
+            })
+            console.log('cards array:', cardsArray)
+        }
+    }
+    givePlayerSomeCards(2);
+    console.log(player1Cards)
 }
 
-// // Shuffle cards before each game
-// let figShuffle;
-// function shuffle() {
-    // figShuffle = figures.slice();
-    // let cardNum = 14;
-    // if (gameLevel === "easy") {
-    //    cardNum = 6;
-   // } else if (gameLevel === "medium") {
-   //     cardNum = 10;
-    //}
-    //let i;
-    //let j;
-    //let temp;
-    //for (i = cardNum; i > 0; i--) {
-    //    j = Math.floor(Math.random() * (i + 1));
-    //    temp = figShuffle[i];
-    //    figShuffle[i] = figShuffle[j];
-    //    figShuffle[j] = temp;
- //   }
-//    return figShuffle;
-//}
-//
+function getRandomCard() {
+    return cardsArray[Math.floor(Math.random() * 51)];
+}
 
-    function choosePic() {
-    let randomNum = Math.floor(Math.random() * cards.length);
-         document.getElementById("card-oneEl").src = cards[randomNum];}
+function getRandomCardIndex() {
+return Math.floor(Math.random() * 51)
+}
+
+function givePlayerCard() {
+    let newCard = getRandomCardIndex();
+    if (player1Cards.includes(newCard)) {
+        givePlayerCard()
+    } else {
+        player1Cards.push(newCard)
+    }
+};
+
+function givePlayerSomeCards(howmany) {
+    for (let i = 0; i < howmany; i++) {
+    givePlayerCard();
+    }
+}
+
+buildCardsArray()
 
 
-// variabels:
-let firstCardPlayer1 = 11;
-let secondCardPlayer1 = 5;
-let firstCardPlayer2 = 2;
-let secondCardPlayer2 = 10;
 
-let sumPlayer1 = firstCardPlayer1 + secondCardPlayer1;
-let sumPlayer2 = firstCardPlayer2 + secondCardPlayer2;
+
 
 let hasBlackJack = false;
 let isAlive = true;
 
 // button "Start"
 function startGame() {
-if (sumPlayer1 < 21 && sumPlayer2 < 21) {
-    console.log ('draw card');
-} else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
-    console.log('draw new card for player1');
-} else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
-    console.log('do not draw card for Player1')
-} else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
-    console.log('player1 win');
-    hasBlackJack = true;
-    isAlive = false;
-} else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
-    console.log('player 2 win');
-    hasBlackJack = true;
-    isAlive = false;
-} else{
-    console.log ('tie');
-    hasBlackJack = true;
-    isAlive = false;
-}
+    if (sumPlayer1 < 21 && sumPlayer2 < 21) {
+        console.log('draw card');
+    } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
+        console.log('draw new card for player1');
+    } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
+        console.log('do not draw card for Player1')
+    } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
+        console.log('player1 win');
+        hasBlackJack = true;
+        isAlive = false;
+    } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
+        console.log('player 2 win');
+        hasBlackJack = true;
+        isAlive = false;
+    } else {
+        console.log('tie');
+        hasBlackJack = true;
+        isAlive = false;
+    }
 }
 
 // button "Draw"
