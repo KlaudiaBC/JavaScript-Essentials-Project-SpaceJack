@@ -90,3 +90,5 @@ let playerName = "";
 let nameEl = "";
 playerName.textContent = "Human " + nameEl;
 console.log(player.Name)
+
+//     printnameEl.innerHTML = (JSON.parse(localStorage.getItem("playerName")) 
