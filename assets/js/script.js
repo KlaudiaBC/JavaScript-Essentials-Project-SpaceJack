@@ -86,6 +86,7 @@ function startGame() {
 // compare sum of Player1 and Player2 --> who is closer to 21 wins.
 
 // render a name for Player2
-let playerName = document.getElementById("player-name");
-let nameEl = ""
+let playerName = "";
+let nameEl = "";
 playerName.textContent = "Human " + nameEl;
+console.log(player.Name)
