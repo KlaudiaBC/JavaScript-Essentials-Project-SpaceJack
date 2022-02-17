@@ -4,6 +4,12 @@ const suite = ['.suite-img-a', '.suite-img-b', '.suite-img-c', '.suite-img-d']
 let cardsArray = [];
 let player1Cards = []
 
+
+/**
+ * The "loop" called when the game is loaded
+ * and the user click the button "Start",
+ * the function is building new cards
+ */
 function buildCardsArray() {
     for (let i = 0; i < suite.length; i++) {
         let suiteValue = suite[i];
@@ -24,14 +30,24 @@ function buildCardsArray() {
     console.log(player1Cards)
 }
 
+/**
+ * Returns random card
+ */
+
 function getRandomCard() {
     return cardsArray[Math.floor(Math.random() * 51)];
 }
 
+/**
+ * Returns the index of the random card
+ */
 function getRandomCardIndex() {
 return Math.floor(Math.random() * 51)
 }
 
+/**
+Create new random card
+ */
 function givePlayerCard() {
     let newCard = getRandomCardIndex();
     if (player1Cards.includes(newCard)) {
@@ -40,6 +56,11 @@ function givePlayerCard() {
         player1Cards.push(newCard)
     }
 };
+
+/**
+Render a specyfic numer
+of random cards for a user
+ */
 
 function givePlayerSomeCards(howmany) {
     for (let i = 0; i < howmany; i++) {
@@ -56,7 +77,7 @@ buildCardsArray()
 let hasBlackJack = false;
 let isAlive = true;
 
-// button "Start"
+// button "Start" // to be done
 function startGame() {
     if (sumPlayer1 < 21 && sumPlayer2 < 21) {
         console.log('draw card');
@@ -86,9 +107,17 @@ function startGame() {
 // compare sum of Player1 and Player2 --> who is closer to 21 wins.
 
 // render a name for Player2
-let playerName = "";
-let nameEl = "";
-playerName.textContent = "Human " + nameEl;
-console.log(player.Name)
 
-//     printnameEl.innerHTML = (JSON.parse(localStorage.getItem("playerName")) 
+// Storing data:
+let playerName = {};
+const myJSON = JSON.stringify(playerName);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data:
+// let text = localStorage.getItem("testJSON");
+// let obj = JSON.parse(text);
+// document.getElementById("demo").innerHTML = obj.name;
+
+
+// printnameEl.innerHTML = (JSON.parse(localStorage.getItem("playerName")))
+

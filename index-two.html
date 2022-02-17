@@ -97,11 +97,10 @@
     </div>
 
     <!-- game area -->
-    <div class="game area">
+    <div class="container">
 
-        <h2 class="title">Alien vs Human</h2>
         <div class="player">
-            <p>Alien Jack</p>
+            <h2>Alien Jack</h2>
         </div>
         <div class="player-side">
             <div class="card" id="card-one">
@@ -115,12 +114,11 @@
                 <div class="suite suite-right"></div>
             </div>
         </div>
-        <div class="player">
-            <p>Here goes some pic to shuffle the cards</p>
-        </div>
-        <div class="player">
-            <p id="player-name"></p>
-        </div>
+        <div class="player player-middle">
+                    <button class="btn btn--big btn-warning" id="draw-btn" onclick="drawNewCard()">Draw</button>
+                    <button class="btn btn--big btn-warning" id="start-btn" onclick="startGame()">Start</button>
+                    <button class="btn btn--big btn-warning" id="check-btn" onClick="checkScore()">Check</button>
+                </div>
         <div class="player-side">
             <div class="card" id="card-three">
                 <div class="suite suite-left"></div>
@@ -132,18 +130,13 @@
                 <div class="suite suite-middle"></div>
                 <div class="suite suite-right"></div>
             </div>
-        </div>
     </div>
-
-    <div class="score-area">
-        <div>
-            <p class="score">Score: <span id="score">0</span></p>
-        </div>
-        <div>
-            <button class="btn btn--big btn-warning" id="start-btn" onclick="startGame()">Start</button>
-            <button class="btn btn--big btn-warning" id="draw-btn" onclick="drawNewCard()">Draw</button>
-            <button class="btn btn--big btn-warning" id="check-btn" onClick="checkScore()">Check</button>
-        </div>
+    <div class="player">
+        <h2>Human Jack</h2>
+    </div>
+    <div class="player">
+        <p id="score">SCORE: </p>
+    </div>
     </div>
 
     <footer></footer>

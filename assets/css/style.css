@@ -47,7 +47,6 @@ body {
     margin: 1rem;
 }
 
-/* css for html-one */
 .container {
     margin: auto;
     padding: 0;
@@ -60,7 +59,7 @@ body {
     border: 5px solid white;
     padding: 10px;
     border-radius: 25px;
-    width: 80%;
+    width: 90%;
 }
 
 .story-box {
@@ -88,6 +87,7 @@ body {
 
 .player {
     text-align: center;
+    color: black;
 }
 
 .score-area {
@@ -213,5 +213,11 @@ body {
 
 .container {
     width: 60%;
+}
+
+.player-middle {
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    gap: 3rem;
 }
 }
