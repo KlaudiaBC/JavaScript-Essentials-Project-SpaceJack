@@ -109,15 +109,19 @@ function startGame() {
 // render a name for Player2
 
 // Storing data:
-let playerName = {};
-const myJSON = JSON.stringify(playerName);
-localStorage.setItem("testJSON", myJSON);
+// const playerName = document.getElementById("playerName");
+// const btnName = document.getElementById("btnName");
+// const playerNameInp = document.getElementById("playerNameInp");
 
-// Retrieving data:
-// let text = localStorage.getItem("testJSON");
-// let obj = JSON.parse(text);
-// document.getElementById("demo").innerHTML = obj.name;
+// document.getElementById("btnName").addEventListener("click", savePlayersName)
 
+// function savePlayersName() {
+    // const inpName = playerNameInp.value;
 
-// printnameEl.innerHTML = (JSON.parse(localStorage.getItem("playerName")))
+    // if (inpName) {
+       // localStorage.setItem(inpName);
+    //}
+//}
 
+// const inpName = localStorage.getItem(inpName);
+// playerNameInp.innerHTML += '$(inpName)';
