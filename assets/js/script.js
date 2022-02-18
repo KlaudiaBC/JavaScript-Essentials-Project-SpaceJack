@@ -15,9 +15,6 @@ function buildCardsArray() {
         let suiteValue = suite[i];
         for (let x = 0; x <= 12; x++) {
             let expectedValue = x + 1;
-            //   if (expectedValue > 10) {
-            //        expectedValue = 10
-            //  }
             cardsArray.push({
                 value: expectedValue,
                 suite: suiteValue,
@@ -30,19 +27,20 @@ function buildCardsArray() {
     console.log(player1Cards)
 }
 
+
 /**
  * Returns random card
  */
 
 function getRandomCard() {
-    return cardsArray[Math.floor(Math.random() * 51)];
+    return cardsArray[Math.floor(Math.random() * 52)];
 }
 
 /**
  * Returns the index of the random card
  */
 function getRandomCardIndex() {
-return Math.floor(Math.random() * 51)
+    return Math.floor(Math.random() * 52)
 }
 
 /**
@@ -64,11 +62,35 @@ of random cards for a user
 
 function givePlayerSomeCards(howmany) {
     for (let i = 0; i < howmany; i++) {
-    givePlayerCard();
+        givePlayerCard();
     }
 }
 
 buildCardsArray()
+
+
+
+function createCard() {
+    let newCard = document.createElement('div');
+    newCard.setAttribute('class', 'card');
+    let CardSuiteOne = document.getElementById('card-one');
+    CardSuiteOne.appendChild(newCard);
+}
+
+createCard()
+
+
+// function removeSquare() {
+   // let oldSquare = document.getElementsByClassName('square');
+ //  let allSquares = document.getElementsByTagName('div');
+   // let squaresWrapper = allSquares[2];
+   // squaresWrapper.remove('oldSquare');
+//}
+
+
+
+// Append the class to the card element:
+
 
 
 
@@ -116,11 +138,11 @@ function startGame() {
 // document.getElementById("btnName").addEventListener("click", savePlayersName)
 
 // function savePlayersName() {
-    // const inpName = playerNameInp.value;
+// const inpName = playerNameInp.value;
 
-    // if (inpName) {
-       // localStorage.setItem(inpName);
-    //}
+// if (inpName) {
+// localStorage.setItem(inpName);
+//}
 //}
 
 // const inpName = localStorage.getItem(inpName);
