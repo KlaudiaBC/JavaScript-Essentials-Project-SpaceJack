@@ -70,22 +70,15 @@ buildCardsArray()
 
 
 
-function createCardOne() {
+function createNewCard() {
     let newCard = document.createElement('div');
     newCard.setAttribute('class', 'card');
-    let CardSuiteOne = document.getElementById('card-one');
-    CardSuiteOne.appendChild(newCard);
+    let playerSide = document.getElementById('playerSide');
+    playerSide.appendChild(newCard);
 }
 
-function createCardTwo() {
-    let newCardTwo = document.createElement('div');
-    newCardTwo.setAttribute('class', 'card');
-    let CardSuiteTwo = document.getElementById('card-two');
-    CardSuiteTwo.appendChild(newCardTwo);
-}
+createNewCard()
 
-createCardOne();
-createCardTwo()
 
 
 // function removeSquare() {
