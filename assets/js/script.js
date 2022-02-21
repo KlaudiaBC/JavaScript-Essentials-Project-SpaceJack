@@ -19,21 +19,20 @@ function buildCardsArray() {
             cardsArray.push({
                 value: expectedValue,
                 suite: suiteValue,
-                suiteClass: 'figure-img-' + (x + 1)
+                suiteClass: ' figure-img-' + (x + 1)
             })
         }
     }
     console.log('cards array:', cardsArray)
-  //  givePlayerSomeCards(2, 'playerOneSide');
-  //  givePlayerSomeCards(2, 'playerTwoSide');
-   // console.log(player1Cards);
-   // console.log(player2Cards);
+    //  givePlayerSomeCards(2, 'playerOneSide');
+    //  givePlayerSomeCards(2, 'playerTwoSide');
+    // console.log(player1Cards);
+    // console.log(player2Cards);
 }
 
 /**
  * Returns random card
  */
-
 function getRandomCard() {
     return cardsArray[Math.floor(Math.random() * 52)];
 }
@@ -43,23 +42,6 @@ function getRandomCard() {
  */
 function getRandomCardIndex() {
     return Math.floor(Math.random() * 52)
-}
-
-
-function createNewCard(whichPlayer) {
-    let cardItem = document.createElement('div');
-    cardItem.setAttribute('class', 'card');
-    let playerSide = document.getElementById(whichPlayer);
-    playerSide.appendChild(cardItem);
-    let leftSuite = document.createElement('div');
-    leftSuite.setAttribute('class', 'suite suite-left' + newCard.suite);
-    cardItem.appendChild(leftSuite);
-    let middleSuite = document.createElement('div');
-    middleSuite.setAttribute('class', 'suite suite-middle' + newCard.suiteClass);
-    cardItem.appendChild(middleSuite);
-    let rightSuite = document.createElement('div');
-    rightSuite.setAttribute('class', 'suite suite-right' + newCard.suite);
-    cardItem.appendChild(rightSuite);
 }
 
 /**
@@ -75,9 +57,24 @@ function givePlayerCard(whichPlayer) {
         } else {
             player2Cards.push(newCard)
         }
-        createNewCard(whichPlayer, cardsArray[newCard])
     }
-};
+}
+
+function createCardItem(whichPlayer) {
+    let cardItem = document.createElement('div');
+    cardItem.setAttribute('class', 'card');
+    let playerSide = document.getElementById(whichPlayer);
+    playerSide.appendChild(cardItem);
+    let leftSuite = document.createElement('div');
+    leftSuite.setAttribute('class', ' suite suite-left');
+    cardItem.appendChild(leftSuite);
+    let middleSuite = document.createElement('div');
+    middleSuite.setAttribute('class', ' suite suite-middle');
+    cardItem.appendChild(middleSuite);
+    let rightSuite = document.createElement('div');
+    rightSuite.setAttribute('class', ' suite suite-right');
+    cardItem.appendChild(rightSuite);
+}
 
 
 /**
@@ -88,12 +85,13 @@ of random cards for a user
 function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
         givePlayerCard(whichPlayer);
+        createCardItem(whichPlayer);
     }
 }
 
-buildCardsArray(),
-givePlayerSomeCards(2, 'playerOneSide')
-
+buildCardsArray()
+givePlayerSomeCards(2, 'playerTwoSide');
+console.log(player2Cards);
 
 
 
@@ -119,25 +117,25 @@ givePlayerSomeCards(2, 'playerOneSide')
 
 // button "Start" // to be done
 //function startGame() {
-  //  if (sumPlayer1 < 21 && sumPlayer2 < 21) {
-  //      console.log('draw card');
- //   } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
- //       console.log('draw new card for player1');
- //   } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
-  //      console.log('do not draw card for Player1')
- //   } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
- //       console.log('player1 win');
- //       hasBlackJack = true;
- //       isAlive = false;
- //   } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
-  //      console.log('player 2 win');
-   //     hasBlackJack = true;
-  //      isAlive = false;
- //   } else {
-  //      console.log('tie');
-  //      hasBlackJack = true;
-  //      isAlive = false;
-  //  }
+//  if (sumPlayer1 < 21 && sumPlayer2 < 21) {
+//      console.log('draw card');
+//   } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
+//       console.log('draw new card for player1');
+//   } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
+//      console.log('do not draw card for Player1')
+//   } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
+//       console.log('player1 win');
+//       hasBlackJack = true;
+//       isAlive = false;
+//   } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
+//      console.log('player 2 win');
+//     hasBlackJack = true;
+//      isAlive = false;
+//   } else {
+//      console.log('tie');
+//      hasBlackJack = true;
+//      isAlive = false;
+//  }
 //}
 
 // button "Draw"
@@ -165,4 +163,3 @@ givePlayerSomeCards(2, 'playerOneSide')
 
 // const inpName = localStorage.getItem(inpName);
 // playerNameInp.innerHTML += '$(inpName)';
-
