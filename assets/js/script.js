@@ -1,8 +1,9 @@
 // array with suite:
-const suite = ['.suite-img-a', '.suite-img-b', '.suite-img-c', '.suite-img-d']
+const suite = [' suite-img-1', ' suite-img-2', ' suite-img-3', ' suite-img-4']
 
 let cardsArray = [];
-let player1Cards = []
+let player1Cards = [];
+let player2Cards = [];
 
 
 /**
@@ -20,13 +21,14 @@ function buildCardsArray() {
                 suite: suiteValue,
                 suiteClass: 'figure-img-' + (x + 1)
             })
-            console.log('cards array:', cardsArray)
         }
     }
-    givePlayerSomeCards(2);
-    console.log(player1Cards)
+    console.log('cards array:', cardsArray)
+  //  givePlayerSomeCards(2, 'playerOneSide');
+  //  givePlayerSomeCards(2, 'playerTwoSide');
+   // console.log(player1Cards);
+   // console.log(player2Cards);
 }
-
 
 /**
  * Returns random card
@@ -43,76 +45,64 @@ function getRandomCardIndex() {
     return Math.floor(Math.random() * 52)
 }
 
+
+function createNewCard(whichPlayer) {
+    let cardItem = document.createElement('div');
+    cardItem.setAttribute('class', 'card');
+    let playerSide = document.getElementById(whichPlayer);
+    playerSide.appendChild(cardItem);
+    let leftSuite = document.createElement('div');
+    leftSuite.setAttribute('class', 'suite suite-left' + newCard.suite);
+    cardItem.appendChild(leftSuite);
+    let middleSuite = document.createElement('div');
+    middleSuite.setAttribute('class', 'suite suite-middle' + newCard.suiteClass);
+    cardItem.appendChild(middleSuite);
+    let rightSuite = document.createElement('div');
+    rightSuite.setAttribute('class', 'suite suite-right' + newCard.suite);
+    cardItem.appendChild(rightSuite);
+}
+
 /**
 Create new random card
  */
-function givePlayerCard() {
+function givePlayerCard(whichPlayer) {
     let newCard = getRandomCardIndex();
-    if (player1Cards.includes(newCard)) {
-        givePlayerCard()
+    if (player1Cards.includes(newCard) || player2Cards.includes(newCard)) {
+        givePlayerCard(whichPlayer)
     } else {
-        player1Cards.push(newCard)
+        if (whichPlayer === 'playerOneSide') {
+            player1Cards.push(newCard)
+        } else {
+            player2Cards.push(newCard)
+        }
+        createNewCard(whichPlayer, cardsArray[newCard])
     }
 };
+
 
 /**
 Render a specyfic numer
 of random cards for a user
  */
 
-function givePlayerSomeCards(howmany) {
+function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
-        givePlayerCard();
+        givePlayerCard(whichPlayer);
     }
 }
 
-buildCardsArray()
+buildCardsArray(),
+givePlayerSomeCards(2, 'playerOneSide')
 
 
 
-function createNewCardP1() {
-    let newCard = document.createElement('div');
-    newCard.setAttribute('class', 'card');
-    let playerSide = document.getElementById('playerOneSide');
-    playerSide.appendChild(newCard);
-    let leftSuite = document.createElement('div');
-    leftSuite.setAttribute('class', 'suite suite-left');
-    newCard.appendChild(leftSuite);
-    let middleSuite = document.createElement('div');
-    middleSuite.setAttribute('class', 'suite suite-middle');
-    newCard.appendChild(middleSuite);
-    let rightSuite = document.createElement('div');
-    rightSuite.setAttribute('class', 'suite suite-right');
-    newCard.appendChild(rightSuite);
-}
-
-function createNewCardP2() {
-    let newCard = document.createElement('div');
-    newCard.setAttribute('class', 'card');
-    let playerSide = document.getElementById('playerTwoSide');
-    playerSide.appendChild(newCard);
-    let leftSuite = document.createElement('div');
-    leftSuite.setAttribute('class', 'suite suite-left');
-    newCard.appendChild(leftSuite);
-    let middleSuite = document.createElement('div');
-    middleSuite.setAttribute('class', 'suite suite-middle');
-    newCard.appendChild(middleSuite);
-    let rightSuite = document.createElement('div');
-    rightSuite.setAttribute('class', 'suite suite-right');
-    newCard.appendChild(rightSuite);
-}
-
-
-createNewCardP1()
-createNewCardP1()
-createNewCardP2()
 
 
 // function removeSquare() {
-   // let oldSquare = document.getElementsByClassName('square');
- //  let allSquares = document.getElementsByTagName('div');
-   // let squaresWrapper = allSquares[2];
-   // squaresWrapper.remove('oldSquare');
+// let oldSquare = document.getElementsByClassName('square');
+//  let allSquares = document.getElementsByTagName('div');
+// let squaresWrapper = allSquares[2];
+// squaresWrapper.remove('oldSquare');
 //}
 
 
@@ -124,31 +114,31 @@ createNewCardP2()
 
 
 
-let hasBlackJack = false;
-let isAlive = true;
+//let hasBlackJack = false;
+//let isAlive = true;
 
 // button "Start" // to be done
-function startGame() {
-    if (sumPlayer1 < 21 && sumPlayer2 < 21) {
-        console.log('draw card');
-    } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
-        console.log('draw new card for player1');
-    } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
-        console.log('do not draw card for Player1')
-    } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
-        console.log('player1 win');
-        hasBlackJack = true;
-        isAlive = false;
-    } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
-        console.log('player 2 win');
-        hasBlackJack = true;
-        isAlive = false;
-    } else {
-        console.log('tie');
-        hasBlackJack = true;
-        isAlive = false;
-    }
-}
+//function startGame() {
+  //  if (sumPlayer1 < 21 && sumPlayer2 < 21) {
+  //      console.log('draw card');
+ //   } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
+ //       console.log('draw new card for player1');
+ //   } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
+  //      console.log('do not draw card for Player1')
+ //   } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
+ //       console.log('player1 win');
+ //       hasBlackJack = true;
+ //       isAlive = false;
+ //   } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
+  //      console.log('player 2 win');
+   //     hasBlackJack = true;
+  //      isAlive = false;
+ //   } else {
+  //      console.log('tie');
+  //      hasBlackJack = true;
+  //      isAlive = false;
+  //  }
+//}
 
 // button "Draw"
 // in this function: game have to Alive, Player 1 > 21, Player 2 > 21 --> render newCard for Player 2 (image) + sum value of the card with previous sumPlayer2
@@ -175,3 +165,4 @@ function startGame() {
 
 // const inpName = localStorage.getItem(inpName);
 // playerNameInp.innerHTML += '$(inpName)';
+
