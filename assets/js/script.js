@@ -70,15 +70,42 @@ buildCardsArray()
 
 
 
-function createNewCard() {
+function createNewCardP1() {
     let newCard = document.createElement('div');
     newCard.setAttribute('class', 'card');
-    let playerSide = document.getElementById('playerSide');
+    let playerSide = document.getElementById('playerOneSide');
     playerSide.appendChild(newCard);
+    let leftSuite = document.createElement('div');
+    leftSuite.setAttribute('class', 'suite suite-left');
+    newCard.appendChild(leftSuite);
+    let middleSuite = document.createElement('div');
+    middleSuite.setAttribute('class', 'suite suite-middle');
+    newCard.appendChild(middleSuite);
+    let rightSuite = document.createElement('div');
+    rightSuite.setAttribute('class', 'suite suite-right');
+    newCard.appendChild(rightSuite);
 }
 
-createNewCard()
+function createNewCardP2() {
+    let newCard = document.createElement('div');
+    newCard.setAttribute('class', 'card');
+    let playerSide = document.getElementById('playerTwoSide');
+    playerSide.appendChild(newCard);
+    let leftSuite = document.createElement('div');
+    leftSuite.setAttribute('class', 'suite suite-left');
+    newCard.appendChild(leftSuite);
+    let middleSuite = document.createElement('div');
+    middleSuite.setAttribute('class', 'suite suite-middle');
+    newCard.appendChild(middleSuite);
+    let rightSuite = document.createElement('div');
+    rightSuite.setAttribute('class', 'suite suite-right');
+    newCard.appendChild(rightSuite);
+}
 
+
+createNewCardP1()
+createNewCardP1()
+createNewCardP2()
 
 
 // function removeSquare() {
