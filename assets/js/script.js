@@ -19,16 +19,12 @@ function buildCardsArray() {
             cardsArray.push({
                 value: expectedValue,
                 suite: suiteValue,
-                suiteClass: ' figure-img-' + (x + 1)
+                suiteClass: ' figure-img-' + (x + 1),
             })
         }
     }
-    console.log('cards array:', cardsArray)
-    //  givePlayerSomeCards(2, 'playerOneSide');
-    //  givePlayerSomeCards(2, 'playerTwoSide');
-    // console.log(player1Cards);
-    // console.log(player2Cards);
 }
+
 
 /**
  * Returns random card
@@ -48,7 +44,7 @@ function getRandomCardIndex() {
 Create new random card
  */
 function givePlayerCard(whichPlayer) {
-    let newCard = getRandomCardIndex();
+    let newCard = getRandomCardIndex(whichPlayer);
     if (player1Cards.includes(newCard) || player2Cards.includes(newCard)) {
         givePlayerCard(whichPlayer)
     } else {
@@ -60,20 +56,20 @@ function givePlayerCard(whichPlayer) {
     }
 }
 
-function createCardItem(whichPlayer) {
-    let cardItem = document.createElement('div');
-    cardItem.setAttribute('class', 'card');
+function createCardEl(whichPlayer) {
+    let cardEl = document.createElement('div');
+    cardEl.setAttribute('class', 'card');
     let playerSide = document.getElementById(whichPlayer);
-    playerSide.appendChild(cardItem);
+    playerSide.appendChild(cardEl);
     let leftSuite = document.createElement('div');
     leftSuite.setAttribute('class', ' suite suite-left');
-    cardItem.appendChild(leftSuite);
+    cardEl.appendChild(leftSuite);
     let middleSuite = document.createElement('div');
     middleSuite.setAttribute('class', ' suite suite-middle');
-    cardItem.appendChild(middleSuite);
+    cardEl.appendChild(middleSuite);
     let rightSuite = document.createElement('div');
     rightSuite.setAttribute('class', ' suite suite-right');
-    cardItem.appendChild(rightSuite);
+    cardEl.appendChild(rightSuite);
 }
 
 
@@ -85,15 +81,35 @@ of random cards for a user
 function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
         givePlayerCard(whichPlayer);
-        createCardItem(whichPlayer);
+        createCardEl(whichPlayer);
     }
 }
 
 buildCardsArray()
-givePlayerSomeCards(2, 'playerTwoSide');
-console.log(player2Cards);
+console.log(player2Cards)
 
 
+let buttonClick = false;
+
+function startGame() {
+    if (buttonClick) {
+        return;
+    } else {
+        buttonClick = true;
+        givePlayerSomeCards(2, 'playerTwoSide'),
+            givePlayerSomeCards(2, 'playerOneSide')
+    }
+}
+
+let count = 0
+
+function drawNewCard() {
+    count += 1;
+    givePlayerSomeCards(1, 'playerTwoSide')
+    if (count > 1) {
+        $('#draw-btn').prop('disabled', true);
+    }
+}
 
 
 // function removeSquare() {
@@ -102,15 +118,6 @@ console.log(player2Cards);
 // let squaresWrapper = allSquares[2];
 // squaresWrapper.remove('oldSquare');
 //}
-
-
-
-// Append the class to the card element:
-
-
-
-
-
 
 //let hasBlackJack = false;
 //let isAlive = true;
