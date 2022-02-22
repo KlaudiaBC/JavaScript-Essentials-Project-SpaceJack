@@ -7,7 +7,7 @@ It is an online game for children based on the rules of popular casino game Blac
 ## Table of contents
 - <a href="#content">Content</a>
 - <a href="#uj">User journey</a>
-- <a href="#ux">UX Desig</a>
+- <a href="#ux">UX Design</a>
 - <a href="#layout">Layout</a>
 - <a href="#ip">Implementation process</a>
 - <a href="#tu">Technologies used</a>
@@ -16,18 +16,23 @@ It is an online game for children based on the rules of popular casino game Blac
 - <a href="#test">Testing</a>
 
 <p id="content"></p>
+
 ## Content
 
 <p id="uj"></p>
+
 ## User journey
 
 <p id="ux"></p>
+
 ## UX Design:
 
 <p id="layout"></p>
+
 ## Layout
 
 <p id="ip"></p>
+
 ## Implementation process:
 1. At first I created HTML files for the introduction page and for a game page as well as css and .js files which I connected to my HTML.
 2. I added components (logo, header, navbar, divs). I also added styling to both pages.
@@ -38,6 +43,7 @@ Thanks to this method I reduced the amount of images from 52 to 17.
 6. A game logic: Instead of creating an element in the DOM, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random element only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
 
 <p id="tu"></p>
+
 ## Technologies used:
 - HTML5, CSS3, JavaScript
 - GitHub, Gitpod and Git
@@ -50,6 +56,7 @@ Thanks to this method I reduced the amount of images from 52 to 17.
 - Remove.bg (for removal of background in card images)
 
 <p id="ack"></p>
+
 ## Acknowledgement:
 In this place I would like to thank everyone, who added an knowledge and value to this project:
 - Code Institute course materials and walkthroughs
@@ -62,6 +69,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - Flaticon.com (for logo)
 
 <p id="deploy"></p>
+
 ## Deployment:
 
 The project was deployed to GitHub Pages using the following steps:
