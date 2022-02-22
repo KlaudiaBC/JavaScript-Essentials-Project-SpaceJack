@@ -1,11 +1,21 @@
 # JavaScript Essentials: "SpaceJack" Portfolio Project
 ## Welcome!
 
-### This is my Portfolio 2 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
+## This is my Portfolio 2 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
 It is an online game for children based on the rules of popular casino game Blackjack.
 
-## Content
+## Table of contents
+- <a href="#content">Content</a>
+- <a href="#uj">User journey</a>
+- <a href="#ux">UX Desig</a>
+- <a href="#layout">Layout</a>
+- <a href="#ip">Implementation process</a>
+- <a href="#tu">Technologies used</a>
+- <a href="#ack">Acknowledgement</a>
+- <a href="#deploy">Deployment</a>
+- - <a href="#test">Testing</a>
 
+## Content
 
 ## User journey
 
