@@ -9,13 +9,14 @@ let player2Cards = [];
 /**
  * The "loop" called when the game is loaded
  * and the user click the button "Start",
- * the function is building new cards
+ * the function is building new cards array
  */
 function buildCardsArray() {
     for (let i = 0; i < suite.length; i++) {
         let suiteValue = suite[i];
         for (let x = 0; x <= 12; x++) {
             let expectedValue = x + 1;
+            // push the card object into the card array
             cardsArray.push({
                 value: expectedValue,
                 suite: suiteValue,
@@ -23,14 +24,6 @@ function buildCardsArray() {
             })
         }
     }
-}
-
-
-/**
- * Returns random card
- */
-function getRandomCard() {
-    return cardsArray[Math.floor(Math.random() * 52)];
 }
 
 /**
@@ -41,56 +34,71 @@ function getRandomCardIndex() {
 }
 
 /**
-Create new random card
+* Create new random card
+* @param whichPlayer
+* @param newCard
  */
 function givePlayerCard(whichPlayer) {
     let newCard = getRandomCardIndex(whichPlayer);
+    // check if a player already has a card with that index
     if (player1Cards.includes(newCard) || player2Cards.includes(newCard)) {
         givePlayerCard(whichPlayer)
     } else {
+        // if no player has a card
+        // give whichPlayer a card
         if (whichPlayer === 'playerOneSide') {
             player1Cards.push(newCard)
         } else {
             player2Cards.push(newCard)
         }
+        // add this card element to the player container
+        createCardEl(cardsArray[newCard], whichPlayer);
     }
 }
 
-function createCardEl(whichPlayer) {
+/**
+ * Add a card el to the DOM
+ * @param whichCard
+ * @param whichPlayer
+ */
+function createCardEl(whichCard, whichPlayer) {
     let cardEl = document.createElement('div');
     cardEl.setAttribute('class', 'card');
     let playerSide = document.getElementById(whichPlayer);
     playerSide.appendChild(cardEl);
     let leftSuite = document.createElement('div');
-    leftSuite.setAttribute('class', ' suite suite-left');
+    leftSuite.setAttribute('class', ' suite suite-left' + whichCard.suite);
     cardEl.appendChild(leftSuite);
     let middleSuite = document.createElement('div');
-    middleSuite.setAttribute('class', ' suite suite-middle');
+    middleSuite.setAttribute('class', ' suite suite-middle' + whichCard.suiteClass);
     cardEl.appendChild(middleSuite);
     let rightSuite = document.createElement('div');
-    rightSuite.setAttribute('class', ' suite suite-right');
+    rightSuite.setAttribute('class', ' suite suite-right' + whichCard.suite);
     cardEl.appendChild(rightSuite);
 }
 
 
 /**
-Render a specyfic numer
-of random cards for a user
- */
+* Render a specyfic numer
+* of random cards for a user
+* @param howmany
+* @param whichPlayer
+*/
 
 function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
         givePlayerCard(whichPlayer);
-        createCardEl(whichPlayer);
     }
 }
 
-buildCardsArray()
-console.log(player2Cards)
 
 
 let buttonClick = false;
 
+/**
+ * Render 2 random cards for each player
+ * @returns false
+ */
 function startGame() {
     if (buttonClick) {
         return;
@@ -103,9 +111,14 @@ function startGame() {
 
 let count = 0
 
+/**
+ * Render a random card for a player
+ */
 function drawNewCard() {
     count += 1;
     givePlayerSomeCards(1, 'playerTwoSide')
+    // allows to render max 2 new cards
+    // disable the button after limit was met
     if (count > 1) {
         $('#draw-btn').prop('disabled', true);
     }
@@ -170,3 +183,5 @@ function drawNewCard() {
 
 // const inpName = localStorage.getItem(inpName);
 // playerNameInp.innerHTML += '$(inpName)';
+
+buildCardsArray();
