@@ -75,6 +75,8 @@ function createCardEl(whichCard, whichPlayer) {
     let rightSuite = document.createElement('div');
     rightSuite.setAttribute('class', ' suite suite-right' + whichCard.suite);
     cardEl.appendChild(rightSuite);
+    let cardGameValue = whichCard.value;
+    console.log('value:', cardGameValue);
 }
 
 
@@ -129,16 +131,14 @@ function drawNewCard() {
  * @param whichPlayer
  * @param whichCard 
  */
-function amount(whichCard) {
-    drawNewCard()
-    if (whichCard.value === 1) {
-        console.log ('ohoh');
-    } else if (whichCard.value > 10) {
-        console.log ('okeeey');
-    } else
-        console.log('Good one')
-};
-
+// function amount(cardGameValue) {
+//     if (cardGameValue === 1) {
+//         console.log ('ohoh');
+//     } else if (cardGameValue > 10) {
+//         console.log ('okeeey');
+//     } else
+//         console.log('Good one')
+// };
 
 
 // function sum(prev, next) {
