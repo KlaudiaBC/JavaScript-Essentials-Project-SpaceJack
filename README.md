@@ -13,16 +13,21 @@ It is an online game for children based on the rules of popular casino game Blac
 - <a href="#tu">Technologies used</a>
 - <a href="#ack">Acknowledgement</a>
 - <a href="#deploy">Deployment</a>
-- - <a href="#test">Testing</a>
+- <a href="#test">Testing</a>
 
+<p id="content"></p>
 ## Content
 
+<p id="uj"></p>
 ## User journey
 
+<p id="ux"></p>
 ## UX Design:
 
+<p id="layout"></p>
 ## Layout
 
+<p id="ip"></p>
 ## Implementation process:
 1. At first I created HTML files for the introduction page and for a game page as well as css and .js files which I connected to my HTML.
 2. I added components (logo, header, navbar, divs). I also added styling to both pages.
@@ -32,6 +37,7 @@ Thanks to this method I reduced the amount of images from 52 to 17.
 5. Styling: After research about the fonts which are child-friendly, I decided to change the main font from 'Orbitron' to 'Bubblegum Sans'.
 6. A game logic: Instead of creating an element in the DOM, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random element only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
 
+<p id="tu"></p>
 ## Technologies used:
 - HTML5, CSS3, JavaScript
 - GitHub, Gitpod and Git
@@ -43,7 +49,7 @@ Thanks to this method I reduced the amount of images from 52 to 17.
 - Freeconvert.com (for converting the background video)
 - Remove.bg (for removal of background in card images)
 
-
+<p id="ack"></p>
 ## Acknowledgement:
 In this place I would like to thank everyone, who added an knowledge and value to this project:
 - Code Institute course materials and walkthroughs
@@ -55,6 +61,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - Pexels (for background video)
 - Flaticon.com (for logo)
 
+<p id="deploy"></p>
 ## Deployment:
 
 The project was deployed to GitHub Pages using the following steps:
@@ -65,6 +72,7 @@ The project was deployed to GitHub Pages using the following steps:
 4. Click the dropdown button called "None" and select "Master Branch".
 5. The page will automatically refresh and provide you with a link to the "GitHub Pages" deploying your project in the live-view.
 
+<p id="test"></p>
 ## Testing:
 Tests have been performed on the:
 Testing also included different devices:
