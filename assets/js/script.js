@@ -77,7 +77,23 @@ function createCardEl(whichCard, whichPlayer) {
     cardEl.appendChild(rightSuite);
     let cardGameValue = whichCard.value;
     console.log('value:', cardGameValue);
+
+/**
+ * Extract the expected value of the card
+ * @param cardGameValue
+ */
+    function amount(cardGameValue) {
+        if (cardGameValue === '1') {
+            return '11';
+        } else if (cardGameValue > '10') {
+            return '10';
+        } else
+            return cardGameValue;
+    }; amount(cardGameValue);
+    
+    console.log(amount(cardGameValue));
 }
+
 
 
 /**
@@ -126,19 +142,7 @@ function drawNewCard() {
     }
 }
 
-/**
- * Extract the expected value of the card
- * @param whichPlayer
- * @param whichCard 
- */
-// function amount(cardGameValue) {
-//     if (cardGameValue === 1) {
-//         console.log ('ohoh');
-//     } else if (cardGameValue > 10) {
-//         console.log ('okeeey');
-//     } else
-//         console.log('Good one')
-// };
+
 
 
 // function sum(prev, next) {
