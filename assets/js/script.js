@@ -23,7 +23,7 @@ function buildCardsArray() {
                 suiteClass: ' figure-img-' + (x + 1),
             })
         }
-    }
+    } console.log(cardsArray);
 }
 
 /**
@@ -34,9 +34,9 @@ function getRandomCardIndex() {
 }
 
 /**
-* Create new random card
-* @param whichPlayer
-* @param newCard
+ * Create new random card
+ * @param whichPlayer
+ * @param newCard
  */
 function givePlayerCard(whichPlayer) {
     let newCard = getRandomCardIndex(whichPlayer);
@@ -79,11 +79,11 @@ function createCardEl(whichCard, whichPlayer) {
 
 
 /**
-* Render a specyfic numer
-* of random cards for a user
-* @param howmany
-* @param whichPlayer
-*/
+ * Render a specyfic numer
+ * of random cards for a user
+ * @param howmany
+ * @param whichPlayer
+ */
 
 function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
@@ -106,7 +106,7 @@ function startGame() {
         buttonClick = true;
         givePlayerSomeCards(2, 'playerTwoSide'),
             givePlayerSomeCards(2, 'playerOneSide')
-    }
+    } console.log(player2Cards)
 }
 
 let count = 0
@@ -123,6 +123,29 @@ function drawNewCard() {
         $('#draw-btn').prop('disabled', true);
     }
 }
+
+/**
+ * Extract the expected value of the card
+ * @param whichPlayer
+ * @param whichCard 
+ */
+function amount(whichCard) {
+    drawNewCard()
+    if (whichCard.value === 1) {
+        console.log ('ohoh');
+    } else if (whichCard.value > 10) {
+        console.log ('okeeey');
+    } else
+        console.log('Good one')
+};
+
+
+
+// function sum(prev, next) {
+//     return prev + next
+// }
+
+
 
 
 // function removeSquare() {
