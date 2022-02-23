@@ -45,7 +45,7 @@ body {
 }
 
 .modal-content h3,p {
-    margin: 1rem;
+    margin: .2rem;
 }
 
 .container {
@@ -80,17 +80,21 @@ body {
     margin: auto;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
     padding: 10px;
     border-radius: 25px;
-    position: relative;
 }
 
 .player {
     text-align: center;
     color: black;
+}
+
+.middle-table {
+    width: 6rem,
 }
 
 .score-area {

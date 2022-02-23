@@ -4,6 +4,10 @@ const suite = [' suite-img-1', ' suite-img-2', ' suite-img-3', ' suite-img-4']
 let cardsArray = [];
 let player1Cards = [];
 let player2Cards = [];
+let player1Value;
+let player2Value;
+let buttonClick = false;
+let count = 0
 
 
 /**
@@ -23,7 +27,10 @@ function buildCardsArray() {
                 suiteClass: ' figure-img-' + (x + 1),
             })
         }
-    } console.log(cardsArray);
+    } 
+    player1Value = 0;
+    player2Value = 0;
+    console.log(cardsArray);
 }
 
 /**
@@ -53,8 +60,16 @@ function givePlayerCard(whichPlayer) {
         }
         // add this card element to the player container
         createCardEl(cardsArray[newCard], whichPlayer);
+
+        // add card-game value to the card el
+        let cardGameValue = amount(cardsArray[newCard].value);
+        console.log('adding value:', cardGameValue);
+
+        //sum the card-game values
+        totaValue(whichPlayer, cardGameValue);
     }
 }
+
 
 /**
  * Add a card el to the DOM
@@ -75,26 +90,61 @@ function createCardEl(whichCard, whichPlayer) {
     let rightSuite = document.createElement('div');
     rightSuite.setAttribute('class', ' suite suite-right' + whichCard.suite);
     cardEl.appendChild(rightSuite);
-    let cardGameValue = whichCard.value;
-    console.log('value:', cardGameValue);
+}
+
 
 /**
  * Extract the expected value of the card
  * @param cardGameValue
  */
-    function amount(cardGameValue) {
-        if (cardGameValue === '1') {
-            return '11';
-        } else if (cardGameValue > '10') {
-            return '10';
-        } else
-            return cardGameValue;
-    }; amount(cardGameValue);
-    
-    console.log(amount(cardGameValue));
+ function amount(cardGameValue) {
+    if (cardGameValue === 1) {
+        return 11;
+    } else if (cardGameValue > 10) {
+        return 10;
+    } else
+        return cardGameValue;
+};
+
+/**
+ * Sum the card-game values of the cards of each player
+ * @param whichPlayer 
+ * @param cardGameValue 
+ */
+ function totaValue(whichPlayer, cardGameValue) {
+    if (whichPlayer === 'playerOneSide') {
+    player1Value += cardGameValue
+    console.log('total player1 :', player1Value)
+} else {
+    player2Value += cardGameValue
+    console.log('total player 2:', player2Value)
+}
 }
 
 
+
+/**
+ * Render a random card for a player
+ */
+ function drawNewCard() {
+    count += 1;
+    givePlayerSomeCards(1, 'playerTwoSide')
+    // allows to render max 1 new card
+    // disable the button after limit was met
+    if (count > 1) {
+        $('#draw-btn').prop('disabled', true);
+    } 
+}
+
+function drawCardPlayerOne() {
+    count += 1;
+    givePlayerSomeCards(1, 'playerOneSide')
+    // allows to render max 2 new cards
+    // disable the button after limit was met
+    if (player1Value > 17 && count > 0) {
+        $('#check-btn').prop('disabled', true);
+    } 
+}
 
 /**
  * Render a specyfic numer
@@ -102,7 +152,6 @@ function createCardEl(whichCard, whichPlayer) {
  * @param howmany
  * @param whichPlayer
  */
-
 function givePlayerSomeCards(howmany, whichPlayer) {
     for (let i = 0; i < howmany; i++) {
         givePlayerCard(whichPlayer);
@@ -110,86 +159,46 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 }
 
 
-
-let buttonClick = false;
-
-/**
- * Render 2 random cards for each player
- * @returns false
- */
 function startGame() {
-    if (buttonClick) {
-        return;
-    } else {
-        buttonClick = true;
-        givePlayerSomeCards(2, 'playerTwoSide'),
-            givePlayerSomeCards(2, 'playerOneSide')
-    } console.log(player2Cards)
+    givePlayerSomeCards(2, 'playerTwoSide'),
+    givePlayerSomeCards(2, 'playerOneSide'),
+    showMessage("Welcome!");
 }
 
-let count = 0
+$('#start-btn').on('click', function(){
+    $('#start-btn').show();
+    $(this).hide();
+});
 
-/**
- * Render a random card for a player
- */
-function drawNewCard() {
-    count += 1;
-    givePlayerSomeCards(1, 'playerTwoSide')
-    // allows to render max 2 new cards
-    // disable the button after limit was met
-    if (count > 1) {
-        $('#draw-btn').prop('disabled', true);
-    }
+function showMessage(someText){
+        let messageWrapper = document.getElementById('middle-table');
+        messageWrapper.innerText = someText
 }
 
 
 
-
-// function sum(prev, next) {
-//     return prev + next
-// }
+// let isAlive
 
 
+function checkScore() {
+drawCardPlayerOne()
+let message;
+if (player1Value < 21 && player2Value < 21) {
+   message = "Draw the card";
+} else if (player1Value === player2Value) {
+    message = "It's a tie!";
+} else if (player1Value === 21) {
+    message = "Alien: SpaceJack! -1 star";
+} else if (player2Value === 21) {
+    message = 'Human: SpaceJack! +1 star';
+} else if ((player2Value < 21) > player1Value) {
+    message = 'Human: WIN! +1 star';
+} else {
+    message = 'Alien: WIN! -1 star';
+}
+showMessage(message);
+}
 
-
-// function removeSquare() {
-// let oldSquare = document.getElementsByClassName('square');
-//  let allSquares = document.getElementsByTagName('div');
-// let squaresWrapper = allSquares[2];
-// squaresWrapper.remove('oldSquare');
-//}
-
-//let hasBlackJack = false;
-//let isAlive = true;
-
-// button "Start" // to be done
-//function startGame() {
-//  if (sumPlayer1 < 21 && sumPlayer2 < 21) {
-//      console.log('draw card');
-//   } else if (sumPlayer1 > 17 && sumPlayer2 > 21) {
-//       console.log('draw new card for player1');
-//   } else if (sumPlayer1 < 17 && sumPlayer2 > 21) {
-//      console.log('do not draw card for Player1')
-//   } else if (sumPlayer1 === 21 && sumPlayer2 != 21) {
-//       console.log('player1 win');
-//       hasBlackJack = true;
-//       isAlive = false;
-//   } else if (sumPlayer2 === 21 && sumPlayer1 != 21) {
-//      console.log('player 2 win');
-//     hasBlackJack = true;
-//      isAlive = false;
-//   } else {
-//      console.log('tie');
-//      hasBlackJack = true;
-//      isAlive = false;
-//  }
-//}
-
-// button "Draw"
-// in this function: game have to Alive, Player 1 > 21, Player 2 > 21 --> render newCard for Player 2 (image) + sum value of the card with previous sumPlayer2
-
-//button "Check"
-// compare sum of Player1 and Player2 --> who is closer to 21 wins.
 
 // render a name for Player2
 
