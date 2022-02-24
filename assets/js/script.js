@@ -125,13 +125,14 @@ let count = 0
 /**
  * Render a random card for a player
  */
+
 function drawNewCard() {
     count += 1;
     givePlayerSomeCards(1, 'playerTwoSide');
     // allows to render max 1 new card
     // disable the button after limit was met
     if (count > 1) {
-        disableBtn('#draw');
+        $('#draw-btn').prop('disabled', true);
     }
 }
 
