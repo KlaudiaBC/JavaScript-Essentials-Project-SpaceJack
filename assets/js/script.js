@@ -26,7 +26,7 @@ function buildCardsArray() {
                 suiteClass: ' figure-img-' + (x + 1),
             })
         }
-    } 
+    }
     player1Value = 0;
     player2Value = 0;
     console.log(cardsArray);
@@ -96,7 +96,7 @@ function createCardEl(whichCard, whichPlayer) {
  * Extract the expected value of the card
  * @param cardGameValue
  */
- function amount(cardGameValue) {
+function amount(cardGameValue) {
     if (cardGameValue === 1) {
         return 11;
     } else if (cardGameValue > 10) {
@@ -110,14 +110,14 @@ function createCardEl(whichCard, whichPlayer) {
  * @param whichPlayer 
  * @param cardGameValue 
  */
- function totaValue(whichPlayer, cardGameValue) {
+function totaValue(whichPlayer, cardGameValue) {
     if (whichPlayer === 'playerOneSide') {
-    player1Value += cardGameValue
-    console.log('total player1 :', player1Value)
-} else {
-    player2Value += cardGameValue
-    console.log('total player 2:', player2Value)
-}
+        player1Value += cardGameValue
+        console.log('total player1 :', player1Value)
+    } else {
+        player2Value += cardGameValue
+        console.log('total player 2:', player2Value)
+    }
 }
 
 
@@ -125,14 +125,14 @@ let count = 0
 /**
  * Render a random card for a player
  */
- function drawNewCard() {
+function drawNewCard() {
     count += 1;
     givePlayerSomeCards(1, 'playerTwoSide')
     // allows to render max 1 new card
     // disable the button after limit was met
     if (count > 1) {
         disableBtn('#draw');
-    } 
+    }
 }
 
 /**
@@ -150,8 +150,8 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 
 function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
-    givePlayerSomeCards(2, 'playerOneSide'),
-    enableBtn('#draw-btn');
+        givePlayerSomeCards(2, 'playerOneSide'),
+        enableBtn('#draw-btn');
     enableBtn('#check-btn');
     showMessage("Welcome!");
     hideBtn('#start');
@@ -162,13 +162,12 @@ function drawCardPlayerOne() {
     givePlayerSomeCards(1, 'playerOneSide')
     // allows to render max 2 new cards
     // disable the button after limit was met
-    if (player1Value > 17) {
-    }
+    if (player1Value > 17) {}
 }
 
-function showMessage(someText){
-        let messageWrapper = document.getElementById('middle-table');
-        messageWrapper.innerText = someText
+function showMessage(someText) {
+    let messageWrapper = document.getElementById('middle-table');
+    messageWrapper.innerText = someText
 }
 
 
@@ -183,39 +182,44 @@ function disableBtn(whichBtn) {
 }
 
 function hideBtn(whichBtn) {
-    $(whichBtn).click(function(){
+    $(whichBtn).click(function () {
         $(whichBtn).hide();
-      });
+    });
 }
 
+function showBtn(whichBtn) {
+    $(whichBtn).click(function () {
+        $(whichBtn).show();
+    });
+}
 
 
 function checkScore() {
-drawCardPlayerOne();
-disableBtn('#draw-btn');
-disableBtn('#check-btn');
-let message;
-if (player1Value === player2Value) {
-    message = "It's a tie! Try again.";
-    reloadDeck()
-} else if (player1Value === 21) {
-    message = "Alien: SpaceJack!";
-    substractPoints()
-    reloadDeck()
-} else if (player2Value === 21) {
-    message = 'Human: SpaceJack!';
-    addPoints()
-    reloadDeck()
-} else if ((player2Value < 21) > (player1Value < 21)  || player1Value > 21) {
-    message = 'Human: WIN!';
-    addPoints()
-    reloadDeck()
-} else {
-    message = 'Alien: WIN!';
-    substractPoints()
-    reloadDeck()
-}
-showMessage(message);
+    drawCardPlayerOne();
+    disableBtn('#draw-btn');
+    disableBtn('#check-btn');
+    let message;
+    if (player1Value === player2Value) {
+        message = "It's a tie! Try again.";
+        reloadDeck()
+    } else if (player1Value === 21) {
+        message = "Alien: SpaceJack!";
+        substractPoints()
+        reloadDeck()
+    } else if (player2Value === 21) {
+        message = 'Human: SpaceJack!';
+        addPoints()
+        reloadDeck()
+    } else if ((player2Value < 21) > (player1Value < 21) || player1Value > 21) {
+        message = 'Human: WIN!';
+        addPoints()
+        reloadDeck()
+    } else {
+        message = 'Alien: WIN!';
+        substractPoints()
+        reloadDeck()
+    }
+    showMessage(message);
 }
 
 let sum = 5
@@ -224,32 +228,34 @@ sumEl.textContent = "You have " + sum + " stars!"
 
 function addPoints() {
     if (sum < 10) {
-sum = sum + 1
-sumEl.textContent = "You have " + sum + " stars!"
-} else {
-    win()
-}
+        sum = sum + 1
+        sumEl.textContent = "You have " + sum + " stars!"
+    } else {
+        win()
+    }
 }
 
 function substractPoints() {
- if (sum > 0) {
-    sum = sum - 1
-sumEl.textContent = "You have " + sum + " stars!"
- } else {
-     lose()
- }
+    if (sum > 0) {
+        sum = sum - 1
+        sumEl.textContent = "You have " + sum + " stars!"
+    } else {
+        lose()
+    }
 }
 
 function win() {}
+
 function lose() {}
 
 
 function reloadDeck() {
-    setTimeout(function(){
+    setTimeout(function () {
         $('.middle-table').empty();
         $('.card').remove();
-      }, 2000);
-    }
+        startGame();
+    }, 1000);
+}
 
 // render a name for Player2
 
