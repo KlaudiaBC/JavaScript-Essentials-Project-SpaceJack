@@ -150,19 +150,19 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 
 function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
-        givePlayerSomeCards(2, 'playerOneSide'),
-        enableBtn('#draw-btn');
+    givePlayerSomeCards(2, 'playerOneSide'),
+    enableBtn('#draw-btn');
     enableBtn('#check-btn');
     showMessage("Welcome!");
     hideBtn('#start');
 }
 
 function drawCardPlayerOne() {
-    count += 1;
-    givePlayerSomeCards(1, 'playerOneSide')
-    // allows to render max 2 new cards
-    // disable the button after limit was met
-    if (player1Value > 17) {}
+    if (player1Value > 17) {
+        givePlayerSomeCards(1, 'playerOneSide')
+    } else {
+        disableBtn('#check-btn')
+    }
 }
 
 function showMessage(someText) {
@@ -232,6 +232,7 @@ function addPoints() {
         sumEl.textContent = "You have " + sum + " stars!"
     } else {
         win()
+        sumEl.textContent = "You have " + sum + " stars!"
     }
 }
 
@@ -241,12 +242,17 @@ function substractPoints() {
         sumEl.textContent = "You have " + sum + " stars!"
     } else {
         lose()
+        sumEl.textContent = "You have " + sum + " stars!"
     }
 }
 
-function win() {}
+function win() {
+    $('#modalWin').modal('show');
+}
 
-function lose() {}
+function lose() {
+    $('#modalLose').modal('show');
+}
 
 
 function reloadDeck() {
