@@ -127,7 +127,7 @@ let count = 0
  */
 function drawNewCard() {
     count += 1;
-    givePlayerSomeCards(1, 'playerTwoSide')
+    givePlayerSomeCards(1, 'playerTwoSide');
     // allows to render max 1 new card
     // disable the button after limit was met
     if (count > 1) {
@@ -148,6 +148,12 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 }
 
 
+function givePlayerOneCard() {
+if (player1Value > 17) {
+    givePlayerSomeCards(1, 'playerOneSide')
+}
+}
+
 function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
     givePlayerSomeCards(2, 'playerOneSide'),
@@ -155,14 +161,6 @@ function startGame() {
     enableBtn('#check-btn');
     showMessage("Welcome!");
     hideBtn('#start');
-}
-
-function drawCardPlayerOne() {
-    if (player1Value > 17) {
-        givePlayerSomeCards(1, 'playerOneSide')
-    } else {
-        disableBtn('#check-btn')
-    }
 }
 
 function showMessage(someText) {
@@ -195,10 +193,10 @@ function showBtn(whichBtn) {
 
 
 function checkScore() {
-    drawCardPlayerOne();
-    disableBtn('#draw-btn');
-    disableBtn('#check-btn');
     let message;
+    disableBtn("#draw-btn");
+    disableBtn("#check-btn");
+    givePlayerOneCard();
     if (player1Value === player2Value) {
         message = "It's a tie! Try again.";
         reloadDeck()
@@ -227,32 +225,33 @@ let sumEl = document.getElementById("score")
 sumEl.textContent = "You have " + sum + " stars!"
 
 function addPoints() {
-    if (sum < 10) {
+    if (sum < 9) {
         sum = sum + 1
         sumEl.textContent = "You have " + sum + " stars!"
     } else {
-        win()
+        win();
         sumEl.textContent = "You have " + sum + " stars!"
     }
 }
 
 function substractPoints() {
-    if (sum > 0) {
-        sum = sum - 1
+    if (sum === 1) {
+        lose();
         sumEl.textContent = "You have " + sum + " stars!"
     } else {
-        lose()
+        sum = sum - 1
         sumEl.textContent = "You have " + sum + " stars!"
     }
 }
 
+
 function win() {
     $('#modalWin').modal('show');
-}
+};
 
 function lose() {
     $('#modalLose').modal('show');
-}
+};
 
 
 function reloadDeck() {
@@ -261,7 +260,17 @@ function reloadDeck() {
         $('.card').remove();
         startGame();
     }, 1000);
+    player1Value = 0;
+    player2Value = 0;
 }
+
+function renderNewGame() {
+    location.reload(true);
+}
+
+
+
+// document.getElementsByClassName("reload").addEventListener("click", document.reload());
 
 // render a name for Player2
 
