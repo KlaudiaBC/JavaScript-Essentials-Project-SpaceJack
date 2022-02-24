@@ -6,8 +6,7 @@ let player1Cards = [];
 let player2Cards = [];
 let player1Value;
 let player2Value;
-let buttonClick = false;
-let count = 0
+
 
 
 /**
@@ -122,7 +121,7 @@ function createCardEl(whichCard, whichPlayer) {
 }
 
 
-
+let count = 0
 /**
  * Render a random card for a player
  */
@@ -133,16 +132,6 @@ function createCardEl(whichCard, whichPlayer) {
     // disable the button after limit was met
     if (count > 1) {
         $('#draw-btn').prop('disabled', true);
-    } 
-}
-
-function drawCardPlayerOne() {
-    count += 1;
-    givePlayerSomeCards(1, 'playerOneSide')
-    // allows to render max 2 new cards
-    // disable the button after limit was met
-    if (player1Value > 17 && count > 0) {
-        $('#check-btn').prop('disabled', true);
     } 
 }
 
@@ -162,6 +151,7 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
     givePlayerSomeCards(2, 'playerOneSide'),
+    showBtn('#draw-btn');
     showMessage("Welcome!");
 }
 
@@ -170,6 +160,17 @@ $('#start-btn').on('click', function(){
     $(this).hide();
 });
 
+
+function drawCardPlayerOne() {
+    count += 1;
+    givePlayerSomeCards(1, 'playerOneSide')
+    // allows to render max 2 new cards
+    // disable the button after limit was met
+    if (player1Value > 17 && count > 0) {
+    disableBtn('#check-btn')
+    }
+}
+
 function showMessage(someText){
         let messageWrapper = document.getElementById('middle-table');
         messageWrapper.innerText = someText
@@ -177,28 +178,44 @@ function showMessage(someText){
 
 
 
+const button = document.querySelectorAll('button')
+
+function showBtn(whichBtn) {
+    $('button').prop('disabled', false);
+}
+
+function disableBtn(whichBtn) {
+    $('button').prop('disabled', true);
+}
+
+
 // let isAlive
 
 
 function checkScore() {
 drawCardPlayerOne()
+endGameSet()
 let message;
-if (player1Value < 21 && player2Value < 21) {
-   message = "Draw the card";
-} else if (player1Value === player2Value) {
-    message = "It's a tie!";
+if (player1Value === player2Value) {
+    message = "It's a tie! Try again.";
 } else if (player1Value === 21) {
-    message = "Alien: SpaceJack! -1 star";
+    message = "Alien: SpaceJack!";
 } else if (player2Value === 21) {
-    message = 'Human: SpaceJack! +1 star';
-} else if ((player2Value < 21) > player1Value) {
-    message = 'Human: WIN! +1 star';
+    message = 'Human: SpaceJack!';
+} else if ((player2Value < 21) > (player1Value < 21)) {
+    message = 'Human: WIN!';
 } else {
-    message = 'Alien: WIN! -1 star';
+    message = 'Alien: WIN!';
 }
 showMessage(message);
 }
 
+
+function endGameSet() {
+
+}
+
+function endGameTotal() {}
 
 // render a name for Player2
 
