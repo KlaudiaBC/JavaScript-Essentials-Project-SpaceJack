@@ -131,7 +131,7 @@ let count = 0
     // allows to render max 1 new card
     // disable the button after limit was met
     if (count > 1) {
-        $('#draw-btn').prop('disabled', true);
+        disableBtn('#draw');
     } 
 }
 
@@ -151,16 +151,11 @@ function givePlayerSomeCards(howmany, whichPlayer) {
 function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
     givePlayerSomeCards(2, 'playerOneSide'),
-    showBtn('#draw-btn');
-    showBtn('#check-btn');
+    enableBtn('#draw-btn');
+    enableBtn('#check-btn');
     showMessage("Welcome!");
+    hideBtn('#start');
 }
-
-$('#start-btn').on('click', function(){
-    $('#start-btn').show();
-    $(this).hide();
-});
-
 
 function drawCardPlayerOne() {
     count += 1;
@@ -177,16 +172,22 @@ function showMessage(someText){
 }
 
 
-
 const button = document.querySelectorAll('button')
 
-function showBtn(whichBtn) {
+function enableBtn(whichBtn) {
     $(whichBtn).prop('disabled', false);
 }
 
 function disableBtn(whichBtn) {
     $(whichBtn).prop('disabled', true);
 }
+
+function hideBtn(whichBtn) {
+    $(whichBtn).click(function(){
+        $(whichBtn).hide();
+      });
+}
+
 
 
 function checkScore() {
@@ -196,18 +197,23 @@ disableBtn('#check-btn');
 let message;
 if (player1Value === player2Value) {
     message = "It's a tie! Try again.";
-    substractPoints()
+    reloadDeck()
 } else if (player1Value === 21) {
     message = "Alien: SpaceJack!";
     substractPoints()
+    reloadDeck()
 } else if (player2Value === 21) {
     message = 'Human: SpaceJack!';
     addPoints()
+    reloadDeck()
 } else if ((player2Value < 21) > (player1Value < 21)  || player1Value > 21) {
     message = 'Human: WIN!';
     addPoints()
+    reloadDeck()
 } else {
     message = 'Alien: WIN!';
+    substractPoints()
+    reloadDeck()
 }
 showMessage(message);
 }
@@ -217,17 +223,33 @@ let sumEl = document.getElementById("score")
 sumEl.textContent = "You have " + sum + " stars!"
 
 function addPoints() {
+    if (sum < 10) {
 sum = sum + 1
-sumEl.textContent = "You have " + sum + " stars!" 
+sumEl.textContent = "You have " + sum + " stars!"
+} else {
+    win()
+}
 }
 
 function substractPoints() {
-sum = sum - 1
+ if (sum > 0) {
+    sum = sum - 1
 sumEl.textContent = "You have " + sum + " stars!"
+ } else {
+     lose()
+ }
 }
 
-function renderNewSet () {}
-function endGame() {}
+function win() {}
+function lose() {}
+
+
+function reloadDeck() {
+    setTimeout(function(){
+        $('.middle-table').empty();
+        $('.card').remove();
+      }, 2000);
+    }
 
 // render a name for Player2
 
