@@ -152,6 +152,7 @@ function startGame() {
     givePlayerSomeCards(2, 'playerTwoSide'),
     givePlayerSomeCards(2, 'playerOneSide'),
     showBtn('#draw-btn');
+    showBtn('#check-btn');
     showMessage("Welcome!");
 }
 
@@ -166,8 +167,7 @@ function drawCardPlayerOne() {
     givePlayerSomeCards(1, 'playerOneSide')
     // allows to render max 2 new cards
     // disable the button after limit was met
-    if (player1Value > 17 && count > 0) {
-    disableBtn('#check-btn')
+    if (player1Value > 17) {
     }
 }
 
@@ -181,41 +181,53 @@ function showMessage(someText){
 const button = document.querySelectorAll('button')
 
 function showBtn(whichBtn) {
-    $('button').prop('disabled', false);
+    $(whichBtn).prop('disabled', false);
 }
 
 function disableBtn(whichBtn) {
-    $('button').prop('disabled', true);
+    $(whichBtn).prop('disabled', true);
 }
 
 
-// let isAlive
-
-
 function checkScore() {
-drawCardPlayerOne()
-endGameSet()
+drawCardPlayerOne();
+disableBtn('#draw-btn');
+disableBtn('#check-btn');
 let message;
 if (player1Value === player2Value) {
     message = "It's a tie! Try again.";
+    substractPoints()
 } else if (player1Value === 21) {
     message = "Alien: SpaceJack!";
+    substractPoints()
 } else if (player2Value === 21) {
     message = 'Human: SpaceJack!';
-} else if ((player2Value < 21) > (player1Value < 21)) {
+    addPoints()
+} else if ((player2Value < 21) > (player1Value < 21)  || player1Value > 21) {
     message = 'Human: WIN!';
+    addPoints()
 } else {
     message = 'Alien: WIN!';
 }
 showMessage(message);
 }
 
+let sum = 5
+let sumEl = document.getElementById("score")
+sumEl.textContent = "You have " + sum + " stars!"
 
-function endGameSet() {
-
+function addPoints() {
+sum = sum + 1
+sumEl.textContent = "You have " + sum + " stars!" 
 }
 
-function endGameTotal() {}
+function substractPoints() {
+sum = sum - 1
+sumEl.textContent = "You have " + sum + " stars!"
+}
+
+function renderNewSet () {}
+function endGame() {}
 
 // render a name for Player2
 
