@@ -8,7 +8,6 @@ let player1Value;
 let player2Value;
 
 
-
 /**
  * The "loop" called when the game is loaded
  * and the user click the button "Start",
@@ -329,22 +328,17 @@ function renderNewGame() {
 
 // render a name for Player2
 
-// Storing data:
-// const playerName = document.getElementById("playerName");
-// const btnName = document.getElementById("btnName");
-// const playerNameInp = document.getElementById("playerNameInp");
+/**
+ * Storing data of the input (user name)
+ */
+function store(){
+     var userName= document.getElementById("userName");
+     localStorage.setItem("userName", userName.value);
+    }
 
-// document.getElementById("btnName").addEventListener("click", savePlayersName)
+    let storedValue = localStorage.getItem("userName");
 
-// function savePlayersName() {
-// const inpName = playerNameInp.value;
-
-// if (inpName) {
-// localStorage.setItem(inpName);
-//}
-//}
-
-// const inpName = localStorage.getItem(inpName);
-// playerNameInp.innerHTML += '$(inpName)';
+    let playerName = document.getElementById("playerName")
+    playerName.textContent = "Human " + storedValue
 
 buildCardsArray();
