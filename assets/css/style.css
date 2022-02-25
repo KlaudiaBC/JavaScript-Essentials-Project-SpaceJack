@@ -131,6 +131,9 @@ body {
 .suite {
     display: flex;
     flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .suite-left {

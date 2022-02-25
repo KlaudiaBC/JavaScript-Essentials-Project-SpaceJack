@@ -120,12 +120,25 @@ function totaValue(whichPlayer, cardGameValue) {
     }
 }
 
+/** Make game alive:
+ * display and hide buttons
+ * give each player 2 random cards
+ * show message to the User
+ */
+ function startGame() {
+    givePlayerSomeCards(2, 'playerTwoSide'),
+    givePlayerSomeCards(2, 'playerOneSide'),
+    enableBtn('#draw-btn');
+    enableBtn('#check-btn');
+    showMessage("Welcome!");
+    hideBtn('#start');
+}
 
 let count = 0
+
 /**
  * Render a random card for a player
  */
-
 function drawNewCard() {
     count += 1;
     givePlayerSomeCards(1, 'playerTwoSide');
@@ -148,51 +161,32 @@ function givePlayerSomeCards(howmany, whichPlayer) {
     }
 }
 
-
+/** Render a random card for Player1
+ * under condition: only if value 
+ * of his cards is smaller than 17
+ */
 function givePlayerOneCard() {
 if (player1Value > 17) {
     givePlayerSomeCards(1, 'playerOneSide')
 }
 }
 
-function startGame() {
-    givePlayerSomeCards(2, 'playerTwoSide'),
-    givePlayerSomeCards(2, 'playerOneSide'),
-    enableBtn('#draw-btn');
-    enableBtn('#check-btn');
-    showMessage("Welcome!");
-    hideBtn('#start');
-}
-
+/**
+ * Show message to the User
+ * Inform abot the results of the game
+ * @param {*} someText 
+ */
 function showMessage(someText) {
     let messageWrapper = document.getElementById('middle-table');
     messageWrapper.innerText = someText
 }
 
-
-const button = document.querySelectorAll('button')
-
-function enableBtn(whichBtn) {
-    $(whichBtn).prop('disabled', false);
-}
-
-function disableBtn(whichBtn) {
-    $(whichBtn).prop('disabled', true);
-}
-
-function hideBtn(whichBtn) {
-    $(whichBtn).click(function () {
-        $(whichBtn).hide();
-    });
-}
-
-function showBtn(whichBtn) {
-    $(whichBtn).click(function () {
-        $(whichBtn).show();
-    });
-}
-
-
+/**
+ * Compare the sum of values attached to the cards
+ * of both players and render a message
+ * with information who is a winner
+ * triger the new game set
+ */
 function checkScore() {
     let message;
     disableBtn("#draw-btn");
@@ -225,6 +219,11 @@ let sum = 5
 let sumEl = document.getElementById("score")
 sumEl.textContent = "You have " + sum + " stars!"
 
+/**
+ * Add 1 point and render the score,
+ * condition: when sum = 10
+ * render User points
+ */
 function addPoints() {
     if (sum < 9) {
         sum = sum + 1
@@ -235,6 +234,11 @@ function addPoints() {
     }
 }
 
+/**
+ * Substract 1 point and render the score,
+ * condition: when sum = 0
+ * render User points
+ */
 function substractPoints() {
     if (sum === 1) {
         lose();
@@ -246,15 +250,50 @@ function substractPoints() {
 }
 
 
-function win() {
-    $('#modalWin').modal('show');
-};
+const button = document.querySelectorAll('button')
 
-function lose() {
-    $('#modalLose').modal('show');
-};
+/**
+ * Activate the button of choice
+ * @param whichBtn 
+ */
+function enableBtn(whichBtn) {
+    $(whichBtn).prop('disabled', false);
+}
 
+/**
+ * Deactivates the button of choice
+ * @param whichBtn 
+ */
+function disableBtn(whichBtn) {
+    $(whichBtn).prop('disabled', true);
+}
 
+/**
+ * Hide the button of choice
+ * @param whichBtn 
+ */
+function hideBtn(whichBtn) {
+    $(whichBtn).click(function () {
+        $(whichBtn).hide();
+    });
+}
+
+/**
+ * Display the button of choice
+ * @param whichBtn 
+ */
+function showBtn(whichBtn) {
+    $(whichBtn).click(function () {
+        $(whichBtn).show();
+    });
+}
+
+/**
+ * Render a new game set,
+ * reset players scores while
+ * keep the number of User points,
+ * time set: 1 sec.
+ */
 function reloadDeck() {
     setTimeout(function () {
         $('.middle-table').empty();
@@ -265,13 +304,28 @@ function reloadDeck() {
     player2Value = 0;
 }
 
+/**
+ * Show the modal (win)
+ */
+ function win() {
+    $('#modalWin').modal('show');
+};
+
+/**
+ * Show the modal (win)
+ */
+function lose() {
+    $('#modalLose').modal('show');
+};
+
+/**
+ * Render a new game
+ * clear the scores and user points
+ */
 function renderNewGame() {
     location.reload(true);
 }
 
-
-
-// document.getElementsByClassName("reload").addEventListener("click", document.reload());
 
 // render a name for Player2
 
