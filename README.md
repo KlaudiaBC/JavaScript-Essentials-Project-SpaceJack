@@ -18,10 +18,31 @@ It is an online game for children based on the rules of popular casino game Blac
 <p id="content"></p>
 
 ## Content
+Card games are as old as the world we live in and there are multiple reasons why they are being practiced nowadays.
+They teach various important skills like focus, decision making, humility and many more. I chose the blackjack game and decided to slightly change the rules to suit the mind of a child. It was very satisfying. This game is a perfect metaphor of life: the oponents the hidden card symbolises the things we don't know once we are making our decisions in general. We don't know other people's thoughts and feelings. We don't know the outcome and we can not predict all the possible scenarios. Our opponent, our faith, always has some of the cards hidden and it requires focus, patience and a bit of luck to guess what card is it. Yet, sometimes there is no way to guess, as in our life there are situations we couldn't possibly be prepared for. And sometimes, our life goes a different path than we thought it will and we also have to learn to accept it, to transfer the loss into a motivation to become better. Life is a sequence of trials, wins and loses and the balance of those gives us the possibility to learn, feel, experience and simply live.
 
 <p id="uj"></p>
 
 ## User journey
+At first the user lands on the intro page. In the introduction he is informed about a special mission to save the Earth from Aliens invasion. This should make him feel curious and motivated to play.
+Above the message, next to the logo, there are 2 buttons, which after clicking will display a modal with additional information: the rules and mission of the game.
+On the intro page there is also an input form which allows User to set his name which later will be rendered in the game page. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game page.
+
+Game page has the same layout as an intro page, thanks to which users can easily access all the provided features like: menu buttons which contain mentioned modals. Also the deck is in the same shape like the container on the into page.
+Decks have 3 vertical parts, starting from the top: Alien side, middle of the deck with initially 3 buttons (while the game is live, in the middle part of the deck User will receive the messages about his results).
+At first User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
+After pressing a Start button, the actual game starts. Button "Start" is no longer visible and two other buttons are active (in the main colour). Both players receive 2 random cards. User can see his cards but he can not see the second card of the Alien (is flipped over).
+He is provided with a choice: to draw the card and add extra value to his score or to "check" which is aligned with the end of the set. The score of the User is compared to the score of Alien and depending on the results, the User can gain one star when win (the score is visible under Users name) or lose one star when loses.
+Users can choose the option "Draw" only 2 times. After rendering two new random cards, the button "Draw" will change its colour and indicate to the User that it is no longer active.
+The choice of Check automatically compares the scores of both players and renders a message with information who is the winner of the set.
+Accordingly, the User points of the bottom of the deck will increase by 1 (in won), decrease by 1 (if lose) or stay the same if the players cards results are equal.
+New set starts automatically after 1 second.
+The game is looping until the points of User become 10 or 0.
+In this case, User will receive the message about results displayed in the modal which will be activated automatically. Again, User is provided with a choice of two buttons: "Play again" button will render a new game, "Go back" will send User back to the intro page.
+
+<p align="center">
+  <img src="">
+</p>
 
 <p id="ux"></p>
 
