@@ -81,7 +81,10 @@ function createCardEl(whichCard, whichPlayer) {
   leftSuite.setAttribute("class", " suite suite-left" + whichCard.suite);
   cardEl.appendChild(leftSuite);
   let middleSuite = document.createElement("div");
-  middleSuite.setAttribute("class", " suite suite-middle" + whichCard.suiteClass);
+  middleSuite.setAttribute(
+    "class",
+    " suite suite-middle" + whichCard.suiteClass
+  );
   cardEl.appendChild(middleSuite);
   let rightSuite = document.createElement("div");
   rightSuite.setAttribute("class", " suite suite-right" + whichCard.suite);
@@ -200,7 +203,7 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if (player2Value < 21 > (player1Value < 21) || player1Value > 21) {
+  } else if ((player2Value < 21) > (player1Value > 21) || player1Value > 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -298,7 +301,7 @@ function reloadDeck() {
   }, 1000);
   player1Value = 0;
   player2Value = 0;
-  count = 0
+  count = 0;
 }
 
 /**
@@ -338,18 +341,16 @@ let playerName = document.getElementById("playerName");
 playerName.textContent = "Human " + storedValue;
 
 /*
-* Mute the audio (onclick)
-*/
-function muteAudio() {
-  let audio = document.getElementById('audio');
-  
-  if (audio.mute === false) {
-      document.getElementById('audio').muted = true;
+ * Mute the audio (onclick)
+ */
+
+function toggleAudio() {
+  const audio = document.getElementById("audio");
+  if (!!audio.muted) {
+    audio.muted = false;
+  } else {
+    audio.muted = true;
   }
-  else {
-      audio.mute === true 
-      document.getElementById('audio').muted = false;
-      }
-  }
+}
 
 buildCardsArray();

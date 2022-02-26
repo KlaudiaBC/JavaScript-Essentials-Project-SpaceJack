@@ -70,7 +70,7 @@ body {
     font-size: large;
 }
 
-/* css for html-two */
+/* css for game page */
 .link-nav {
     text-decoration: none;
     color: #fff;
@@ -112,6 +112,16 @@ body {
     text-align: center;
 }
 
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon-img {
+    object-fit: contain;
+    position: relative;
+    width: 100%;
+}
 
 /* card element */
 .card {
