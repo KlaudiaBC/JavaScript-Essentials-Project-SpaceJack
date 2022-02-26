@@ -337,5 +337,19 @@ let playerName = document.getElementById("playerName");
 /* Render a user name in the game area */
 playerName.textContent = "Human " + storedValue;
 
+/*
+* Mute the audio (onclick)
+*/
+function muteAudio() {
+  let audio = document.getElementById('audio');
+  
+  if (audio.mute === false) {
+      document.getElementById('audio').muted = true;
+  }
+  else {
+      audio.mute === true 
+      document.getElementById('audio').muted = false;
+      }
+  }
 
 buildCardsArray();

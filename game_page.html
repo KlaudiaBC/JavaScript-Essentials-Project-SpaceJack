@@ -140,10 +140,12 @@
     </div>
 
     <div class="player-side">
-        <audio controls autoplay>
-            <source src="/assets/music/the-power-of-a-heroic-epic-story-60s-10810.mp3" type="audio/mpeg>
+        <audio id="audio" autoplay>
+            <source src="https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/music/the-power-of-a-heroic-epic-story-60s-10810.mp3" type="audio/ogg">
+            <source src="https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/music/the-power-of-a-heroic-epic-story-60s-10810.ogg" type="audio/mpeg">
           Your browser does not support the audio element.
           </audio>
+          <button id="mute" onclick="muteAudio()"><img src="https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/mute.png" id="mute_img"/></button>
     </div>
 
     <!-- win and lose modals -->
