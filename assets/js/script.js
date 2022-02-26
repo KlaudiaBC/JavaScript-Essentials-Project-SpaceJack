@@ -81,10 +81,7 @@ function createCardEl(whichCard, whichPlayer) {
   leftSuite.setAttribute("class", " suite suite-left" + whichCard.suite);
   cardEl.appendChild(leftSuite);
   let middleSuite = document.createElement("div");
-  middleSuite.setAttribute(
-    "class",
-    " suite suite-middle" + whichCard.suiteClass
-  );
+  middleSuite.setAttribute("class", " suite suite-middle" + whichCard.suiteClass);
   cardEl.appendChild(middleSuite);
   let rightSuite = document.createElement("div");
   rightSuite.setAttribute("class", " suite suite-right" + whichCard.suite);
@@ -194,7 +191,6 @@ function check() {
 }
 
 function checkScore() {
-  reloadDeck();
   let message;
   if (player1Value === player2Value) {
     message = "It's a tie! Try again.";
@@ -212,6 +208,7 @@ function checkScore() {
     substractPoints();
   }
   showMessage(message);
+  reloadDeck();
 }
 
 let sum = 5;
@@ -301,6 +298,7 @@ function reloadDeck() {
   }, 1000);
   player1Value = 0;
   player2Value = 0;
+  count = 0
 }
 
 /**
