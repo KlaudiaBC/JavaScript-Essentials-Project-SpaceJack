@@ -49,28 +49,28 @@ Thanks to this method I reduced the amount of images from 52 to 17.
 
 ## Technologies used:
 - HTML5, CSS3, JavaScript
-- <a href="https://github.com/">GitHub, Gitpod and Git</a>
-- <a href="https://getbootstrap.com/">Bootstrap version 4</a>
-- <a href="https://fonts.google.com/">GoogleFonts</a>
+- <a href="https://github.com/" target="_blank">GitHub, Gitpod and Git</a>
+- <a href="https://getbootstrap.com/" target="_blank">Bootstrap version 4</a>
+- <a href="https://fonts.google.com/" target="_blank">GoogleFonts</a>
 - VS code
 - Wireframe Software Balsamiq
-- <a href="https://app.diagrams.net/">Draw.io</a>
-- <a href="https://www.freeconvert.com/">Free Convert</a> (for converting the background video)
-- <a href="https://www.remove.bg/">Remove.bg</a> (for removal of background in card images)
+- <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
+- <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
+- <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
 
 <p id="ack"></p>
 
 ## Acknowledgement:
 In this place I would like to thank everyone, who added an knowledge and value to this project:
-- <a href="https://codeinstitute.net/">Code Institute</a> course materials and walkthroughs
+- <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course materials and walkthroughs
 - lead and support of my Code Institute Mentor - Guido Cecilio
 - Code Institute Slack Community
-- Tutorials by <a href="https://www.youtube.com/c/programmingwithmosh">Mosh</a> and <a href="https://scrimba.com/dashboard?tab=overview">Scrimba</a>
-- <a href="https://www.w3schools.com/">W3schools</a>
-- <a href="https://stackoverflow.com/">Stack Overflow</a>
-- <a href="https://developer.mozilla.org/en-US/">MDN Web Docks</a>
-- <a href="https://www.pexels.com/">Pexels</a> (for background video)
-- <a href="https://www.flaticon.com/">Flaticon</a> (for logo)
+- Tutorials by <a href="https://www.youtube.com/c/programmingwithmosh" target="_blank">Mosh</a> and <a href="https://scrimba.com/dashboard?tab=overview" target="_blank">Scrimba</a>
+- <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
+- <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+- <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docks</a>
+- <a href="https://www.pexels.com/" target="_blank">Pexels</a> (for background video)
+- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> (for logo)
 - "Clean Code - A Handbook of Agile Software Craftsmanship" by Robert Martin
 
 <p id="deploy"></p>
