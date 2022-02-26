@@ -337,4 +337,5 @@ let playerName = document.getElementById("playerName");
 /* Render a user name in the game area */
 playerName.textContent = "Human " + storedValue;
 
+
 buildCardsArray();
