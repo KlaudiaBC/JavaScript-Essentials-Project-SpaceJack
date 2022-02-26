@@ -6,6 +6,7 @@ let player1Cards = [];
 let player2Cards = [];
 let player1Value;
 let player2Value;
+let sum = 5;
 
 /**
  * The "loop" called when the game is loaded
@@ -130,20 +131,20 @@ function startGame() {
   enableBtn("#check-btn");
   showMessage("Your move!");
   renderPoints();
+  applyStoreValue()
   // hideBtn('#start');
 }
 
-let count = 0;
+
 
 /**
  * Render a random card for a player
  */
 function drawNewCard() {
-  count += 1;
   givePlayerSomeCards(1, "playerTwoSide");
   // allows to render max 1 new card
   // disable the button after limit was met
-  if (count > 1) {
+  if (player2Cards.length === 4) {
     disableBtn("#draw-btn");
   }
 }
@@ -214,10 +215,10 @@ function checkScore() {
   reloadDeck();
 }
 
-let sum = 5;
-let sumEl = document.getElementById("score");
+
 
 function renderPoints() {
+  let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
 }
 
@@ -248,8 +249,6 @@ function substractPoints() {
     sum = sum - 1;
   }
 }
-
-const button = document.querySelectorAll("button");
 
 /**
  * Activate the button of choice
@@ -294,14 +293,18 @@ function showBtn(whichBtn) {
  * time set: 1 sec.
  */
 function reloadDeck() {
+  deleteItems()
   setTimeout(function () {
-    $(".middle-table").empty();
-    $(".card").remove();
     startGame();
   }, 1000);
+}
+function deleteItems() {
   player1Value = 0;
   player2Value = 0;
-  count = 0;
+  player1Cards = [];
+  player2Cards = [];
+  $(".middle-table").empty();
+  $(".card").remove();
 }
 
 /**
@@ -330,15 +333,19 @@ function renderNewGame() {
  * Storing data of the input (user name)
  */
 function store() {
+  console.log('A...')
   var userName = document.getElementById("userName");
   localStorage.setItem("userName", userName.value);
 }
 
+
+function applyStoreValue() {
 let storedValue = localStorage.getItem("userName");
 let playerName = document.getElementById("playerName");
 
 /* Render a user name in the game area */
 playerName.textContent = "Human " + storedValue;
+}
 
 /*
  * Mute the audio (onclick)
