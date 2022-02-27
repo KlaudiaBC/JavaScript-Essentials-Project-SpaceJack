@@ -353,10 +353,13 @@ playerName.textContent = "Human " + storedValue;
 
 function toggleAudio() {
   const audio = document.getElementById("audio");
+  let icon = document.getElementById("sound");
+  icon.setAttribute("class", "icon icon-img-on")
   if (!!audio.muted) {
     audio.muted = false;
   } else {
     audio.muted = true;
+    icon.setAttribute("class", "icon icon-img-off");
   }
 }
 

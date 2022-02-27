@@ -113,14 +113,23 @@ body {
 }
 
 .icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
+    padding: .2rem;
 }
 
-.icon-img {
+.icon-img- {
     object-fit: contain;
     position: relative;
     width: 100%;
+}
+
+.icon-img-on {
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/volume.png');
+}
+
+.icon-img-off {
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/mute.png');
 }
 
 /* card element */
