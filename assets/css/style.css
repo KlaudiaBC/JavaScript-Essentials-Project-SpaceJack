@@ -115,11 +115,18 @@ body {
 .icon {
     width: 3rem;
     height: 3rem;
-    padding: .2rem;
+    padding: 0;
+    margin: .5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+	border: none;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
 }
 
 .icon-img- {
-    object-fit: contain;
+    object-fit: fill;
     position: relative;
     width: 100%;
 }
@@ -202,10 +209,10 @@ body {
     background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/three.png');
 }
 .figure-img-4 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/four.png');
 }
 .figure-img-5 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/five.png');
 }
 .figure-img-6 {
     background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/six.png');
