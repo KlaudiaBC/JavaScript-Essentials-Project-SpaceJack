@@ -293,11 +293,12 @@ function showBtn(whichBtn) {
  * time set: 1 sec.
  */
 function reloadDeck() {
-  deleteItems()
   setTimeout(function () {
+    deleteItems();
     startGame();
   }, 1000);
 }
+
 function deleteItems() {
   player1Value = 0;
   player2Value = 0;
