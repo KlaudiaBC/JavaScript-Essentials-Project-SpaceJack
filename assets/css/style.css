@@ -63,6 +63,7 @@ body {
     width: 90%;
 }
 
+
 .story-box {
     color: rgb(0, 0, 58);
     text-align: center;
@@ -70,7 +71,7 @@ body {
     font-size: large;
 }
 
-/* css for game page */
+/* styling for game page */
 .link-nav {
     text-decoration: none;
     color: #fff;
@@ -112,6 +113,8 @@ body {
     text-align: center;
 }
 
+
+/* styling for icon el */
 .icon {
     width: 3rem;
     height: 3rem;
@@ -123,6 +126,7 @@ body {
 	border: none;
     transition: background 250ms ease-in-out, 
                 transform 150ms ease;
+    background-color: transparent;
 }
 
 .icon-img- {

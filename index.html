@@ -125,20 +125,19 @@
             <p><strong>You must be careful!</strong></p>
             <p>Aliens are really tricky!</p>
         </div>
+        <br>
         <fieldset>
-            <div class="row">
-                <div class="col">
+                <div class="story-box">
                     <form>
-                    <input id="userName" type="text" maxlength="10" method="post" placeholder="your hero name" required />
+                    <label class="story-box" for="userName">What is your name?</label>
+                    <input id="userName" name="userName" type="text" maxlength="10" method="post" placeholder="hero name" required />
                 </form>
                 </div>
-            </div>
-            <br>
-            <div class="title">
+ </fieldset>
+            <div class="modals">
                 <button id="btnName" type="submit" class="btn btn-warning" onclick="store()"><a href="game_page.html">I AM READY!</a></button>
             </div>
-            <br>
-        </fieldset>
+            </div>
 
         <footer>
         </footer>

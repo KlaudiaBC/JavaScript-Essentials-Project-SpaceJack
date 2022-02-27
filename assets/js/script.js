@@ -334,7 +334,6 @@ function renderNewGame() {
  * Storing data of the input (user name)
  */
 function store() {
-  console.log('A...')
   var userName = document.getElementById("userName");
   localStorage.setItem("userName", userName.value);
 }
