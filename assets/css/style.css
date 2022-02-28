@@ -1,277 +1,276 @@
 /* video in the background */
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1; 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 body {
-    color: white;
-    font-family: 'Bubblegum Sans', cursive;
-    margin: auto;
-    width: auto;
+  color: white;
+  font-family: "Bubblegum Sans", cursive;
+  margin: auto;
+  width: auto;
 }
 
 .navbar-brand {
-    font-family: 'Syne Tactile', cursive;
-    font-size: 40px;
-    padding: 1rem;
+  font-family: "Syne Tactile", cursive;
+  font-size: 40px;
+  padding: 1rem;
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .modals {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: .5rem;
-    padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
 .modal-content {
-    color: black;
-    background-color: aliceblue;
+  color: black;
+  background-color: aliceblue;
 }
 
-.modal-content h3,p {
-    margin: .2rem;
+.modal-content h3,
+p {
+  margin: 0.2rem;
 }
 
 .container {
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: aliceblue;
-    opacity: 0.8;
-    border: 5px solid white;
-    padding: 10px;
-    border-radius: 25px;
-    width: 90%;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  opacity: 0.8;
+  border: 5px solid white;
+  padding: 10px;
+  border-radius: 25px;
+  width: 90%;
 }
 
 .story-box {
-    color: rgb(0, 0, 58);
-    text-align: center;
-    font-weight: 150;
-    font-size: large;
+  color: rgb(0, 0, 58);
+  text-align: center;
+  font-weight: 150;
+  font-size: large;
 }
 
 /* styling for game page */
 .link-nav {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .player-side {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: .2rem;
-    padding: .2rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
 }
 
 .player {
-    text-align: center;
-    color: black;
+  text-align: center;
+  color: black;
 }
 
 .middle-table {
-    width: 6rem,
+  width: 6rem;
 }
 
 .score-area {
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 10px;
-    border-radius: 25px;
-    width: 60%;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  border-radius: 25px;
+  width: 60%;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
-
 
 /* styling for icon el */
 .icon {
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    margin: .5rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-	border: none;
-    transition: background 250ms ease-in-out, 
-                transform 150ms ease;
-    background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  margin: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  background-color: transparent;
 }
 
 .icon-img- {
-    object-fit: fill;
-    position: relative;
-    width: 100%;
+  object-fit: fill;
+  position: relative;
+  width: 100%;
 }
 
 .icon-img-on {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/volume.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/volume.png");
 }
 
 .icon-img-off {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/mute.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/mute.png");
 }
 
 .icon-img-star-1 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-01.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star01.png");
 }
 
 .icon-img-star-2 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-02.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star02.png");
 }
 
 .icon-img-star-3 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-03.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star03.png");
 }
 
 /* card element */
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: solid #fff;
-    border-radius: .2rem;
-    width: 5rem;
-    height: 6.5rem;
-    background-color: rgb(226, 226, 217);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid #fff;
+  border-radius: 0.2rem;
+  width: 5rem;
+  height: 6.5rem;
+  background-color: rgb(226, 226, 217);
 }
 
 .suite {
-    display: flex;
-    flex-direction: row;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .suite-left {
-    display: flex;
-    align-self: flex-start;
-    margin-top: .15rem;
-    margin-left: .15rem;
-    width: 1.2rem;
-    height: 1.2rem;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  margin-left: 0.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .suite-right {
-    display: flex;
-    align-self: flex-end;
-    margin-bottom: .15rem;
-    margin-right: .15rem;
-    width: 1.2rem;
-    height: 1.2rem;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 0.15rem;
+  margin-right: 0.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .suite-middle {
-    display: flex;
-    align-self: center;
-    width: 2.8rem;
-    height: 3.4rem;
+  display: flex;
+  align-self: center;
+  width: 2.8rem;
+  height: 3.4rem;
 }
 
 /* card images - suite */
 .suite-img-1 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png'); 
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png");
 }
 .suite-img-2 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png");
 }
 .suite-img-3 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png");
 }
 .suite-img-4 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/suite_ab.png");
 }
 
 /* card images - actor */
 .figure-img-1 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 .figure-img-2 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/two.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/two.png");
 }
 .figure-img-3 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/three.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/three.png");
 }
 .figure-img-4 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/four.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/four.png");
 }
 .figure-img-5 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/five.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/five.png");
 }
 .figure-img-6 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/six.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/six.png");
 }
 .figure-img-7 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 .figure-img-8 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/eight.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/eight.png");
 }
 .figure-img-9 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/nine.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/nine.png");
 }
 .figure-img-10 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 .figure-img-11 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 .figure-img-12 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 .figure-img-13 {
-    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png');
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
 }
 
 /* media query */
 
 @media (min-width: 40em) {
-.modals {
+  .modals {
     float: right;
-}
+  }
 
-.container {
+  .container {
     width: 60%;
-}
+  }
 
-.player-side {
+  .player-side {
     gap: 1rem;
-}
+  }
 
-.player-middle {
+  .player-middle {
     padding: 2rem 0 2rem 0;
     display: flex;
     gap: 3rem;
-}
+  }
 }

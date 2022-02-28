@@ -131,11 +131,8 @@ function startGame() {
   enableBtn("#check-btn");
   showMessage("Your move!");
   renderPoints();
-  applyStoreValue()
   // hideBtn('#start');
 }
-
-
 
 /**
  * Render a random card for a player
@@ -188,9 +185,9 @@ function showMessage(someText) {
  * triger the new game set
  */
 function check() {
+  givePlayerOneCard();
   disableBtn("#draw-btn");
   disableBtn("#check-btn");
-  givePlayerOneCard();
   checkScore();
 }
 
@@ -204,7 +201,7 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if ((player2Value < 21) > (player1Value > 21) || player1Value > 21) {
+  } else if ((player2Value < 21) > (player1Value < 21) || player1Value > 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -218,16 +215,19 @@ function checkScore() {
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
+  changeStarIcon();
 }
 
 function changeStarIcon() {
   let starIcon = document.getElementById("starIcon");
   if (sum === 5) {
-    starIcon.setAttribute("class", "icon icon-img-01");
+    starIcon.setAttribute("class", " icon-img-01");
   } else if (sum > 5) {
-    starIcon.setAttribute("class", "icon icon-img-02");
+    starIcon.removeAttribute("class", " icon-img-01");
+    starIcon.setAttribute("class", " icon-img-02");
   } else {
-    starIcon.setAttribute("class", "icon icon-img-03");
+    starIcon.removeAttribute("class", " icon-img-02");
+    starIcon.setAttribute("class", " icon-img-03");
   }
 }
 
@@ -349,13 +349,11 @@ function store() {
   localStorage.setItem("userName", userName.value);
 }
 
-
 function applyStoreValue() {
-let storedValue = localStorage.getItem("userName");
-let playerName = document.getElementById("playerName");
-
-/* Render a user name in the game area */
-playerName.textContent = "Human " + storedValue;
+  let storedValue = localStorage.getItem("userName");
+  let playerName = document.getElementById("playerName");
+  /* Render a user name in the game area */
+  playerName.textContent = "Human " + storedValue;
 }
 
 /*
@@ -367,11 +365,14 @@ function toggleAudio() {
   let icon = document.getElementById("sound");
   if (!!audio.muted) {
     audio.muted = false;
+    icon.removeAttribute("class", "icon icon-img-off");
     icon.setAttribute("class", "icon icon-img-on");
   } else {
     audio.muted = true;
+    icon.removeAttribute("class", "icon icon-img-on");
     icon.setAttribute("class", "icon icon-img-off");
   }
 }
 
 buildCardsArray();
+applyStoreValue();
