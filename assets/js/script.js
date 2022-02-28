@@ -217,15 +217,12 @@ function renderPoints() {
 }
 
 function changeStarIcon() {
-  let starIcon = document.getElementById("starIcon");
   if (sum === 5) {
-    starIcon.setAttribute("class", " icon-img-01");
+    $('.icon-img-01').show()
   } else if (sum > 5) {
-    starIcon.removeAttribute("class", " icon-img-01");
-    starIcon.setAttribute("class", " icon-img-02");
+    $('.icon-img-02').show()
   } else {
-    starIcon.removeAttribute("class", " icon-img-02");
-    starIcon.setAttribute("class", " icon-img-03");
+    $('.icon-img-03').show()
   }
 }
 
@@ -373,4 +370,3 @@ function toggleAudio() {
 }
 
 buildCardsArray();
-applyStoreValue();
