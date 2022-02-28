@@ -215,11 +215,20 @@ function checkScore() {
   reloadDeck();
 }
 
-
-
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
+}
+
+function changeStarIcon() {
+  let starIcon = document.getElementById("starIcon");
+  if (sum === 5) {
+    starIcon.setAttribute("class", "icon icon-img-01");
+  } else if (sum > 5) {
+    starIcon.setAttribute("class", "icon icon-img-02");
+  } else {
+    starIcon.setAttribute("class", "icon icon-img-03");
+  }
 }
 
 /**
@@ -243,6 +252,7 @@ function addPoints() {
  */
 function substractPoints() {
   renderPoints();
+  changeStarIcon();
   if (sum === 1) {
     lose();
   } else {
@@ -296,6 +306,7 @@ function reloadDeck() {
   setTimeout(function () {
     deleteItems();
     startGame();
+    changeStarIcon();
   }, 1000);
 }
 
