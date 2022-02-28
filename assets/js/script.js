@@ -131,6 +131,7 @@ function startGame() {
   showMessage("Your move!");
   renderPoints();
   hideStarIcon();
+  changeStarIcon();
 }
 
 /**
@@ -214,23 +215,23 @@ function checkScore() {
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
-  changeStarIcon();
 }
 
 function changeStarIcon() {
+  console.log('show stars')
   if (sum === 5) {
-    $('.icon-img-01').show()
+    showEl('.icon-img-star-1')
   } else if (sum > 5) {
-    $('.icon-img-02').show()
+    $('.icon-img-star-2').show()
   } else {
-    $('.icon-img-03').show()
+    $('.icon-img-star-3').show()
   }
 }
 
 function hideStarIcon() {
-  $('.icon-img-01').hide()
-  $('.icon-img-02').hide()
-  $('.icon-img-03').hide()
+$('.icon-img-star-1').hide()
+$('.icon-img-star-2').hide();
+$('.icon-img-star-3').hide();
 }
 
 /**
@@ -254,7 +255,6 @@ function addPoints() {
  */
 function substractPoints() {
   renderPoints();
-  changeStarIcon();
   if (sum === 1) {
     lose();
   } else {
@@ -279,13 +279,19 @@ function disableBtn(whichBtn) {
 }
 
 /**
- * Hide the button of choice
- * @param whichBtn
+ * Hide the element of choice
+ * @param whichEl
  */
-function hideBtn(whichBtn) {
-  $(whichBtn).click(function () {
-    $(whichBtn).hide();
-  });
+function hideEl(whichEl) {
+  $(whichEl).hide();
+}
+
+/**
+ * Show the element of choice
+ * @param whichEl
+ */
+ function showEl(whichEl) {
+  $(whichEl).show();
 }
 
 /**
@@ -308,6 +314,7 @@ function reloadDeck() {
   setTimeout(function () {
     deleteItems();
     startGame();
+    hideStarIcon()
     changeStarIcon();
   }, 1000);
 }
