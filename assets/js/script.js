@@ -130,6 +130,7 @@ function startGame() {
   enableBtn("#check-btn");
   showMessage("Your move!");
   renderPoints();
+  hideStarIcon();
 }
 
 /**
@@ -224,6 +225,12 @@ function changeStarIcon() {
   } else {
     $('.icon-img-03').show()
   }
+}
+
+function hideStarIcon() {
+  $('.icon-img-01').hide()
+  $('.icon-img-02').hide()
+  $('.icon-img-03').hide()
 }
 
 /**

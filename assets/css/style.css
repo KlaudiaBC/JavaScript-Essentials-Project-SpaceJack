@@ -128,7 +128,7 @@ p {
 }
 
 .icon-img- {
-  object-fit: fill;
+  object-fit: contain;
   position: relative;
   width: 100%;
 }
