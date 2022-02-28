@@ -19,6 +19,7 @@ function buildCardsArray() {
     for (let x = 0; x <= 12; x++) {
       let expectedValue = x + 1;
       // push the card object into the card array
+      // add properties to each object in array
       cardsArray.push({
         value: expectedValue,
         suite: suiteValue,
@@ -58,11 +59,9 @@ function givePlayerCard(whichPlayer) {
     }
     // add this card element to the player container
     createCardEl(cardsArray[newCard], whichPlayer);
-
     // add card-game value to the card el
     let cardGameValue = amount(cardsArray[newCard].value);
     console.log("adding value:", cardGameValue);
-
     //sum the card-game values
     totaValue(whichPlayer, cardGameValue);
   }
@@ -126,12 +125,11 @@ function totaValue(whichPlayer, cardGameValue) {
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
-    givePlayerSomeCards(2, "playerOneSide"),
-    enableBtn("#draw-btn");
+  givePlayerSomeCards(2, "playerOneSide"),
+  enableBtn("#draw-btn");
   enableBtn("#check-btn");
   showMessage("Your move!");
   renderPoints();
-  // hideBtn('#start');
 }
 
 /**
@@ -201,7 +199,7 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if ((player2Value < 21) > (player1Value < 21) || player1Value > 21) {
+  } else if (player2Value > player1Value && player2Value < 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
