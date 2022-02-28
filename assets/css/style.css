@@ -63,7 +63,6 @@ body {
     width: 90%;
 }
 
-
 .story-box {
     color: rgb(0, 0, 58);
     text-align: center;
@@ -141,6 +140,18 @@ body {
 
 .icon-img-off {
     background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/mute.png');
+}
+
+.icon-img-star-1 {
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-01.png');
+}
+
+.icon-img-star-2 {
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-02.png');
+}
+
+.icon-img-star-3 {
+    background-image: url('https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/star-03.png');
 }
 
 /* card element */
