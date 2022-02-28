@@ -294,15 +294,6 @@ function hideEl(whichEl) {
   $(whichEl).show();
 }
 
-/**
- * Display the button of choice
- * @param whichBtn
- */
-function showBtn(whichBtn) {
-  $(whichBtn).click(function () {
-    $(whichBtn).show();
-  });
-}
 
 /**
  * Render a new game set,
@@ -358,6 +349,13 @@ function store() {
   localStorage.setItem("userName", userName.value);
 }
 
+function showDeck() {
+  showEl('.container-two');
+  hideEl('.container-one');
+  store();
+  applyStoreValue()
+}
+
 function applyStoreValue() {
   let storedValue = localStorage.getItem("userName");
   let playerName = document.getElementById("playerName");
@@ -383,4 +381,10 @@ function toggleAudio() {
   }
 }
 
+function intro() {
+  showEl('.container-one');
+  hideEl('.container-two');
+}
+
 buildCardsArray();
+intro();
