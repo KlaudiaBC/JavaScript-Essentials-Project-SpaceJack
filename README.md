@@ -44,7 +44,7 @@ The game is looping until the points of User become 10 or 0.
 In this case, User will receive the message about results displayed in the modal which will be activated automatically. Again, User is provided with a choice of two buttons: "Play again" button will render a new game, "Go back" will send User back to the intro page.
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gamelogic.drawio.png?raw=true" alt="user journey map">
 </p>
 
 <p id="ux"></p>
@@ -69,7 +69,7 @@ In this case, User will receive the message about results displayed in the modal
 9. I added a new function, which creates an array of the card objects with 3 properties assigned to each of them: value, suite and suiteClass. This function contains two loops: one with a suite (4 elements) and second one with the figure (13 elements). Those loops loop through each other and create an array of 52 cards.
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/cardEl.jpg?raw=true alt="card element">
 </p>
 
 10. Instead of creating an element in the HTML, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random object only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
@@ -86,7 +86,7 @@ In this case, User will receive the message about results displayed in the modal
 21. In order to proceed with mathematics behind the blackjack game, I had to create a function which would call the specific parameter (expectedValue) from the random object in the cards array. I set expectedValue as index number +1 because the value of the card could not be equal to 0 and class numbers were also starting from 1, where it was crucial to align value with a number of the card class as each background image for each figure was compatible with the value of this card.
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/button_functions.png?raw=true" alt="buttons & functions">
 </p>
 
 22. Therefore I created a new function called amount and set inside it an if statement which would console.log the particular string while the condition was met. There were 3 conditions: if value is equal 21, is greater than 21 or is smaller than 21.
@@ -96,12 +96,12 @@ In this case, User will receive the message about results displayed in the modal
 
 ## Technologies used:
 - HTML5, CSS3, JavaScript
+- VS code
 - <a href="https://github.com/" target="_blank">GitHub, Gitpod and Git</a>
-- - <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
+- <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
 - <a href="https://getbootstrap.com/" target="_blank">Bootstrap version 4</a>
 - <a href="https://fonts.google.com/" target="_blank">GoogleFonts</a>
-- VS code
-- Wireframe Software Balsamiq
+- <a href="https://balsamiq.com/" target="_blank">Wireframe Software Balsamiq</a>
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
 - <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
 - <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
