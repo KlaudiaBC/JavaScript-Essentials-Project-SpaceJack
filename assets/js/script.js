@@ -381,6 +381,10 @@ function toggleAudio() {
   }
 }
 
+// function flipCard() {
+//   player1Cards[1].setAttribute("class", "card card-back");
+// }
+
 function intro() {
   showEl('.container-one');
   hideEl('.container-two');

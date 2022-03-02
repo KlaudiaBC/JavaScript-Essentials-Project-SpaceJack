@@ -39,14 +39,32 @@ body {
   padding: 1rem;
 }
 
+.modal {
+  padding: 0;
+}
+
 .modal-content {
   color: black;
   background-color: aliceblue;
 }
 
-.modal-content h3,
-p {
+.modal-content {
   margin: 0.2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  text-align: justify;
+}
+
+.modal-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img img {
+  height: 8rem;
+  width: 8rem;
+  padding: .5rem;
 }
 
 .container {
@@ -162,6 +180,8 @@ p {
   width: 5rem;
   height: 6.5rem;
   background-color: rgb(226, 226, 217);
+  transform-style: preserve-3d;
+  transition: all .8s ease;
 }
 
 .suite {
@@ -250,6 +270,11 @@ p {
 }
 .figure-img-13 {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
+}
+
+.card-back {
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
+  transform: rotateY('180deg');
 }
 
 /* media query */
