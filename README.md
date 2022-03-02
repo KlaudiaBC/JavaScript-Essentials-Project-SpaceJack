@@ -68,10 +68,12 @@ In this case, User will receive the message about results displayed in the modal
 8. I added functions Math.floor and Math.random and  in order to display cards randomly. This function took the place of the function choosePic().
 9. I added a new function, which creates an array of the card objects with 3 properties assigned to each of them: value, suite and suiteClass. This function contains two loops: one with a suite (4 elements) and second one with the figure (13 elements). Those loops loop through each other and create an array of 52 cards.
 
+
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/cardEl.jpg?raw=true alt="card element">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/cardEl.jpg?raw=true" alt="card element">
 </p>
 
+                                                                                                                                                      
 10. Instead of creating an element in the HTML, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random object only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
 11. The following step towards the game component was to create a function which will give a player a random card. In order to get a random card from the cards array that was just created in the DOM, it was needed to refer to the index of the object from this array, while using the Math.random() and Math.floor methods.
 12. The next function I built was "givePlayerCard". The logic behind this function lies not only in rendering a random index number (of the card object located in cards array) for a player but also - before that action takes place, it checks if any player already has this index number assigned. If so, it will repeatedly search for another random number. Thanks to that, I made sure that any card will not be displayed twice.
@@ -85,12 +87,22 @@ In this case, User will receive the message about results displayed in the modal
 20. I used the function givePlayerSomeCards in order to create a new function connected with the "Draw" button. After clicking on this button a User can draw a new card. To limit the amount of cards User can request, I set the count for this function and disable the button after the User had clicked the button twice (allows to render max two new cards).
 21. In order to proceed with mathematics behind the blackjack game, I had to create a function which would call the specific parameter (expectedValue) from the random object in the cards array. I set expectedValue as index number +1 because the value of the card could not be equal to 0 and class numbers were also starting from 1, where it was crucial to align value with a number of the card class as each background image for each figure was compatible with the value of this card.
 
+                                                                                                       
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/button_functions.png?raw=true" alt="buttons & functions">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/button_functions.png?raw=true" alt="buttons and functions">
 </p>
 
-22. Therefore I created a new function called amount and set inside it an if statement which would console.log the particular string while the condition was met. There were 3 conditions: if value is equal 21, is greater than 21 or is smaller than 21.
 
+22. I created a new function called "amount" which should return the value of the card = 11  if the expectedValue = 1 and 10 if the expectedValue is greater than 10. The first figure in the array of cards (index=0, expected value=1) has assigned the class in the css which contains an image of Ace as a background. Every following card has a background image compatible with expected value number (or index number + 1) which gives exactly the same value as the presented on the card image for the User. The cards with figures (queen, king and jack) in the actual game have a value of 10, therefore I placed them in the end of the array of figures, which means their expected value will be: 11, 12, 13... The function "amount" is responsible for adjustment of the value assigned in the cards array with the value required in the game.
+23. I adjusted names for html files, keeping only the main file called index and named a second one "game_page" because naming two files with index could interfere with the server while rendering a page. I also add some styling to modals, card elements and input fields.I realised that the function "amount" wasn't working because I hadn't specified the card out of the array of cards for each player. Therefore I created a new variable ("cardGameValue") in order to point out the one chosen card and then store inside this variable a function "amount".
+24. The next function I created is called "totalValue". It takes two parameters into account: "whichPlayer" and "cardGameValue". It is a universal function, which will be called every time when a player will receive a card and sum the game values of the cards added. Those separate sums are stored in variables called: "player1Value" and "player2Value".
+In order to create the next function "drawNewCard" I used the function givePlayerSomeCards and specified the amount to 1. I placed this function inside another function which will disable the "Draw" after the user meets the maximum number of cards he can draw (in this case it is 2 cards). Thanks to a new variable I declared called "count", this function is more reusable- at any point it is possible to change the maximum number of cards.I also created a function "drawCardPlayerOne" which is supposed to add one random card to the player one (computer) only if the sum of his cards is smaller than 17. The function will be called when User decides to end the set and click the "Check" button.
+25. Function "showMessage" is called everytime there is an event of click happening on the page and will render a message for a User in the middle part of the deck. I used the "innerText '' property of the element paragraph existing in my HTML and accessed this element via the document method "getElemenyById".
+26. I used the sample from Scrimba code to create a new function called "checkScore" and called it by using the "onclick" attribute added to the button "Check" in HTML file. At first this function is calling another function: "drawCardPlayerOne" and after its execution, the function compares the results of "player1Value" and "player2Value" and render a message (showMessage) with information whether the User won, lose or there was a tie.
+27. I also added a function which uses the jquery methods "show" and "hide" and assigned it to the start button.
+28. Styling: I changed the order of the buttons and placed the button "Start" in the middle as it will be disabled once clicked and it will make space on the deck for messages. 
+29. I decided to expand the jquery I used to hide button "Start" and create two functions: "showBtn" and "disableBtn" which can be executed on different buttons. I specified parameter "whichBtn" and used a jquery selectors to call the buttons by its IDs. I added this function to the functions "startGame" and "drawCardPlayerOne".
+30. The next feature I added to my game was the player score. I declared a sum = 5 as the User will be starting the game with this amount of points (stars). That will make it possible to run the function "substractPoints" if the Player will lose in the first set while avoiding negative integers. I also created the function "addPoints". At least I added these functions to the "checkScore" function. I declared a new variable called "sumEl" which is connected with the paragraph element in the HTML file (via "innerText" property) and added to each function a new task to render the amount of points in this paragraph.
 
 <p id="tu"></p>
 
@@ -105,6 +117,7 @@ In this case, User will receive the message about results displayed in the modal
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
 - <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
 - <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
+- <a href="https://www.adobe.com/products/photoshop-express.html">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
 
 <p id="ack"></p>
 
