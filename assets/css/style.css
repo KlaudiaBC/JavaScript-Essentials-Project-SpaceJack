@@ -251,7 +251,7 @@ body {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/six.png");
 }
 .figure-img-7 {
-  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/seven.png");
 }
 .figure-img-8 {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/eight.png");
@@ -269,11 +269,11 @@ body {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/king.png");
 }
 .figure-img-13 {
-  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/jack.png");
 }
 
 .card-back {
-  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/queen.png");
+  background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/back_card.png");
   transform: rotateY('180deg');
 }
 
