@@ -65,14 +65,18 @@
                         </div>
                     <h3>OBJECT OF THE GAME</h3>
                     <p>A Human can save the Earth by collecting 10 magic stars. To do so, he shall attempt to beat Alien in SpaceJack by getting a count as close to 21 as possible, without going over 21.</p>
+                    <br>
                     <h3>WINS AND LOSES</h3>
                     <p>The winner is a player whose total value of cards is closer or equal 21. After each game the Human will: receive 1 star if won or lose 1 star if defeated. Human have 5 stars in the beginning of the game. The goal is to collect 10 stars in total.</p>
+                    <br>
                     <h3>CARD VALUES</h3>
-                    <p>Face cards have a value of 10, ace has value of 11 and any other card is its number value.</p>
+                    <p>Face cards have a value of 10, ace has value of 11 and any other card has a number value as shown of the card.</p>
+                    <br>
                     <h3>THE HUMAN'S PLAY</h3>
-                    <p>The Human goes first and must decide whether to "check" (end the set by comparing the results with Alien's score) or "draw" (ask for another card in an attempt to get closer to a count of 21, or even hit 21 exactly).</p>
+                    <p>The Human goes first and must decide. Option one is: "Draw" - ask for another card in an attempt to get closer to a count of 21, or even hit 21 exactly. Option two is: "Check" - show Aliens cards and compare results.</p>
+                    <br>
                     <h3>THE ALIEN'S PLAY</h3>
-                    <p>When the Alien has served cards for a Human, his second card is face-down. If the total value of Alien's cards is 17 or more, it must stand. If the total is 16 or under, he must take a card. Alien must continue to take cards until the total is 17 or more.</p>
+                    <p>When the Alien has served cards for a Human, his second card is face-down. If the total value of Alien's cards is 17 or more, it must stand. If the total is 16 or under, he must take a card. Alien can take only one card.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -104,7 +108,7 @@
                     <p>Patience: In general card games teach us to remain unflappable and calm. Mastering this skill is
                         extremely important these days as society becomes more and more impatient. Undoubtful, learning
                         how to use strategy planning will be useful in school! :)</p>
-                    <p>Concentration: another worth practicing skill, closely connected with patience. In the world of
+                    <p>Concentration: Another worth practicing skill, closely connected with patience. In the world of
                         distractions, being able to remember and recall information is crucial. This is why the Player
                         has to remember the value of the cards and correctly sum them in order to make a decision about
                         the next step, which leads us to...</p>
@@ -163,7 +167,7 @@
                 <button class="btn btn--big btn-warning" id="start-btn" onclick="startGame()">START</button>
             </div>
             <div>
-                <button class="btn btn--big btn-warning" id="check-btn" onClick="checkScore()" disabled>CHECK</button>
+                <button class="btn btn--big btn-warning" id="check-btn" onClick="check()" disabled>CHECK</button>
             </div>
             </div>
 

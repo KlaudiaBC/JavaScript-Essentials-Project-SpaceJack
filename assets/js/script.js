@@ -201,7 +201,7 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if (player2Value > player1Value && player2Value < 21) {
+  } else if (player2Value > player1Value || player1Value > 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -381,9 +381,12 @@ function toggleAudio() {
   }
 }
 
-// function flipCard() {
-//   player1Cards[1].setAttribute("class", "card card-back");
-// }
+let cardReverse = player1Cards[1];
+
+function flipCard() {
+  cardReverse.setAttribute("class", "card-back");
+  console.log("I flipped this card over");
+}
 
 function intro() {
   showEl('.container-one');
