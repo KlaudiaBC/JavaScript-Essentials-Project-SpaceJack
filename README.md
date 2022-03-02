@@ -130,8 +130,12 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
 - <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docks</a>
-- <a href="https://www.pexels.com/" target="_blank">Pexels</a> (for background video)
-- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> (for logo)
+- <a href="https://www.pexels.com/" target="_blank">Pexels: </a> for the background video - author: Mr Borys
+- <a href="https://pixabay.com/" target="_blank">Pixabay: </a> for the background music - author: Lesfm
+- <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>
+  - for logo, stars, sound, win and loose icons - author: Freepik
+  - for social media icons - author
+- Kamila Halat for drawings of all card figures
 - "Clean Code - A Handbook of Agile Software Craftsmanship" by Robert Martin
 
 <p id="deploy"></p>
