@@ -401,7 +401,7 @@ let downloadTimer = setInterval(function(){
     clearInterval(downloadTimer);
     showMessage("Time is up!");
   }
-  document.getElementById("progressBar").value = 10 - timeleft;
+  document.getElementById("timer").value = 10 - timeleft;
   timeleft -= 1;
 }, 1000);
 }
