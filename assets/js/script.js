@@ -125,13 +125,14 @@ function totaValue(whichPlayer, cardGameValue) {
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
-  givePlayerSomeCards(2, "playerOneSide"),
-  enableBtn("#draw-btn");
+    givePlayerSomeCards(2, "playerOneSide"),
+    enableBtn("#draw-btn");
   enableBtn("#check-btn");
   showMessage("Your move!");
   renderPoints();
   hideStarIcon();
   changeStarIcon();
+//  coundDown();
 }
 
 /**
@@ -201,7 +202,8 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if (player2Value > player1Value || player1Value > 21) {
+  } else if 
+    (player2Value > player1Value || player1Value > 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -218,20 +220,20 @@ function renderPoints() {
 }
 
 function changeStarIcon() {
-  console.log('show stars')
+  console.log("show stars");
   if (sum === 5) {
-    showEl('.icon-img-star-1')
+    showEl(".icon-img-star-1");
   } else if (sum > 5) {
-    $('.icon-img-star-2').show()
+    $(".icon-img-star-2").show();
   } else {
-    $('.icon-img-star-3').show()
+    $(".icon-img-star-3").show();
   }
 }
 
 function hideStarIcon() {
-$('.icon-img-star-1').hide()
-$('.icon-img-star-2').hide();
-$('.icon-img-star-3').hide();
+  $(".icon-img-star-1").hide();
+  $(".icon-img-star-2").hide();
+  $(".icon-img-star-3").hide();
 }
 
 /**
@@ -290,10 +292,9 @@ function hideEl(whichEl) {
  * Show the element of choice
  * @param whichEl
  */
- function showEl(whichEl) {
+function showEl(whichEl) {
   $(whichEl).show();
 }
-
 
 /**
  * Render a new game set,
@@ -305,7 +306,7 @@ function reloadDeck() {
   setTimeout(function () {
     deleteItems();
     startGame();
-    hideStarIcon()
+    hideStarIcon();
     changeStarIcon();
   }, 1000);
 }
@@ -350,10 +351,10 @@ function store() {
 }
 
 function showDeck() {
-  showEl('.container-two');
-  hideEl('.container-one');
+  showEl(".container-two");
+  hideEl(".container-one");
   store();
-  applyStoreValue()
+  applyStoreValue();
 }
 
 function applyStoreValue() {
@@ -389,8 +390,20 @@ function flipCard() {
 }
 
 function intro() {
-  showEl('.container-one');
-  hideEl('.container-two');
+  showEl(".container-one");
+  hideEl(".container-two");
+}
+
+function coundDown() {
+let timeleft = 10;
+let downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    showMessage("Time is up!");
+  }
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);
 }
 
 buildCardsArray();
