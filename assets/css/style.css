@@ -133,11 +133,18 @@ body {
 }
 
 .timer {
-  width: 2rem;
-  height: 2rem;
-  border: red solid;
-  border-radius: 50%;
-  align-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: rgb(15, 13, 129) solid;
+  border-radius: 40%;
+  color: black;
+}
+
+.timer p {
+  margin: auto;
+  padding: .3rem;
+  text-align: center;
+  font-size: x-large;
 }
 
 /* styling for icon el */

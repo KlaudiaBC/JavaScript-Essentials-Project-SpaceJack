@@ -132,7 +132,7 @@ function startGame() {
   renderPoints();
   hideStarIcon();
   changeStarIcon();
-//  coundDown();
+  countDown();
 }
 
 /**
@@ -202,8 +202,7 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if 
-    (player2Value > player1Value || player1Value > 21) {
+  } else if (player2Value > player1Value || player1Value > 21) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -382,28 +381,37 @@ function toggleAudio() {
   }
 }
 
-let cardReverse = player1Cards[1];
+// let cardReverse = player1Cards[1];
 
-function flipCard() {
-  cardReverse.setAttribute("class", "card-back");
-  console.log("I flipped this card over");
-}
+// function flipCard() {
+//   cardReverse.setAttribute("class", "card-back");
+//   console.log("I flipped this card over");
+// }
 
 function intro() {
   showEl(".container-one");
   hideEl(".container-two");
 }
 
-function coundDown() {
-let timeleft = 10;
-let downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    showMessage("Time is up!");
-  }
-  document.getElementById("timer").value = 10 - timeleft;
-  timeleft -= 1;
-}, 1000);
+function showTime(someText) {
+  let timer = document.getElementById("timer");
+  timer.innerHTML = someText;
+}
+
+function countDown() {
+  let timeLeft = 10;
+  let timer = setInterval(function () {
+    if (timeLeft === 0) {
+      check();
+      // clear the interval if expired
+      clearInterval(timer);
+    } else if (document.getElementById('check-btn').clicked == true) {
+      clearInterval(timer);
+    } else {
+      showTime(timeLeft);
+    }
+    timeLeft -= 1;
+  }, 1000);
 }
 
 buildCardsArray();
