@@ -7,6 +7,8 @@ let player2Cards = [];
 let player1Value;
 let player2Value;
 let sum = 5;
+let timer;
+let timeLeft = 10;
 
 /**
  * The "loop" called when the game is loaded
@@ -132,7 +134,7 @@ function startGame() {
   renderPoints();
   hideStarIcon();
   changeStarIcon();
-  countDown();
+  startCounter();
 }
 
 /**
@@ -190,6 +192,7 @@ function check() {
   disableBtn("#draw-btn");
   disableBtn("#check-btn");
   checkScore();
+  resetCounter();
 }
 
 function checkScore() {
@@ -394,24 +397,43 @@ function intro() {
 }
 
 function showTime(someText) {
-  let timer = document.getElementById("timer");
-  timer.innerHTML = someText;
+  let timeBox = document.getElementById("timer");
+  timeBox.innerHTML = someText;
 }
 
-function countDown() {
-  let timeLeft = 10;
-  let timer = setInterval(function () {
-    if (timeLeft === 0) {
-      check();
-      // clear the interval if expired
-      clearInterval(timer);
-    } else if (document.getElementById('check-btn').clicked == true) {
-      clearInterval(timer);
-    } else {
-      showTime(timeLeft);
-    }
+// count down remaining time //
+
+/**
+ * start the count from 10 sec to 0
+ * render the time left in the inner HTML el
+ */
+function startCounter() {
+  timer = setInterval(function () {
     timeLeft -= 1;
+    showTime(timeLeft);
+    endOfTime();
   }, 1000);
+}
+
+/**
+ * When the time is = 0,
+ * execute the check() function,
+ * which also resets the counter
+ */
+function endOfTime() {
+  if (timeLeft === 0) {
+    check();
+  }
+}
+
+/**
+ * Restart the counter to its
+ * primary settings
+ */
+function resetCounter() {
+  clearInterval(timer);
+  timeLeft = 10;
+  showTime(timeLeft);
 }
 
 buildCardsArray();
