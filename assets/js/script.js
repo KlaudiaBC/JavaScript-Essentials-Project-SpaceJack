@@ -1,4 +1,13 @@
 // array with suite:
+const checkBtn = document.querySelector('#check-btn');
+const startBtn = document.querySelector('#start-btn');
+const drawBtn = document.querySelector('#draw-btn');
+const containerOne = document.querySelector('.container-one');
+const containerTwo = document.querySelector('.container-two');
+const starOne = document.querySelector('.icon-img-star-1');
+const starTwo = document.querySelector('.icon-img-star-2');
+const starThree = document.querySelector('.icon-img-star-3');
+
 const suite = [" suite-img-1", " suite-img-2", " suite-img-3", " suite-img-4"];
 
 let cardsArray = [];
@@ -128,8 +137,8 @@ function totaValue(whichPlayer, cardGameValue) {
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
     givePlayerSomeCards(2, "playerOneSide"),
-    enableBtn("#draw-btn");
-  enableBtn("#check-btn");
+  enableBtn(drawBtn);
+  enableBtn(checkBtn);
   showMessage("Your move!");
   renderPoints();
   hideStarIcon();
@@ -145,7 +154,7 @@ function drawNewCard() {
   // allows to render max 1 new card
   // disable the button after limit was met
   if (player2Cards.length === 4) {
-    disableBtn("#draw-btn");
+    disableBtn(drawBtn);
   }
 }
 
@@ -189,8 +198,8 @@ function showMessage(someText) {
  */
 function check() {
   givePlayerOneCard();
-  disableBtn("#draw-btn");
-  disableBtn("#check-btn");
+  disableBtn(drawBtn);
+  disableBtn(checkBtn);
   checkScore();
   resetCounter();
 }
@@ -221,21 +230,22 @@ function renderPoints() {
   sumEl.textContent = "You have " + sum + " stars!";
 }
 
+
+
 function changeStarIcon() {
-  console.log("show stars");
   if (sum === 5) {
-    showEl(".icon-img-star-1");
+    showEl(starOne);
   } else if (sum > 5) {
-    $(".icon-img-star-2").show();
+    showEl(starTwo);
   } else {
-    $(".icon-img-star-3").show();
+    showEl(starThree);
   }
 }
 
 function hideStarIcon() {
-  $(".icon-img-star-1").hide();
-  $(".icon-img-star-2").hide();
-  $(".icon-img-star-3").hide();
+  hideEl(starOne);
+  hideEl(starTwo);
+  hideEl(starThree);
 }
 
 /**
@@ -271,7 +281,7 @@ function substractPoints() {
  * @param whichBtn
  */
 function enableBtn(whichBtn) {
-  $(whichBtn).prop("disabled", false);
+  whichBtn.disabled = false;
 }
 
 /**
@@ -279,7 +289,7 @@ function enableBtn(whichBtn) {
  * @param whichBtn
  */
 function disableBtn(whichBtn) {
-  $(whichBtn).prop("disabled", true);
+  whichBtn.disabled = true;
 }
 
 /**
@@ -287,7 +297,7 @@ function disableBtn(whichBtn) {
  * @param whichEl
  */
 function hideEl(whichEl) {
-  $(whichEl).hide();
+  whichEl.style.display = "none";
 }
 
 /**
@@ -295,7 +305,7 @@ function hideEl(whichEl) {
  * @param whichEl
  */
 function showEl(whichEl) {
-  $(whichEl).show();
+  whichEl.style.display = "flex";
 }
 
 /**
@@ -353,8 +363,8 @@ function store() {
 }
 
 function showDeck() {
-  showEl(".container-two");
-  hideEl(".container-one");
+  showEl(containerTwo);
+  hideEl(containerOne);
   store();
   applyStoreValue();
 }
@@ -391,9 +401,14 @@ function toggleAudio() {
 //   console.log("I flipped this card over");
 // }
 
+
+/**
+ * Display intro container
+ * and hide the game area
+ */
 function intro() {
-  showEl(".container-one");
-  hideEl(".container-two");
+  showEl(containerOne);
+  hideEl(containerTwo);
 }
 
 function showTime(someText) {
