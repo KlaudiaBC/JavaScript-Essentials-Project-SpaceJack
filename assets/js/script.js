@@ -1,4 +1,3 @@
-// array with suite:
 const checkBtn = document.querySelector('#check-btn');
 const startBtn = document.querySelector('#start-btn');
 const drawBtn = document.querySelector('#draw-btn');
@@ -7,7 +6,10 @@ const containerTwo = document.querySelector('.container-two');
 const starOne = document.querySelector('.icon-img-star-1');
 const starTwo = document.querySelector('.icon-img-star-2');
 const starThree = document.querySelector('.icon-img-star-3');
+const modalWin = document.getElementById("modalWin");
+const modalLose = document.getElementById("modalLose");
 
+// array with suite:
 const suite = [" suite-img-1", " suite-img-2", " suite-img-3", " suite-img-4"];
 
 let cardsArray = [];
@@ -40,7 +42,6 @@ function buildCardsArray() {
   }
   player1Value = 0;
   player2Value = 0;
-  console.log(cardsArray);
 }
 
 /**
@@ -72,7 +73,6 @@ function givePlayerCard(whichPlayer) {
     createCardEl(cardsArray[newCard], whichPlayer);
     // add card-game value to the card el
     let cardGameValue = amount(cardsArray[newCard].value);
-    console.log("adding value:", cardGameValue);
     //sum the card-game values
     totaValue(whichPlayer, cardGameValue);
   }
@@ -122,10 +122,8 @@ function amount(cardGameValue) {
 function totaValue(whichPlayer, cardGameValue) {
   if (whichPlayer === "playerOneSide") {
     player1Value += cardGameValue;
-    console.log("total player1 :", player1Value);
   } else {
     player2Value += cardGameValue;
-    console.log("total player 2:", player2Value);
   }
 }
 
@@ -133,6 +131,7 @@ function totaValue(whichPlayer, cardGameValue) {
  * display and hide buttons
  * give each player 2 random cards
  * show message to the User
+ * restart counter
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
@@ -151,7 +150,7 @@ function startGame() {
  */
 function drawNewCard() {
   givePlayerSomeCards(1, "playerTwoSide");
-  // allows to render max 1 new card
+  // allows to render max 2 new cards
   // disable the button after limit was met
   if (player2Cards.length === 4) {
     disableBtn(drawBtn);
@@ -170,7 +169,7 @@ function givePlayerSomeCards(howmany, whichPlayer) {
   }
 }
 
-/** Render a random card for Player1
+/** Render a random card for Player1;
  * under condition: only if value
  * of his cards is smaller than 17
  */
@@ -183,7 +182,7 @@ function givePlayerOneCard() {
 /**
  * Show message to the User
  * Inform abot the results of the game
- * @param {*} someText
+ * @param someText
  */
 function showMessage(someText) {
   let messageWrapper = document.getElementById("middle-table");
@@ -191,10 +190,9 @@ function showMessage(someText) {
 }
 
 /**
- * Compare the sum of values attached to the cards
- * of both players and render a message
- * with information who is a winner
- * triger the new game set
+ * Triger the new game set,
+ * disable buttons and
+ * reset the counter
  */
 function check() {
   givePlayerOneCard();
@@ -204,6 +202,12 @@ function check() {
   resetCounter();
 }
 
+/**
+ * Compare the sum of values attached to the
+ * cards of both players and render a message
+ * with information who is a winner,
+ * inc. reload deck
+ */
 function checkScore() {
   let message;
   if (player1Value === player2Value) {
@@ -225,13 +229,18 @@ function checkScore() {
   reloadDeck();
 }
 
+/**
+ * Render the score of the game
+ */
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
 }
 
-
-
+/**
+ * Render different icons,
+ * depending of the score
+ */
 function changeStarIcon() {
   if (sum === 5) {
     showEl(starOne);
@@ -251,7 +260,7 @@ function hideStarIcon() {
 /**
  * Add 1 point and render the score,
  * condition: when sum = 10
- * render User points
+ * render the modal "win"
  */
 function addPoints() {
   renderPoints();
@@ -265,7 +274,7 @@ function addPoints() {
 /**
  * Substract 1 point and render the score,
  * condition: when sum = 0
- * render User points
+ * render the modal "lose"
  */
 function substractPoints() {
   renderPoints();
@@ -312,7 +321,7 @@ function showEl(whichEl) {
  * Render a new game set,
  * reset players scores while
  * keep the number of User points,
- * time set: 1 sec.
+ * time set: 2 sec.
  */
 function reloadDeck() {
   setTimeout(function () {
@@ -320,9 +329,12 @@ function reloadDeck() {
     startGame();
     hideStarIcon();
     changeStarIcon();
-  }, 1000);
+  }, 2000);
 }
 
+/**
+ * Set the game area back to initail state
+ */
 function deleteItems() {
   player1Value = 0;
   player2Value = 0;
@@ -336,14 +348,16 @@ function deleteItems() {
  * Show the modal (win)
  */
 function win() {
-  $("#modalWin").modal("show");
+  modalWin.style.display = "block"
+  clearInterval(timer)
 }
 
 /**
- * Show the modal (win)
+ * Show the modal (lose)
  */
 function lose() {
-  $("#modalLose").modal("show");
+  modalLose.style.display = "block"
+  clearInterval(timer)
 }
 
 /**
@@ -355,18 +369,21 @@ function renderNewGame() {
 }
 
 /**
- * Storing data of the input (user name)
+ * Render a game page
  */
-function store() {
-  var userName = document.getElementById("userName");
-  localStorage.setItem("userName", userName.value);
-}
-
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
   store();
   applyStoreValue();
+}
+
+/**
+ * Storing data of the input (user name)
+ */
+ function store() {
+  var userName = document.getElementById("userName");
+  localStorage.setItem("userName", userName.value);
 }
 
 function applyStoreValue() {
@@ -379,7 +396,6 @@ function applyStoreValue() {
 /*
  * Mute the audio (onclick)
  */
-
 function toggleAudio() {
   const audio = document.getElementById("audio");
   let icon = document.getElementById("sound");
@@ -394,33 +410,33 @@ function toggleAudio() {
   }
 }
 
-// let cardReverse = player1Cards[1];
+// let cardReverse = cardsArray.player1Cards[1];
 
 // function flipCard() {
-//   cardReverse.setAttribute("class", "card-back");
-//   console.log("I flipped this card over");
+// cardReverse.classList.add("card-back");
+// console.log("I flipped this card over");
 // }
-
 
 /**
  * Display intro container
- * and hide the game area
  */
 function intro() {
   showEl(containerOne);
   hideEl(containerTwo);
 }
 
+/**
+ * Render how much time is left in the inner HTML el
+ * @param someText
+ */
 function showTime(someText) {
   let timeBox = document.getElementById("timer");
   timeBox.innerHTML = someText;
 }
 
-// count down remaining time //
 
 /**
- * start the count from 10 sec to 0
- * render the time left in the inner HTML el
+ * Start the count: from 10 sec to 0
  */
 function startCounter() {
   timer = setInterval(function () {
