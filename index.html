@@ -8,7 +8,7 @@
     <meta name="author" content="Klaudia BC">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- font awesome and google fonts -->
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Syne+Tactile&display=swap" rel="stylesheet">
@@ -37,7 +37,9 @@
         <div class="modals">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">RULES</button>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">MISSION</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#scores">SCORES</button>
 
+        <!-- navbar / audio console -->
             <audio id="audio" autoplay loop>
                 <source src="https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/music/the-power-of-a-heroic-epic-story-60s-10810.mp3" type="audio/mpeg">
                 <source src="https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/music/the-power-of-a-heroic-epic-story-60s-10810.ogg" type="audio/ogg">
@@ -50,11 +52,11 @@
     </header>
 
     <!-- rules modal -->
-    <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">HOW TO PLAY?</h5>
+                    <h5 class="modal-title">HOW TO PLAY?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -86,11 +88,11 @@
     </div>
 
     <!-- mission modal -->
-    <div class="modal fade" id="mission" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="mission" tabindex="-1" aria-labelledby="mission" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">OUR MISSION</h5>
+                    <h5 class="modal-title">OUR MISSION</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -125,6 +127,55 @@
         </div>
     </div>
 
+<!-- scores modal -->
+<div class="modal fade" id="scores" tabindex="-1" aria-labelledby="scores" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">OUR HEROS</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-img">
+                <img src="assets/images/fireworks.png" alt="fireworks"/>
+                </div>
+                <div class="story-box">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name of a Hero:</th>
+                      <th>Moves to save the Earth:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                  </tbody>
+                </table>
+                </div>
+        </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                    </div>
+</div>
+
+
 <!-- introduction container -->
     <div class="container container-one">
         <div class="story-box">
@@ -152,32 +203,30 @@
 
     <!-- game area -->
     <div class="container container-two" id="gameArea">
-
         <div class="player">
             <h2>Alien Jack</h2>
         </div>
-       
-        <div id = "deck">
-        <div class="player-side" id="playerOneSide"></div>
 
-        <div class="player player-side">
-                <div>
-                <button class="btn btn--big btn-warning" id="draw-btn" onclick="drawNewCard()" disabled>DRAW</button>
-                </div>
-                <div id="middle-table" class="middle-table">
-                <button class="btn btn--big btn-warning" id="start-btn" onclick="startGame()">START</button>
-            </div>
-            <div>
-                <button class="btn btn--big btn-warning" id="check-btn" onClick="check()" disabled>CHECK</button>
-            </div>
-            </div>
+    <div id = "deck">
+    <div class="player-side" id="playerOneSide"></div>
+     <div class="player player-side">
+        <div>
+        <button class="btn btn-warning" id="draw-btn" onclick="drawNewCard()" disabled>DRAW</button>
+        </div>
+        <div id="middle-table" class="middle-table">
+        <button class="btn btn-warning" id="start-btn" onclick="startGame()">START</button>
+        </div>
+        <div>
+            <button class="btn btn-warning" id="check-btn" onClick="check()" disabled>CHECK</button>
+        </div>
+    </div>
 
-        <div class="player-side" id="playerTwoSide"></div>
+    <div class="player-side" id="playerTwoSide"></div>
     </div>
     <div class="player">
         <h2 id="playerName"><h2>
         </div>
-<div class="player-side">
+    <div class="player-side">
     <div>
         <p><span id="score" class="story-box"></span></p>
     </div>
@@ -210,7 +259,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" onClick="renderNewGame()">Play again!</button>
-              <button type="button" class="btn btn-secondary"><a href="index.html">Back to intro</a></button>
+              <button type="button" class="btn btn-secondary" onclick="intro()">Back to intro</button>
             </div>
           </div>
         </div>
@@ -233,7 +282,7 @@
             </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onClick="renderNewGame()">Play again!</button>
+              <button type="button" class="btn btn-secondary" onClick="showDeck()">Play again!</button>
               <button type="button" class="btn btn-secondary"><a href="index.html">Back to intro</a></button>
             </div>
           </div>
@@ -257,5 +306,4 @@
     <script src="assets/js/script.js"></script>
 
 </body>
-
 </html>

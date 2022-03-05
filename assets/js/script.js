@@ -434,7 +434,6 @@ function showTime(someText) {
   timeBox.innerHTML = someText;
 }
 
-
 /**
  * Start the count: from 10 sec to 0
  */
