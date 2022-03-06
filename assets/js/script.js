@@ -374,24 +374,76 @@ function renderNewGame() {
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
-  store();
-  applyStoreValue();
+  saveSpaceName()
+  renderSpaceName()
+}
+
+let CountButtonCheckClicks = 0;
+
+/** 
+ * Counts the clicks in order to
+ * render the amount of moves
+ * in the score area
+ */
+function countClicks() {
+checkBtn.addEventListener("click", function() {
+  CountButtonCheckClicks += 1;
+});
+}
+
+
+const spaceForm = document.getElementById('space-form');
+const spaceInput = document.getElementById('space-input');
+const spaceBtn = document.getElementById('space-submit');
+const spaceName = document.getElementById('space-name');
+
+// save the input in the local storage //
+let spaceNameStorage = localStorage.getItem("spaceName")
+? JSON.parse(localStorage.getItem("spaceName"))
+: [];
+
+function saveSpaceName() {
+spaceNameStorage.push(spaceInput.value);
+localStorage.setItem("spaceName", JSON.stringify(spaceNameStorage));
+}
+
+const storedSpaceName = JSON.parse(localStorage.getItem('spaceName'));
+
+/**
+ * Renders the name on
+ * the game area
+ */
+function renderSpaceName() {
+spaceName.innerText = "Human " + storedSpaceName;
+}
+
+let spaceMoves = countClicks()
+
+// save the mount of clicks //
+let spaceMovesStorage = localStorage.getItem("spaceMoves")
+? JSON.parse(localStorage.getItem("spaceMoves"))
+: [];
+
+function saveHighScores() {
+spaceMovesStorage.push(spaceMoves.value);
+localStorage.setItem("spaceMoves", JSON.stringify(spaceMovesStorage));
 }
 
 /**
- * Storing data of the input (user name)
+ * Render the amount of clicks (moves)
+ * in the score area
  */
- function store() {
-  var userName = document.getElementById("userName");
-  localStorage.setItem("userName", userName.value);
+const storedSpaceMoves = JSON.parse(localStorage.getItem('spaceMoves'));
+
+const heroName = document.getElementsByClassName("heroName");
+const heroScore = document.getElementById('heroScore');
+
+function renderHighScore() {
+  heroName.innerText = storedSpaceName;
+  heroScore.innerText = storedSpaceMoves;
 }
 
-function applyStoreValue() {
-  let storedValue = localStorage.getItem("userName");
-  let playerName = document.getElementById("playerName");
-  /* Render a user name in the game area */
-  playerName.textContent = "Human " + storedValue;
-}
+localStorage.clear();
 
 /*
  * Mute the audio (onclick)

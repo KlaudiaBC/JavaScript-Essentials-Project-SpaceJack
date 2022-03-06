@@ -151,28 +151,26 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td></td>
-                      <td></td>
+                      <td class="heroName"></td>
+                      <td class="heroScore"></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="heroName"></td>
+                        <td class="heroScore"></td>
                       </tr>
                       <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="heroName"></td>
+                        <td class="heroScore"></td>
                       </tr>
                   </tbody>
                 </table>
                 </div>
         </div>
-              
-                    <!-- Modal footer -->
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                    </div>
-                    </div>
+    </div>
+ </div>
+</div>
 </div>
 
 
@@ -190,14 +188,14 @@
         <br>
         <fieldset>
                 <div class="story-box">
-                    <form>
+                    <form id="space-form">
                     <label class="story-box" for="userName">What is your name?</label>
-                    <input id="userName" name="userName" type="text" maxlength="10" method="post" placeholder="hero name" required />
+                    <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required />
                 </form>
                 </div>
- </fieldset>
+        </fieldset>
             <div class="modals">
-                <button id="btnName" type="submit" class="btn btn-warning" onclick="showDeck()">I AM READY!</button>
+                <button id="space-submit" type="submit" class="btn btn-warning" onclick="showDeck()">I AM READY!</button>
             </div>
             </div>
 
@@ -224,7 +222,7 @@
     <div class="player-side" id="playerTwoSide"></div>
     </div>
     <div class="player">
-        <h2 id="playerName"><h2>
+        <h2 id="space-name"><h2>
         </div>
     <div class="player-side">
     <div>
@@ -258,6 +256,7 @@
             </div>
             </div>
             <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onClick="saveHighScores()">Save my name!</button>
               <button type="button" class="btn btn-secondary" onClick="renderNewGame()">Play again!</button>
               <button type="button" class="btn btn-secondary" onclick="intro()">Back to intro</button>
             </div>
