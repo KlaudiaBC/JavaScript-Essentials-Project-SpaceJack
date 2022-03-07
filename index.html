@@ -155,13 +155,9 @@
                       <td class="heroScore"></td>
                     </tr>
                     <tr>
-                        <td class="heroName"></td>
-                        <td class="heroScore"></td>
-                      </tr>
-                      <tr>
-                        <td class="heroName"></td>
-                        <td class="heroScore"></td>
-                      </tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
                   </tbody>
                 </table>
                 </div>
@@ -185,17 +181,19 @@
             <p>You must be careful!</p>
             <p>Aliens are really tricky!</p>
         </div>
-        <br>
-        <fieldset>
-                <div class="story-box">
-                    <form id="space-form">
+                <div class="modals" id="space-form">
+                    <form>
                     <label class="story-box" for="userName">What is your name?</label>
-                    <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required />
+                    <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required>
+                    <button id="space-submit" type="submit" class="btn btn-info">SAVE</button>
                 </form>
                 </div>
-        </fieldset>
-            <div class="modals">
-                <button id="space-submit" type="submit" class="btn btn-warning" onclick="showDeck()">I AM READY!</button>
+            <div class="modals" id="goBtn">
+                <button class="btn btn-primary" onclick="showDeck()">I AM READY!</button>
+                </div>
+                <div class="modals modals-new-user">
+                    <button id="space-newplayer" class="btn btn-info">NEW PLAYER</button>
+                </div>
             </div>
             </div>
 
@@ -256,9 +254,8 @@
             </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onClick="saveHighScores()">Save my name!</button>
-              <button type="button" class="btn btn-secondary" onClick="renderNewGame()">Play again!</button>
-              <button type="button" class="btn btn-secondary" onclick="intro()">Back to intro</button>
+            <button type="button" class="btn btn-secondary" onclick="saveHighScores()">Save my name!</button>
+              <button type="button" class="btn btn-secondary" onclick="renderNewGame()">Play again!</button>
             </div>
           </div>
         </div>
@@ -281,8 +278,7 @@
             </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onClick="showDeck()">Play again!</button>
-              <button type="button" class="btn btn-secondary"><a href="index.html">Back to intro</a></button>
+              <button type="button" class="btn btn-secondary" onclick="showDeck()">Play again!</button>
             </div>
           </div>
         </div>

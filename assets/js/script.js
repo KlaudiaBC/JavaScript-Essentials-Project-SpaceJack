@@ -376,7 +376,6 @@ function renderNewGame() {
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
-  saveSpaceName()
   renderSpaceName()
 }
 
@@ -393,59 +392,63 @@ function showDeck() {
 // });
 // }
 
-
 const spaceForm = document.getElementById('space-form');
+// space input is the text from input
 const spaceInput = document.getElementById('space-input');
 const spaceBtn = document.getElementById('space-submit');
+const newPlayerBtn = document.getElementById('space-newplayer')
+// spacename is the el in game area
 const spaceName = document.getElementById('space-name');
-
-// save the input in the local storage //
-let spaceNameStorage = localStorage.getItem("spaceName")
-? JSON.parse(localStorage.getItem("spaceName"))
-: [];
+const newPlayerDiv = document.querySelector('.modals-new-user')
+const goBtn = document.getElementById('goBtn')
+const spaceScoresName = document.querySelector('.heroName')
 
 function saveSpaceName() {
-spaceNameStorage.push(spaceInput.value);
-localStorage.setItem("spaceName", JSON.stringify(spaceNameStorage));
+  localStorage.setItem('spaceUser', JSON.stringify(spaceInput.value));
 }
 
-const storedSpaceName = JSON.parse(localStorage.getItem('spaceName'));
+spaceBtn.addEventListener('click', saveSpaceName);
+newPlayerBtn.addEventListener('click', removeSpaceUser)
+
+function getSpaceName() {
+  return JSON.parse(localStorage.getItem("spaceUser"));
+}
 
 /**
  * Renders the name on
  * the game area
  */
-function renderSpaceName() {
-spaceName.innerText = "Human " + storedSpaceName;
+ function renderSpaceName() {
+  let storedSpaceName = getSpaceName();
+  spaceName.innerText = "Human " + storedSpaceName;
+}
+
+function removeSpaceUser() {
+  localStorage.removeItem('spaceUser');
+  hideEl(newPlayerDiv);
+  hideEl(goBtn)
+  showEl(spaceForm)
+}
+
+function hideInputArea() {
+  if (localStorage.getItem("spaceUser") != null) {
+hideEl(spaceForm);
+showEl(newPlayerDiv)
+  }
+}
+
+function saveHighScores() {
+  let storedSpaceName = getSpaceName();
+  spaceScoresName.innerText = storedSpaceName
 }
 
 // let spaceMoves = countClicks()
-
-// save the mount of clicks //
-let spaceMovesStorage = localStorage.getItem("spaceMoves")
-? JSON.parse(localStorage.getItem("spaceMoves"))
-: [];
-
 // function saveHighScores() {
 // spaceMovesStorage.push(spaceMoves.value);
 // localStorage.setItem("spaceMoves", JSON.stringify(spaceMovesStorage));
 // }
 
-/**
- * Render the amount of clicks (moves)
- * in the score area
- */
-const storedSpaceMoves = JSON.parse(localStorage.getItem('spaceMoves'));
 
-const heroName = document.getElementsByClassName("heroName");
-const heroScore = document.getElementById('heroScore');
-
-function renderHighScore() {
-  heroName.innerText = storedSpaceName;
-  heroScore.innerText = storedSpaceMoves;
-}
-
-localStorage.clear();
 
 /*
  * Mute the audio (onclick)
@@ -525,3 +528,4 @@ function resetCounter() {
 
 buildCardsArray();
 intro();
+hideInputArea()

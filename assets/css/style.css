@@ -36,7 +36,7 @@ body {
   align-items: center;
   flex-direction: row;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .modal {
@@ -290,9 +290,8 @@ body {
 
 .card-back {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/back_card.png");
-  transform: rotateY("180deg");
   background-repeat: no-repeat;
-  background-size: fill;
+  background-size: contain;
   background-position: center;
 }
 
@@ -305,6 +304,10 @@ body {
 @media (min-width: 40em) {
   .modals {
     float: right;
+  }
+
+  .modals-new-user {
+    display: none;
   }
 
   .container {
