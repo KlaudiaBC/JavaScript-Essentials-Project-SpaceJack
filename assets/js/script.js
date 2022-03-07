@@ -143,6 +143,7 @@ function startGame() {
   hideStarIcon();
   changeStarIcon();
   startCounter();
+  flipCard(1)
 }
 
 /**
@@ -198,6 +199,7 @@ function check() {
   givePlayerOneCard();
   disableBtn(drawBtn);
   disableBtn(checkBtn);
+  flipCard(1);
   checkScore();
   resetCounter();
 }
@@ -378,18 +380,18 @@ function showDeck() {
   renderSpaceName()
 }
 
-let CountButtonCheckClicks = 0;
+// let CountButtonCheckClicks = 0;
 
-/** 
- * Counts the clicks in order to
- * render the amount of moves
- * in the score area
- */
-function countClicks() {
-checkBtn.addEventListener("click", function() {
-  CountButtonCheckClicks += 1;
-});
-}
+// /** 
+//  * Counts the clicks in order to
+//  * render the amount of moves
+//  * in the score area
+//  */
+// function countClicks() {
+// checkBtn.addEventListener("click", function() {
+//   CountButtonCheckClicks += 1;
+// });
+// }
 
 
 const spaceForm = document.getElementById('space-form');
@@ -417,17 +419,17 @@ function renderSpaceName() {
 spaceName.innerText = "Human " + storedSpaceName;
 }
 
-let spaceMoves = countClicks()
+// let spaceMoves = countClicks()
 
 // save the mount of clicks //
 let spaceMovesStorage = localStorage.getItem("spaceMoves")
 ? JSON.parse(localStorage.getItem("spaceMoves"))
 : [];
 
-function saveHighScores() {
-spaceMovesStorage.push(spaceMoves.value);
-localStorage.setItem("spaceMoves", JSON.stringify(spaceMovesStorage));
-}
+// function saveHighScores() {
+// spaceMovesStorage.push(spaceMoves.value);
+// localStorage.setItem("spaceMoves", JSON.stringify(spaceMovesStorage));
+// }
 
 /**
  * Render the amount of clicks (moves)
@@ -462,12 +464,15 @@ function toggleAudio() {
   }
 }
 
-// let cardReverse = cardsArray.player1Cards[1];
 
-// function flipCard() {
-// cardReverse.classList.add("card-back");
-// console.log("I flipped this card over");
-// }
+function flipCard(index) {
+let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
+let reverseCard = reverseCardsArray[index];
+if (reverseCard.classList.contains("card-back")) {
+  reverseCard.classList.remove("card-back");
+} else
+  reverseCard.classList.add("card-back");
+}
 
 /**
  * Display intro container

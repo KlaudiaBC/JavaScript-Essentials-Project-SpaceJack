@@ -160,7 +160,7 @@ body {
   background-color: transparent;
 }
 
-.icon-img- {
+.icon-img {
   object-fit: contain;
   position: relative;
   width: 100%;
@@ -291,6 +291,13 @@ body {
 .card-back {
   background-image: url("https://klaudiabc.github.io/JavaScript-Essentials-Project-SpaceJack/assets/images/back_card.png");
   transform: rotateY("180deg");
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: center;
+}
+
+.card-back .suite {
+  display: none;
 }
 
 /* media query */
