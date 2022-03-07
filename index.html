@@ -38,7 +38,7 @@
         <div class="modals">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">RULES</button>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">MISSION</button>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#scores">SCORES</button>
+            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores" onclick="showScores()">SCORES</button>
 
             <!-- navbar / audio console -->
             <audio id="audio" autoplay loop>
@@ -155,7 +155,7 @@
                         <img src="assets/images/fireworks.png" alt="fireworks" />
                     </div>
                     <div class="story-box">
-                        <table class="table table-striped">
+                        <table id="scoreTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Name of a Hero:</th>
@@ -190,16 +190,14 @@
             <p>You must be careful!</p>
             <p>Aliens are really tricky!</p>
         </div>
-        <div class="modals" id="space-form">
+        <div class="story-box" id="space-form">
             <form>
                 <label class="story-box" for="userName">What is your name?</label>
                 <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required>
                 <button id="space-submit" type="submit" class="btn btn-info">SAVE</button>
             </form>
         </div>
-        <div class="modals">
             <button id="goBtn" class="btn btn-primary" onclick="showDeck()">I AM READY!</button>
-        </div>
         <div class="modals modals-new-user">
             <button id="space-newplayer" class="btn btn-info">NEW PLAYER</button>
         </div>
@@ -264,7 +262,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="saveHighScores()">Save my name!</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="renderNewGame()">Play
                         again!</button>
                 </div>

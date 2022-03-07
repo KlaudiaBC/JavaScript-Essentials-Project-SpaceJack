@@ -1,11 +1,11 @@
-const checkBtn = document.querySelector('#check-btn');
-const startBtn = document.querySelector('#start-btn');
-const drawBtn = document.querySelector('#draw-btn');
-const containerOne = document.querySelector('.container-one');
-const containerTwo = document.querySelector('.container-two');
-const starOne = document.querySelector('.icon-img-star-1');
-const starTwo = document.querySelector('.icon-img-star-2');
-const starThree = document.querySelector('.icon-img-star-3');
+const checkBtn = document.querySelector("#check-btn");
+const startBtn = document.querySelector("#start-btn");
+const drawBtn = document.querySelector("#draw-btn");
+const containerOne = document.querySelector(".container-one");
+const containerTwo = document.querySelector(".container-two");
+const starOne = document.querySelector(".icon-img-star-1");
+const starTwo = document.querySelector(".icon-img-star-2");
+const starThree = document.querySelector(".icon-img-star-3");
 const modalWin = document.getElementById("modalWin");
 const modalLose = document.getElementById("modalLose");
 
@@ -143,8 +143,9 @@ function startGame() {
   hideStarIcon();
   changeStarIcon();
   startCounter();
-  flipCard(1)
+  flipCard(1);
 }
+
 
 /**
  * Render a random card for a player
@@ -221,7 +222,10 @@ function checkScore() {
   } else if (player2Value === 21) {
     message = "Human: SpaceJack!";
     addPoints();
-  } else if (player2Value > player1Value || player1Value > 21) {
+  } else if (
+    ((player2Value > player1Value) < 21) ||
+    ((player2Value < player1Value) > 21)
+  ) {
     message = "Human: WIN!";
     addPoints();
   } else {
@@ -351,16 +355,16 @@ function deleteItems() {
  * Show the modal (win)
  */
 function win() {
-  modalWin.style.display = "block"
-  clearInterval(timer)
+  modalWin.style.display = "block";
+  clearInterval(timer);
 }
 
 /**
  * Show the modal (lose)
  */
 function lose() {
-  modalLose.style.display = "block"
-  clearInterval(timer)
+  modalLose.style.display = "block";
+  clearInterval(timer);
 }
 
 /**
@@ -377,30 +381,30 @@ function renderNewGame() {
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
-  renderSpaceName()
+  renderSpaceName();
 }
 
-const spaceForm = document.getElementById('space-form');
+const spaceForm = document.getElementById("space-form");
 // space input is the text from input
-const spaceInput = document.getElementById('space-input');
-const spaceBtn = document.getElementById('space-submit');
-const newPlayerBtn = document.getElementById('space-newplayer')
+const spaceInput = document.getElementById("space-input");
+const spaceBtn = document.getElementById("space-submit");
+const newPlayerBtn = document.getElementById("space-newplayer");
 // spacename is the el in game area
-const spaceName = document.getElementById('space-name');
-const newPlayerDiv = document.querySelector('.modals-new-user')
-const goBtn = document.getElementById('goBtn')
-const spaceScoresName = document.querySelector('#heroName')
+const spaceName = document.getElementById("space-name");
+const newPlayerDiv = document.querySelector(".modals-new-user");
+const goBtn = document.getElementById("goBtn");
+const spaceScoresName = document.querySelector("#heroName");
 
 /**
  * Save the data from the input form
  * in the local storage
  */
 function saveSpaceName() {
-  localStorage.setItem('spaceUser', JSON.stringify(spaceInput.value));
+  localStorage.setItem("spaceUser", JSON.stringify(spaceInput.value));
 }
 
-spaceBtn.addEventListener('click', saveSpaceName);
-newPlayerBtn.addEventListener('click', removeSpaceUser);
+spaceBtn.addEventListener("click", saveSpaceName);
+newPlayerBtn.addEventListener("click", removeSpaceUser);
 
 /**
  * Get the data from the local storage
@@ -424,27 +428,29 @@ function renderSpaceName() {
  * Removes the data from the local storage
  */
 function removeSpaceUser() {
-  localStorage.removeItem('spaceUser');
+  localStorage.removeItem("spaceUser");
   hideEl(newPlayerDiv);
   hideEl(goBtn);
   showEl(spaceForm);
 }
 
-/** 
-  * Hide the input element when
-  * there is an existing data in the local storage
-  */
+/**
+ * Hide the input element when
+ * there is an existing data in the local storage
+ */
 function hideInputArea() {
   if (localStorage.getItem("spaceUser") != null) {
     hideEl(spaceForm);
-    showEl(newPlayerDiv)
-    showEl(goBtn)
+    showEl(newPlayerDiv);
+    showEl(goBtn);
   }
 }
 
-function saveHighScores() {
-  let heroName = getSpaceName();
-  spaceScoresName.innerText = heroName
+function showScores() {
+  let x = new Date(); 
+    let heroName = spaceScoresName.innerText = getSpaceName();
+    document.querySelector("#heroName").html(heroName + x);     
+    document.querySelector('#modal').modal('show');
 }
 
 /*
@@ -465,16 +471,15 @@ function toggleAudio() {
 }
 
 /**
- * Toggle the choosen card el when invoked,
- * @param index 
+ * Toggle the chosen card el when invoked,
+ * @param index
  */
 function flipCard(index) {
   let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
   let reverseCard = reverseCardsArray[index];
   if (reverseCard.classList.contains("card-back")) {
     reverseCard.classList.remove("card-back");
-  } else
-    reverseCard.classList.add("card-back");
+  } else reverseCard.classList.add("card-back");
 }
 
 /**
@@ -492,6 +497,9 @@ function intro() {
 function showTime(someText) {
   let timeBox = document.getElementById("timer");
   timeBox.innerHTML = someText;
+  if (timeLeft < 5) {
+    showMessage("Time's up!")
+  }
 }
 
 /**
@@ -528,4 +536,4 @@ function resetCounter() {
 
 buildCardsArray();
 intro();
-hideInputArea()
+hideInputArea();
