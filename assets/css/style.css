@@ -36,7 +36,7 @@ body {
   align-items: center;
   flex-direction: row;
   gap: 0.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .modal {
@@ -142,7 +142,7 @@ body {
 
 .timer p {
   margin: auto;
-  padding: .3rem;
+  padding: 0.3rem;
   text-align: center;
   font-size: x-large;
 }

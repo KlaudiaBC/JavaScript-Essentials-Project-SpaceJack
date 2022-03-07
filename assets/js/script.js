@@ -136,7 +136,7 @@ function totaValue(whichPlayer, cardGameValue) {
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
     givePlayerSomeCards(2, "playerOneSide"),
-  enableBtn(drawBtn);
+    enableBtn(drawBtn);
   enableBtn(checkBtn);
   showMessage("Your move!");
   renderPoints();
@@ -180,13 +180,14 @@ function givePlayerOneCard() {
   }
 }
 
+let messageWrapper = document.querySelector("#middle-table");
+
 /**
  * Show message to the User
  * Inform abot the results of the game
  * @param someText
  */
 function showMessage(someText) {
-  let messageWrapper = document.getElementById("middle-table");
   messageWrapper.innerText = someText;
 }
 
@@ -379,19 +380,6 @@ function showDeck() {
   renderSpaceName()
 }
 
-// let CountButtonCheckClicks = 0;
-
-// /** 
-//  * Counts the clicks in order to
-//  * render the amount of moves
-//  * in the score area
-//  */
-// function countClicks() {
-// checkBtn.addEventListener("click", function() {
-//   CountButtonCheckClicks += 1;
-// });
-// }
-
 const spaceForm = document.getElementById('space-form');
 // space input is the text from input
 const spaceInput = document.getElementById('space-input');
@@ -401,54 +389,63 @@ const newPlayerBtn = document.getElementById('space-newplayer')
 const spaceName = document.getElementById('space-name');
 const newPlayerDiv = document.querySelector('.modals-new-user')
 const goBtn = document.getElementById('goBtn')
-const spaceScoresName = document.querySelector('.heroName')
+const spaceScoresName = document.querySelector('#heroName')
 
+/**
+ * Save the data from the input form
+ * in the local storage
+ */
 function saveSpaceName() {
   localStorage.setItem('spaceUser', JSON.stringify(spaceInput.value));
 }
 
 spaceBtn.addEventListener('click', saveSpaceName);
-newPlayerBtn.addEventListener('click', removeSpaceUser)
+newPlayerBtn.addEventListener('click', removeSpaceUser);
 
+/**
+ * Get the data from the local storage
+ * and convert it into a javascript
+ * @returns spaceUser
+ */
 function getSpaceName() {
   return JSON.parse(localStorage.getItem("spaceUser"));
 }
 
 /**
- * Renders the name on
+ * Renders the name in
  * the game area
  */
- function renderSpaceName() {
+function renderSpaceName() {
   let storedSpaceName = getSpaceName();
   spaceName.innerText = "Human " + storedSpaceName;
 }
 
+/**
+ * Removes the data from the local storage
+ */
 function removeSpaceUser() {
   localStorage.removeItem('spaceUser');
   hideEl(newPlayerDiv);
-  hideEl(goBtn)
-  showEl(spaceForm)
+  hideEl(goBtn);
+  showEl(spaceForm);
 }
 
+/** 
+  * Hide the input element when
+  * there is an existing data in the local storage
+  */
 function hideInputArea() {
   if (localStorage.getItem("spaceUser") != null) {
-hideEl(spaceForm);
-showEl(newPlayerDiv)
+    hideEl(spaceForm);
+    showEl(newPlayerDiv)
+    showEl(goBtn)
   }
 }
 
 function saveHighScores() {
-  let storedSpaceName = getSpaceName();
-  spaceScoresName.innerText = storedSpaceName
+  let heroName = getSpaceName();
+  spaceScoresName.innerText = heroName
 }
-
-// let spaceMoves = countClicks()
-// function saveHighScores() {
-// spaceMovesStorage.push(spaceMoves.value);
-// localStorage.setItem("spaceMoves", JSON.stringify(spaceMovesStorage));
-// }
-
-
 
 /*
  * Mute the audio (onclick)
@@ -467,14 +464,17 @@ function toggleAudio() {
   }
 }
 
-
+/**
+ * Toggle the choosen card el when invoked,
+ * @param index 
+ */
 function flipCard(index) {
-let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
-let reverseCard = reverseCardsArray[index];
-if (reverseCard.classList.contains("card-back")) {
-  reverseCard.classList.remove("card-back");
-} else
-  reverseCard.classList.add("card-back");
+  let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
+  let reverseCard = reverseCardsArray[index];
+  if (reverseCard.classList.contains("card-back")) {
+    reverseCard.classList.remove("card-back");
+  } else
+    reverseCard.classList.add("card-back");
 }
 
 /**
