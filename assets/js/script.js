@@ -1,3 +1,4 @@
+// global variables
 const checkBtn = document.querySelector("#check-btn");
 const startBtn = document.querySelector("#start-btn");
 const drawBtn = document.querySelector("#draw-btn");
@@ -8,6 +9,20 @@ const starTwo = document.querySelector(".icon-img-star-2");
 const starThree = document.querySelector(".icon-img-star-3");
 const modalWin = document.getElementById("modalWin");
 const modalLose = document.getElementById("modalLose");
+const messageWrapper = document.querySelector("#middle-table");
+const spaceForm = document.getElementById("space-form");
+const spaceInput = document.getElementById("space-input");
+const spaceBtn = document.getElementById("space-submit");
+const newPlayerBtn = document.getElementById("space-newplayer");
+const spaceName = document.getElementById("space-name");
+const goBtn = document.getElementById("goBtn");
+const spaceScoresName = document.querySelector("#heroName");
+const saveBtn = document.getElementById('saveBtn');
+const saveScoreBtn = document.getElementById('savescoreBtn')
+const alienScore = document.getElementById('alienScore');
+const humanScore = document.getElementById('humanScore');
+const audio = document.getElementById("audio");
+const icon = document.getElementById("sound");
 
 // array with suite:
 const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
@@ -20,6 +35,41 @@ let player2Value;
 let sum = 5;
 let timer;
 let timeLeft = 10;
+
+
+/**
+ * Activate the button of choice
+ * @param whichBtn
+ */
+ function enableBtn(whichBtn) {
+  whichBtn.disabled = false;
+}
+
+/**
+ * Deactivates the button of choice
+ * @param whichBtn
+ */
+function disableBtn(whichBtn) {
+  whichBtn.disabled = true;
+}
+
+/**
+ * Hide the element of choice
+ * @param whichEl
+ */
+function hideEl(whichEl) {
+  whichEl.style.display = "none";
+}
+
+/**
+ * Show the element of choice
+ * @param whichEl
+ */
+function showEl(whichEl) {
+  whichEl.style.display = "flex";
+}
+
+// functions connected with game logic
 
 /**
  * The "loop" called when the game is loaded
@@ -143,7 +193,6 @@ function startGame() {
   startCounter();
 }
 
-
 /**
  * Render a random card for a player
  */
@@ -177,8 +226,6 @@ function givePlayerOneCard() {
     givePlayerSomeCards(1, "playerOneSide");
   }
 }
-
-let messageWrapper = document.querySelector("#middle-table");
 
 /**
  * Show message to the User
@@ -221,8 +268,8 @@ function checkScore() {
     message = "Human: SpaceJack!";
     addPoints();
   } else if (
-    ((player2Value > player1Value) < 21) ||
-    ((player2Value < player1Value) > 21)
+    (player1Value < 21) < (player2Value < 21) || 
+    ((player2Value > 21) && (player1Value > 21))
   ) {
     message = "Human: WIN!";
     addPoints();
@@ -242,32 +289,13 @@ function renderPoints() {
   sumEl.textContent = "You have " + sum + " stars!";
 }
 
-/**
- * Render different icons,
- * depending of the score
- */
-function changeStarIcon() {
-  if (sum === 5) {
-    showEl(starOne);
-  } else if (sum > 5) {
-    showEl(starTwo);
-  } else {
-    showEl(starThree);
-  }
-}
-
-function hideStarIcon() {
-  hideEl(starOne);
-  hideEl(starTwo);
-  hideEl(starThree);
-}
 
 /**
  * Add 1 point and render the score,
  * condition: when sum = 10
  * render the modal "win"
  */
-function addPoints() {
+ function addPoints() {
   renderPoints();
   if (sum < 9) {
     sum = sum + 1;
@@ -293,38 +321,6 @@ function substractPoints() {
 }
 
 /**
- * Activate the button of choice
- * @param whichBtn
- */
-function enableBtn(whichBtn) {
-  whichBtn.disabled = false;
-}
-
-/**
- * Deactivates the button of choice
- * @param whichBtn
- */
-function disableBtn(whichBtn) {
-  whichBtn.disabled = true;
-}
-
-/**
- * Hide the element of choice
- * @param whichEl
- */
-function hideEl(whichEl) {
-  whichEl.style.display = "none";
-}
-
-/**
- * Show the element of choice
- * @param whichEl
- */
-function showEl(whichEl) {
-  whichEl.style.display = "flex";
-}
-
-/**
  * Render a new game set,
  * reset players scores while
  * keep the number of User points,
@@ -341,10 +337,87 @@ function reloadDeck() {
   }, 2000);
 }
 
+
+// functions connected with display of elements in the game
+
+/**
+ * Display intro container
+ */
+ function intro() {
+  showEl(containerOne);
+  hideEl(containerTwo);
+}
+
+/**
+ * Render a game page
+ */
+function showDeck() {
+  showEl(containerTwo);
+  hideEl(containerOne);
+  renderSpaceName();
+}
+
+/**
+ * Flip over the chosen card el,
+ * @param index
+ */
+ function flipCard(index) {
+  let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
+  let reverseCard = reverseCardsArray[index];
+  if (reverseCard.classList.contains("card-back")) {
+    reverseCard.classList.remove("card-back");
+  } else reverseCard.classList.add("card-back");
+}
+
+/**
+ * Render the value of the
+ * cards for each player
+ */
+ function showsetScore() {
+  humanScore.innerText = player2Value;
+  alienScore.innerText = player1Value;
+  showEl(humanScore);
+  showEl(alienScore)
+  }
+
+/**
+ * Show the modal (win)
+ */
+ function win() {
+  modalWin.style.display = "block";
+}
+
+/**
+ * Show the modal (lose)
+ */
+function lose() {
+  modalLose.style.display = "block";
+}
+
+/**
+ * Render different icons,
+ * depending of the score
+ */
+ function changeStarIcon() {
+  if (sum === 5) {
+    showEl(starOne);
+  } else if (sum > 5) {
+    showEl(starTwo);
+  } else {
+    showEl(starThree);
+  }
+}
+
+function hideStarIcon() {
+  hideEl(starOne);
+  hideEl(starTwo);
+  hideEl(starThree);
+}
+
 /**
  * Set the game area back to initail state
  */
-function deleteItems() {
+ function deleteItems() {
   player1Value = 0;
   player2Value = 0;
   player1Cards = [];
@@ -361,28 +434,8 @@ function renderNewGame() {
   location.reload(true);
 }
 
-/**
- * Render a game page
- */
-function showDeck() {
-  showEl(containerTwo);
-  hideEl(containerOne);
-  renderSpaceName();
-}
 
-const spaceForm = document.getElementById("space-form");
-// space input is the text from input
-const spaceInput = document.getElementById("space-input");
-const spaceBtn = document.getElementById("space-submit");
-const newPlayerBtn = document.getElementById("space-newplayer");
-// spacename is the el in game area
-const spaceName = document.getElementById("space-name");
-const goBtn = document.getElementById("goBtn");
-const spaceScoresName = document.querySelector("#heroName");
-const saveBtn = document.getElementById('saveBtn');
-const saveScoreBtn = document.getElementById('savescoreBtn')
-const alienScore = document.getElementById('alienScore');
-const humanScore = document.getElementById('humanScore')
+// functions connected with local storage
 
 /**
  * Save the data from the input form
@@ -391,9 +444,6 @@ const humanScore = document.getElementById('humanScore')
 function saveSpaceName() {
   localStorage.setItem("spaceUser", JSON.stringify(spaceInput.value));
 }
-
-spaceBtn.addEventListener("click", saveSpaceName);
-newPlayerBtn.addEventListener("click", removeSpaceUser);
 
 /**
  * Get the data from the local storage
@@ -404,6 +454,11 @@ function getSpaceName() {
   return JSON.parse(localStorage.getItem("spaceUser"));
 }
 
+/**
+ * Disable the button 'save'
+ * located in the win modal,
+ * change inner text
+ */
 function saved() {
   saveScoreBtn.innerText = "Saved!"
   disableBtn(saveScoreBtn);
@@ -417,14 +472,6 @@ function renderSpaceName() {
   let storedSpaceName = getSpaceName();
   spaceName.innerText = "Human " + storedSpaceName;
 }
-
-function showsetScore() {
-humanScore.innerText = player2Value;
-alienScore.innerText = player1Value;
-showEl(humanScore);
-showEl(alienScore)
-}
-
 
 /**
  * Removes the data from the local storage
@@ -457,8 +504,16 @@ function showScores() {
   document.querySelector('#modal').modal('show');
 }
 
-const audio = document.getElementById("audio");
-let icon = document.getElementById("sound");
+
+// functios connected with audio
+
+/**
+ * Play the audio
+ */
+ function musicPlay() {
+  audio.play();
+  goBtn.removeEventListener('click', musicPlay);
+}
 
 /*
  * Mute the audio (onclick)
@@ -475,46 +530,8 @@ function toggleAudio() {
   }
 }
 
-goBtn.addEventListener('click', musicPlay);
-function musicPlay() {
-    audio.play();
-    goBtn.removeEventListener('click', musicPlay);
-}
 
-/**
- * Toggle the chosen card el when invoked,
- * @param index
- */
-function flipCard(index) {
-  let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
-  let reverseCard = reverseCardsArray[index];
-  if (reverseCard.classList.contains("card-back")) {
-    reverseCard.classList.remove("card-back");
-  } else reverseCard.classList.add("card-back");
-}
-
-
-/**
- * Show the modal (win)
- */
- function win() {
-  modalWin.style.display = "block";
-}
-
-/**
- * Show the modal (lose)
- */
-function lose() {
-  modalLose.style.display = "block";
-}
-
-/**
- * Display intro container
- */
-function intro() {
-  showEl(containerOne);
-  hideEl(containerTwo);
-}
+// functions connected with the time coundown
 
 /**
  * Render how much time is left in the inner HTML el
@@ -559,6 +576,11 @@ function resetCounter() {
   timeLeft = 10;
   showTime(timeLeft);
 }
+
+// event listeners
+spaceBtn.addEventListener("click", saveSpaceName);
+newPlayerBtn.addEventListener("click", removeSpaceUser);
+goBtn.addEventListener('click', musicPlay);
 
 
 buildCardsArray();
