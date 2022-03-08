@@ -89,6 +89,10 @@ body {
   font-size: large;
 }
 
+.hidden {
+  display: none;
+}
+
 /* styling for game page */
 .link-nav {
   text-decoration: none;

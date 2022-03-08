@@ -391,9 +391,10 @@ const spaceBtn = document.getElementById("space-submit");
 const newPlayerBtn = document.getElementById("space-newplayer");
 // spacename is the el in game area
 const spaceName = document.getElementById("space-name");
-const newPlayerDiv = document.querySelector(".modals-new-user");
+const alienName = document.getElementById("alien-name");
 const goBtn = document.getElementById("goBtn");
 const spaceScoresName = document.querySelector("#heroName");
+const saveBtn = document.getElementById('saveBtn');
 
 /**
  * Save the data from the input form
@@ -424,12 +425,17 @@ function renderSpaceName() {
   spaceName.innerText = "Human " + storedSpaceName;
 }
 
+function renderSetScore() {
+  spaceName.innerText += " " + player2Value;
+  alienName.innerText = "Alien Jack " + player1Value;
+}
+
 /**
  * Removes the data from the local storage
  */
 function removeSpaceUser() {
   localStorage.removeItem("spaceUser");
-  hideEl(newPlayerDiv);
+  hideEl(newPlayerBtn);
   hideEl(goBtn);
   showEl(spaceForm);
 }
@@ -441,16 +447,18 @@ function removeSpaceUser() {
 function hideInputArea() {
   if (localStorage.getItem("spaceUser") != null) {
     hideEl(spaceForm);
-    showEl(newPlayerDiv);
+    showEl(newPlayerBtn);
     showEl(goBtn);
   }
 }
 
 function showScores() {
+  if (localStorage.getItem("spaceUser") != null) {
   let x = new Date(); 
     let heroName = spaceScoresName.innerText = getSpaceName();
     document.querySelector("#heroName").html(heroName + x);     
     document.querySelector('#modal').modal('show');
+}
 }
 
 /*
@@ -533,6 +541,7 @@ function resetCounter() {
   timeLeft = 10;
   showTime(timeLeft);
 }
+
 
 buildCardsArray();
 intro();
