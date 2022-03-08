@@ -3,6 +3,7 @@ body {
   font-family: "Bubblegum Sans", cursive;
   margin: auto;
   width: auto;
+  height: 100%;
 }
 
 /* video in the background */
@@ -307,6 +308,46 @@ color: red;
 
 .card-back .suite {
   display: none;
+}
+
+/* footer */
+.footer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: #050A30;
+    color: white;
+    font-family: sans-serif;
+  }
+
+.footer p {
+  margin-top: 1rem;
+  font-size: smaller;
+  padding-right: 2rem;
+}
+
+.sm-icons {
+  height: 3rem;
+  width: 3rem;
+  padding: .5rem;
+  display: flex;
+}
+
+.sm-icons:hover {
+  height: 3.3rem;
+  width: 3.3rem;
+}
+
+.sm-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 /* media query */
