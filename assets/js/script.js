@@ -132,15 +132,15 @@ function totaValue(whichPlayer, cardGameValue) {
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
-    givePlayerSomeCards(2, "playerOneSide"),
-    enableBtn(drawBtn);
+  givePlayerSomeCards(2, "playerOneSide"),
+  enableBtn(drawBtn);
   enableBtn(checkBtn);
   showMessage("Your move!");
   renderPoints();
   hideStarIcon();
   changeStarIcon();
-  startCounter();
   flipCard(1);
+  startCounter();
 }
 
 
@@ -272,6 +272,7 @@ function addPoints() {
   if (sum < 9) {
     sum = sum + 1;
   } else {
+    intro()
     win();
   }
 }
@@ -284,6 +285,7 @@ function addPoints() {
 function substractPoints() {
   renderPoints();
   if (sum === 1) {
+    intro()
     lose();
   } else {
     sum = sum - 1;
@@ -349,21 +351,6 @@ function deleteItems() {
   player2Cards = [];
   $(".middle-table").empty();
   $(".card").remove();
-}
-
-/**
- * Show the modal (win)
- */
-function win() {
-  modalWin.style.display = "block";
-}
-
-/**
- * Show the modal (lose)
- */
-function lose() {
-  modalLose.style.display = "block";
-  clearInterval(timer);
 }
 
 /**
@@ -470,12 +457,13 @@ function showScores() {
   document.querySelector('#modal').modal('show');
 }
 
+const audio = document.getElementById("audio");
+let icon = document.getElementById("sound");
+
 /*
  * Mute the audio (onclick)
  */
 function toggleAudio() {
-  const audio = document.getElementById("audio");
-  let icon = document.getElementById("sound");
   if (!!audio.muted) {
     audio.muted = false;
     icon.removeAttribute("class", "icon icon-img-off");
@@ -485,6 +473,12 @@ function toggleAudio() {
     icon.removeAttribute("class", "icon icon-img-on");
     icon.setAttribute("class", "icon icon-img-off");
   }
+}
+
+goBtn.addEventListener('click', musicPlay);
+function musicPlay() {
+    audio.play();
+    goBtn.removeEventListener('click', musicPlay);
 }
 
 /**
@@ -497,6 +491,21 @@ function flipCard(index) {
   if (reverseCard.classList.contains("card-back")) {
     reverseCard.classList.remove("card-back");
   } else reverseCard.classList.add("card-back");
+}
+
+
+/**
+ * Show the modal (win)
+ */
+ function win() {
+  modalWin.style.display = "block";
+}
+
+/**
+ * Show the modal (lose)
+ */
+function lose() {
+  modalLose.style.display = "block";
 }
 
 /**
