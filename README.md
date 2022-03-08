@@ -52,15 +52,29 @@ In this case, User will receive the message about results displayed in the modal
 <p id="ux"></p>
 
 ## UX Design
-Wireframe projects were designed on the Balsamiq Wireframe Software. See the projects below.
+All the practises that serve improving the user experience including:
 - Easy navigation - all content fits on the screen (on the mobile devices it may be needed to scroll in order to see the top or bottom part of the page but the game area will all fit on the mobile screen). Buttons with additional information are placed on the top of the page.
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logo.png?raw=true" alt="SpaceJack logo">
+</p>
+
 - Logo- placed on the top of the page
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
+</p>
+
 - High contrast between background and elements placed on this background.
 - Social media links - placed in the footer
 - Introduction content - displayed as an onload page.
 - Introduction box includes an input field. The value User will provide will be rendered as a personalised name of a player.
 - Score area - included in one of the modals, allows the user to see his previous scores.
 - Background sound - should add the feeling of adventure and moving into a game world. It is possible to mute the sound if the user finds it bothersome.
+
+Wireframe projects were designed on the Balsamiq Wireframe Software. See the projects below.
+Wireframe project for the desktop:
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/SpaceJack_BW.png?raw=true" alt="wireframe project">
+</p>
 
 <p id="layout"></p>
 
@@ -134,16 +148,17 @@ According to John Hughes, author of the article "12 best kids fonts for children
 40. An extra feature I added was a star icon displayed next to the Player score. I stored three icons in three divs in an html file. In the css file I set their display property to "none" by default. Then in the js file I added a new function with a statement "if" which will render a specific icon when score is equal 5 or is below/above 5.
 41. I realised that my intro page and game page were exactly the same- the only difference was the inner element of the container (story-box in the intro page and deck of the game page). In order to simplify the form and avoid repeating the code multiple times, I copied the div with story box into a game page HTML, renamed the file to "index.html" and deleted the intro HTML file. Then I created a function which (based on assigned classes) will render an introduction on load and the game after click event.
 42. I added missing images to the background properties in figure and suite classes. Also rewrite the content in the modals "win" and "lose".
-43. After a consultation with my mentor, I proceed with further implementations: at first I added a time count and set its value to 10 seconds. I added a countdown div to the game area so the user can be notified how much time he has left.
-44. I also changed my jquery code into a vanilla javascript in order to standardize the syntax and make it easier to read, access in the future.
-45. The next feature I created was a score system which will connect with local storage using. By using the JavaScript built in functions: JSON.parse() and JSON.stringify I could convert the format of the data into a string (lightweight format) and leter retrieve this data back into a js format. I added a third button to the menu buttons which will display the modal with scores. Because I used the local storage, the scores will not be saved and shown in the global frame, but the user will be able to access his score on the device he used to play the game.
-46. Then I also added a new function countClicks() which counts the clicks on the "check" button and will render the final amount once the game is over. Once the user wins the game, he will be provided with a save button in the "win" modal. The function connected with this button is responsible for saving the name and amount of clicks as an array of objects in the local storage and rendering those values in the "scores" modal.
+43. After a consultation with my mentor, I proceed with further implementations: at first I added a time count and set its value to 10 seconds. I added a countdown div to the game area so the user can be notified how much time he has left. I also changed my jquery code into a vanilla javascript in order to standardize the syntax and make it easier to read, access in the future.
+44. The next feature I created was a score system which will connect with local storage using. By using the JavaScript built in functions: JSON.parse() and JSON.stringify I could convert the format of the data into a string (lightweight format) and leter retrieve this data back into a js format. I added a third button to the menu buttons which will display the modal with scores. Because I used the local storage, the scores will not be saved and shown in the global frame, but the user will be able to access his score on the device he used to play the game.
+45. The following feature I created was a score system which will connect with the local storage. By using the JavaScript built-in functions: JSON.parse() and JSON.stringify() I could convert the format of the data into a string (lightweight format) and later retrieve this data back into a js format. I added a third button to the menu buttons which will display the modal with scores. Because I used the local storage, the scores will not be saved and shown in the global frame, but the user will be able to access his score on the device he used to play the game. Once the user wins the game, he will be provided with a save button in the "win" modal. The function connected with this button is responsible for placing the name of the User which is already existing in the local storage, in the score area.
+46. Remaining function in the actual game area was the one responsible for toggling the hidden card. According to the rules, players should not see the opponent card until check. Therefore I added a class containing a back-card image set as a background and created a function which will add this class to the card and remove it once the card is shown (check).
+47. According to my mentor code review, I also changed the syntax of the "createCardEl()" function and removed empty spaces in the code. Before I used the method setAttribute() and added the classes to the element by placing the space before the class name. This action allowed me to add classes without overwriting the ones already added to the element. In order to remove those extra spaces, I changed this method to the classList.add() method, which turned out to work exactly the same but allow me to simplify my code syntax.
 
 <p id="us"></p>
 
 ## User stories
 <p align="center">
-  <img src="" alt="user stories">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/userstories.jpg?raw=true" alt="user stories">
 </p>
 
 
