@@ -204,6 +204,7 @@ function check() {
   flipCard(1);
   checkScore();
   resetCounter();
+  showsetScore()
 }
 
 /**
@@ -336,6 +337,8 @@ function reloadDeck() {
     startGame();
     hideStarIcon();
     changeStarIcon();
+    hideEl(alienScore);
+    hideEl(humanScore)
   }, 2000);
 }
 
@@ -391,10 +394,11 @@ const spaceBtn = document.getElementById("space-submit");
 const newPlayerBtn = document.getElementById("space-newplayer");
 // spacename is the el in game area
 const spaceName = document.getElementById("space-name");
-const alienName = document.getElementById("alien-name");
 const goBtn = document.getElementById("goBtn");
 const spaceScoresName = document.querySelector("#heroName");
 const saveBtn = document.getElementById('saveBtn');
+const alienScore = document.getElementById('alienScore');
+const humanScore = document.getElementById('humanScore')
 
 /**
  * Save the data from the input form
@@ -425,9 +429,11 @@ function renderSpaceName() {
   spaceName.innerText = "Human " + storedSpaceName;
 }
 
-function renderSetScore() {
-  spaceName.innerText += " " + player2Value;
-  alienName.innerText = "Alien Jack " + player1Value;
+function showsetScore() {
+humanScore.innerText = player2Value;
+alienScore.innerText = player1Value;
+showEl(humanScore);
+showEl(alienScore)
 }
 
 /**

@@ -136,6 +136,12 @@ body {
   text-align: center;
 }
 
+.setscore {
+font-size: x-large;
+padding-left: 1rem;
+color: red;
+}
+
 .timer {
   width: 3rem;
   height: 3rem;
