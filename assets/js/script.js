@@ -10,7 +10,7 @@ const modalWin = document.getElementById("modalWin");
 const modalLose = document.getElementById("modalLose");
 
 // array with suite:
-const suite = [" suite-img-1", " suite-img-2", " suite-img-3", " suite-img-4"];
+const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
 
 let cardsArray = [];
 let player1Cards = [];
@@ -36,7 +36,7 @@ function buildCardsArray() {
       cardsArray.push({
         value: expectedValue,
         suite: suiteValue,
-        suiteClass: " figure-img-" + (x + 1),
+        suiteClass: "figure-img-" + (x + 1),
       });
     }
   }
@@ -89,16 +89,13 @@ function createCardEl(whichCard, whichPlayer) {
   let playerSide = document.getElementById(whichPlayer);
   playerSide.appendChild(cardEl);
   let leftSuite = document.createElement("div");
-  leftSuite.setAttribute("class", " suite suite-left" + whichCard.suite);
+  leftSuite.classList.add("suite", "suite-left", whichCard.suite)
   cardEl.appendChild(leftSuite);
   let middleSuite = document.createElement("div");
-  middleSuite.setAttribute(
-    "class",
-    " suite suite-middle" + whichCard.suiteClass
-  );
+  middleSuite.classList.add("suite", "suite-middle", whichCard.suiteClass);
   cardEl.appendChild(middleSuite);
   let rightSuite = document.createElement("div");
-  rightSuite.setAttribute("class", " suite suite-right" + whichCard.suite);
+  rightSuite.classList.add("suite", "suite-right", whichCard.suite);
   cardEl.appendChild(rightSuite);
 }
 
@@ -359,7 +356,6 @@ function deleteItems() {
  */
 function win() {
   modalWin.style.display = "block";
-  clearInterval(timer);
 }
 
 /**
@@ -397,6 +393,7 @@ const spaceName = document.getElementById("space-name");
 const goBtn = document.getElementById("goBtn");
 const spaceScoresName = document.querySelector("#heroName");
 const saveBtn = document.getElementById('saveBtn');
+const saveScoreBtn = document.getElementById('savescoreBtn')
 const alienScore = document.getElementById('alienScore');
 const humanScore = document.getElementById('humanScore')
 
@@ -420,6 +417,11 @@ function getSpaceName() {
   return JSON.parse(localStorage.getItem("spaceUser"));
 }
 
+function saved() {
+  saveScoreBtn.innerText = "Saved!"
+  disableBtn(saveScoreBtn);
+}
+
 /**
  * Renders the name in
  * the game area
@@ -435,6 +437,7 @@ alienScore.innerText = player1Value;
 showEl(humanScore);
 showEl(alienScore)
 }
+
 
 /**
  * Removes the data from the local storage
@@ -458,13 +461,13 @@ function hideInputArea() {
   }
 }
 
+/**
+ * Render a name of a User in the
+ * scores modal
+ */
 function showScores() {
-  if (localStorage.getItem("spaceUser") != null) {
-  let x = new Date(); 
-    let heroName = spaceScoresName.innerText = getSpaceName();
-    document.querySelector("#heroName").html(heroName + x);     
-    document.querySelector('#modal').modal('show');
-}
+  spaceScoresName.innerText = getSpaceName()
+  document.querySelector('#modal').modal('show');
 }
 
 /*
