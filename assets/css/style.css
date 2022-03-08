@@ -138,9 +138,9 @@ body {
 }
 
 .setscore {
-font-size: x-large;
-padding-left: 1rem;
-color: red;
+  font-size: x-large;
+  padding-left: 1rem;
+  color: red;
 }
 
 .timer {
@@ -312,18 +312,18 @@ color: red;
 
 /* footer */
 .footer {
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-    background-color: #050A30;
-    color: white;
-    font-family: sans-serif;
-  }
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #050a30;
+  color: white;
+  font-family: sans-serif;
+}
 
 .footer p {
   margin-top: 1rem;
@@ -334,7 +334,7 @@ color: red;
 .sm-icons {
   height: 3rem;
   width: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
 }
 
