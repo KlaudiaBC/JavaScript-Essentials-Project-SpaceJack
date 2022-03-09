@@ -22,8 +22,8 @@ const alienScore = document.getElementById('alienScore');
 const humanScore = document.getElementById('humanScore');
 const audio = document.getElementById("audio");
 const icon = document.getElementById("sound");
-const alienSide = document.getElementById("playerOneSide")
-const humanSide = document.getElementById("playerTwoSide")
+const alienSide = document.getElementById("playerOneSide");
+const humanSide = document.getElementById("playerTwoSide");
 
 // array with suite:
 const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
@@ -269,8 +269,7 @@ function checkScore() {
     message = "Human: SpaceJack!";
     addPoints();
   } else if (
-    // player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
-    player1Value > 5
+    player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
   ) {
     message = "Human: WIN!";
     addPoints();
@@ -592,8 +591,7 @@ spaceBtn.addEventListener("click", saveSpaceName);
 newPlayerBtn.addEventListener("click", removeSpaceUser);
 goBtn.addEventListener("click", musicPlay);
 saveScoreBtn.addEventListener("click", saved);
-icon.addEventListener("click", toggleAudio)
-
+icon.addEventListener("click", toggleAudio);
 
 buildCardsArray();
 intro();
