@@ -4,6 +4,10 @@
 ## This is my Portfolio 2 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
 It is an online game for children based on the rules of popular casino game Blackjack.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/responsive.png?raw=true" alt="responsive design">
+</p>
+
 ## Table of contents
 - <a href="#content">Content</a>
 - <a href="#uj">User journey</a>
@@ -86,6 +90,14 @@ The theme of this webpage is: space. Therefore there were multiple actions taken
 3. Cards include hand drawings, which makes the game more child-friendly.
 4. Strong contrast: In the light box and in the modals (light background colour) the text is in the dark blue colour. In the places where the background colour is dark (header, module buttons) the colour of the text is white.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures01.jpg?raw=true" alt="cards illustrations">
+</p>
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures02.jpg?raw=true" alt="cards illustrations">
+</p>
+
 ### Typography:
 According to John Hughes, author of the article "12 best kids fonts for children's websites and design projects" on the portal "Elegant themes" - Bubblegum Sans is "highly readable and subtle". This is why I chose it over my first choice which was 'Orbitron'.
 
@@ -153,6 +165,9 @@ According to John Hughes, author of the article "12 best kids fonts for children
 45. The following feature I created was a score system which will connect with the local storage. By using the JavaScript built-in functions: JSON.parse() and JSON.stringify() I could convert the format of the data into a string (lightweight format) and later retrieve this data back into a js format. I added a third button to the menu buttons which will display the modal with scores. Because I used the local storage, the scores will not be saved and shown in the global frame, but the user will be able to access his score on the device he used to play the game. Once the user wins the game, he will be provided with a save button in the "win" modal. The function connected with this button is responsible for placing the name of the User which is already existing in the local storage, in the score area.
 46. Remaining function in the actual game area was the one responsible for toggling the hidden card. According to the rules, players should not see the opponent card until check. Therefore I added a class containing a back-card image set as a background and created a function which will add this class to the card and remove it once the card is shown (check).
 47. According to my mentor code review, I also changed the syntax of the "createCardEl()" function and removed empty spaces in the code. Before I used the method setAttribute() and added the classes to the element by placing the space before the class name. This action allowed me to add classes without overwriting the ones already added to the element. In order to remove those extra spaces, I changed this method to the classList.add() method, which turned out to work exactly the same but allow me to simplify my code syntax.
+48. The issue I faced once I added a timer was that after the modal win/lose was displayed and game was finished, the function responsible for countdown was still executing and looping once the time was over via invoking function "check". In other words the game was playing itself in the back infinitely. I have tried a couple different approaches but each of them was overwritten with the active functions. At first I added a function interval.clear() to each of the functions: win() and loose(). It didn't work. Then I exchanged this function with a showDeck() function but this one happened to be active already, therefore no changes in the time count were made. Finally I exchanged this function for a showIntro() function which restarted a game and then displayed the win/lose modal.
+49. I also changed the settings of my autoplay as I found out that some browsers (eg. Chrome) does not support that function. To avoid any issues with a sound display, I have resigned from the autoplay and created a new function which will play the audio once the button "Ready to play" was clicked. This means, User will land on the muted page and invoke the play music function once the actual game.
+50. I added a footer. I have tried a different approach this time in terms of adding icons for social media anchor tags. In the previous project I used Font Awesome and discovered that among Bootstrap, Pooper and other implementations of data, an additional library was affecting my performance score and significantly slowing down the process of rendering the page. To avoid adding more unused code to my webpage, I stored the chosen icons of social media (converted into a small size) in my internal file and styled them manually.
 
 <p id="us"></p>
 
@@ -176,6 +191,7 @@ According to John Hughes, author of the article "12 best kids fonts for children
 - <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
 - <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
 - <a href="https://www.adobe.com/products/photoshop-express.html">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
+- <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a>
 
 <p id="ack"></p>
 
@@ -190,12 +206,11 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docks</a>
 - <a href="https://logrocket.com/" target="_blank">LogRocket</a>
 - <a href="https://www.javascripttutorial.net/">JavaScript Tutorial</a>
-- <a href="https://www.pexels.com/" target="_blank">Pexels: </a> for the background video - author: RoyaltyFreeVideosYT
+- <a href="https://www.pexels.com/" target="_blank">Pexels: </a> for the background video - author: Mr Borys
 - <a href="https://pixabay.com/" target="_blank">Pixabay: </a> for the background music - author: Lesfm
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>
-  - for logo, stars, sound, win and loose icons - author: Freepik
+  - for logo, stars, sound, social media, win and loose icons - author: Freepik
   - for suite icons - author: juicy_fish
-  - for social media icons - author
 - Kamila Halat for the figures and numbers illustrations
 - "Clean Code - A Handbook of Agile Software Craftsmanship" by Robert Martin
 
