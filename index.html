@@ -28,7 +28,7 @@
 <body>
     <!-- background video -->
     <video autoplay muted loop id="myVideo">
-        <source src="assets/video/pexels-mr-borys-9860820xsm.mp4" type="video/mp4">
+        <source src="assets/video/pexels-mr-borys-9860820.mp4" type="video/mp4">
     </video>
 
     <header>
@@ -39,7 +39,8 @@
         <div class="modals">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">RULES</button>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">MISSION</button>
-            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores" onclick="showScores()">SCORES</button>
+            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores"
+                onclick="showScores()">SCORES</button>
 
             <!-- navbar / audio console -->
             <audio id="audio" loop>
@@ -69,25 +70,30 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-img">
-                        <img src="assets/images/superhero02.png" alt="superhero" />
+                        <img class="modal-img-icon" src="assets/images/superhero02.png" alt="superhero" />
                     </div>
                     <h3>OBJECT OF THE GAME</h3>
                     <p>A Human can save the Earth by collecting 10 magic stars. To do so, he shall attempt to beat Alien
-                        in SpaceJack by getting a count as close to 21 as possible, without going over 21.</p>
+                        in SpaceJack by getting a count as close to 21 as possible, without going over 21. The value of
+                        the cards will appear next to the Player name once set is over.</p>
                     <br>
                     <h3>WINS AND LOSES</h3>
-                    <p>The winner is a player whose total value of cards is closer or equal 21. After each game the
-                        Human will: receive 1 star if won or lose 1 star if defeated. Human have 5 stars in the
-                        beginning of the game. The goal is to collect 10 stars in total.</p>
+                    <p>The winner is a player whose total value of cards is closer or equal 21. If an Alien goes over
+                        21, he automatically loses. After each game the Human will: receive 1 star if won or lose 1 star
+                        if defeated. Humans have 5 stars in the beginning of the game. The goal is to collect 10 stars
+                        in total. Humans can see the amount of stars below his name.</p>
                     <br>
                     <h3>CARD VALUES</h3>
                     <p>Face cards have a value of 10, ace has value of 11 and any other card has a number value as shown
                         of the card.</p>
+                    <div class="modal-img">
+                        <img class="modal-img modal-img-sm" src="/assets/images/figures_modal.png" alt="figures">
+                    </div>
                     <br>
                     <h3>THE HUMAN'S PLAY</h3>
                     <p>The Human goes first and must decide. Option one is: "Draw" - ask for another card in an attempt
-                        to get closer to a count of 21, or even hit 21 exactly. Option two is: "Check" - show Aliens
-                        cards and compare results.</p>
+                        to get closer to a count of 21, or even hit 21 exactly. Option two is: "Check" - see Aliens
+                        cards and compare results. Watch out! Human have only 10 seconds to check!</p>
                     <br>
                     <h3>THE ALIEN'S PLAY</h3>
                     <p>When the Alien has served cards for a Human, his second card is face-down. If the total value of
@@ -114,7 +120,7 @@
                 <div class="modal-body">
                     <h3>Get ready for a journey to space with a very special assignment to save the Earth!</h3>
                     <div class="modal-img">
-                        <img src="assets/images/superhero01.png" alt="superhero" />
+                        <img class="modal-img-icon" src="assets/images/superhero01.png" alt="superhero" />
                     </div>
                     <p>Welcome to SpaceJack - a fun way to practice basic math, memory and decision making skills! The
                         layout and rules are simplified to a child level (4+) while adults can also enjoy the game.</p>
@@ -133,6 +139,14 @@
                         is also a "luck" factor, as the cards are random. It is a good lesson of life flow, where our
                         control over the universe is limited. Sometimes we win and sometimes we lose. It is important
                         for a child to learn how to lose and understand that this is just another part of life.</p>
+                    <br>
+                    <h4>I would like to thank everyone who added a value to this project, especially:</h4>
+                    <ul>
+                        <li>Code Institute and my mentor Guido Cecilio for provided education and learning support</li>
+                        <li>my sister Kamila Halat for all the characters illustrations</li>
+                        <li>my husband Jason for mental support and all the dev-tips that saved hours of my coding</li>
+                        <li>my son James for being a constant inspiration 💙</li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -153,7 +167,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-img">
-                        <img src="assets/images/fireworks.png" alt="fireworks" />
+                        <img class="modal-img-icon" src="assets/images/fireworks.png" alt="fireworks" />
                     </div>
                     <div class="story-box">
                         <table id="scoreTable" class="table table-striped">
@@ -264,7 +278,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="savescoreBtn" type="button" class="btn btn-secondary" data-dismiss="modal" onclick="saved()">Save my name!</button>
+                    <button id="savescoreBtn" type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="saved()">Save my name!</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="renderNewGame()">Play
                         again!</button>
                 </div>
@@ -295,18 +310,22 @@
             </div>
         </div>
     </div>
-<br>
-<br>
+    <br>
+    <br>
 
     <footer class="footer">
         <div>
             <p>&copy; Copyright reserved. KBC 2022 &middot;</p>
         </div>
         <div class="sm-icons">
-            <a href="https://github.com/KlaudiaBC" title="GitHub" target="_blank"><img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/github.png?raw=true" alt="GitHub"></a>
+            <a href="https://github.com/KlaudiaBC" title="GitHub" target="_blank"><img
+                    src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/github.png?raw=true"
+                    alt="GitHub"></a>
         </div>
         <div class="sm-icons">
-            <a href="https://www.linkedin.com/in/klaudia-blaize-coar/" title="LinkedIn" target="_blank"><img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/linkedin.png?raw=true" alt="LinkedIn"></a>  
+            <a href="https://www.linkedin.com/in/klaudia-blaize-coar/" title="LinkedIn" target="_blank"><img
+                    src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/linkedin.png?raw=true"
+                    alt="LinkedIn"></a>
         </div>
     </footer>
 

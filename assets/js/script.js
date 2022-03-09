@@ -41,7 +41,7 @@ let timeLeft = 10;
  * Activate the button of choice
  * @param whichBtn
  */
- function enableBtn(whichBtn) {
+function enableBtn(whichBtn) {
   whichBtn.disabled = false;
 }
 
@@ -182,8 +182,8 @@ function totaValue(whichPlayer, cardGameValue) {
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide"),
-  givePlayerSomeCards(2, "playerOneSide"),
-  enableBtn(drawBtn);
+    givePlayerSomeCards(2, "playerOneSide"),
+    enableBtn(drawBtn);
   enableBtn(checkBtn);
   showMessage("Your move!");
   renderPoints();
@@ -268,8 +268,7 @@ function checkScore() {
     message = "Human: SpaceJack!";
     addPoints();
   } else if (
-    (player1Value < 21) < (player2Value < 21) || 
-    ((player2Value > 21) && (player1Value > 21))
+    player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
   ) {
     message = "Human: WIN!";
     addPoints();
@@ -295,7 +294,7 @@ function renderPoints() {
  * condition: when sum = 10
  * render the modal "win"
  */
- function addPoints() {
+function addPoints() {
   renderPoints();
   if (sum < 9) {
     sum = sum + 1;
@@ -343,7 +342,7 @@ function reloadDeck() {
 /**
  * Display intro container
  */
- function intro() {
+function intro() {
   showEl(containerOne);
   hideEl(containerTwo);
 }
@@ -361,11 +360,11 @@ function showDeck() {
  * Flip over the chosen card el,
  * @param index
  */
- function flipCard(index) {
+function flipCard(index) {
   let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
   let reverseCard = reverseCardsArray[index];
   if (reverseCard.classList.contains("card-back")) {
-    reverseCard.classList.remove("card-back");
+    reverseCard.classList.remove("card-back")
   } else reverseCard.classList.add("card-back");
 }
 
@@ -373,17 +372,17 @@ function showDeck() {
  * Render the value of the
  * cards for each player
  */
- function showsetScore() {
+function showsetScore() {
   humanScore.innerText = player2Value;
   alienScore.innerText = player1Value;
   showEl(humanScore);
   showEl(alienScore)
-  }
+}
 
 /**
  * Show the modal (win)
  */
- function win() {
+function win() {
   modalWin.style.display = "block";
 }
 
@@ -398,7 +397,7 @@ function lose() {
  * Render different icons,
  * depending of the score
  */
- function changeStarIcon() {
+function changeStarIcon() {
   if (sum === 5) {
     showEl(starOne);
   } else if (sum > 5) {
@@ -417,7 +416,7 @@ function hideStarIcon() {
 /**
  * Set the game area back to initail state
  */
- function deleteItems() {
+function deleteItems() {
   player1Value = 0;
   player2Value = 0;
   player1Cards = [];
@@ -510,7 +509,7 @@ function showScores() {
 /**
  * Play the audio
  */
- function musicPlay() {
+function musicPlay() {
   audio.play();
   goBtn.removeEventListener('click', musicPlay);
 }
