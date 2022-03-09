@@ -22,6 +22,8 @@ const alienScore = document.getElementById('alienScore');
 const humanScore = document.getElementById('humanScore');
 const audio = document.getElementById("audio");
 const icon = document.getElementById("sound");
+const alienSide = document.getElementById("playerOneSide")
+const humanSide = document.getElementById("playerTwoSide")
 
 // array with suite:
 const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
@@ -416,13 +418,20 @@ function hideStarIcon() {
  * Set the game area back to initail state
  */
 function deleteItems() {
+  removeAllChildNodes(humanSide);
+  removeAllChildNodes(alienSide);
   player1Value = 0;
   player2Value = 0;
   player1Cards = [];
   player2Cards = [];
-  $(".middle-table").empty();
-  $(".card").remove();
 }
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
 
 /**
  * Render a new game
