@@ -39,8 +39,7 @@
         <div class="modals">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">RULES</button>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">MISSION</button>
-            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores"
-                onclick="showScores()">SCORES</button>
+            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores" onclick="showScores()">SCORES</button>
 
             <!-- navbar / audio console -->
             <audio id="audio" loop>
@@ -87,7 +86,9 @@
                     <p>Face cards have a value of 10, ace has value of 11 and any other card has a number value as shown
                         of the card.</p>
                     <div class="modal-img">
-                        <img class="modal-img modal-img-sm" src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/figures_modal.png?raw=true" alt="figures">
+                        <img class="modal-img modal-img-sm"
+                            src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/figures_modal.png?raw=true"
+                            alt="figures">
                     </div>
                     <br>
                     <br>
@@ -180,9 +181,6 @@
                             <tbody>
                                 <tr>
                                     <td id="heroName"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -279,7 +277,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="savescoreBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Save my name!</button>
+                    <button id="savescoreBtn" type="button" class="btn btn-secondary">Save my
+                        name!</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="renderNewGame()">Play
                         again!</button>
                 </div>
@@ -300,7 +299,8 @@
                     </div>
                     <div class="story-box">
                         <p>Great job getting so far!</p>
-                        <p>Try again. Maybe you will be more lucky!</p>
+                        <p>Maybe next time you will be more lucky!</p>
+                        <p>Do you want to play again?</p>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -313,6 +313,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  background-color: rgb(226, 226, 217);
 }
 
 .card-back .suite {

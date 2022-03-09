@@ -269,7 +269,8 @@ function checkScore() {
     message = "Human: SpaceJack!";
     addPoints();
   } else if (
-    player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
+    // player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
+    player1Value > 5
   ) {
     message = "Human: WIN!";
     addPoints();
@@ -432,7 +433,6 @@ function removeAllChildNodes(parent) {
   }
 }
 
-
 /**
  * Render a new game
  * clear the scores and user points
@@ -469,6 +469,7 @@ function getSpaceName() {
 function saved() {
   saveScoreBtn.innerText = "Saved!";
   disableBtn(saveScoreBtn);
+  showEl(spaceScoresName);
 }
 
 /**
@@ -510,7 +511,6 @@ function showScores() {
   spaceScoresName.innerText = getSpaceName();
   document.querySelector('#modal').modal('show');
 }
-
 
 // functios connected with audio
 
