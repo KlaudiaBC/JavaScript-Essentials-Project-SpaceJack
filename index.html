@@ -53,7 +53,7 @@
                 Your browser does not support the audio element.
             </audio>
             <div>
-                <button id="sound" class="icon icon-img-on" onclick="toggleAudio()"></button>
+                <button id="sound" class="icon icon-img-on"></button>
             </div>
         </div>
     </header>
@@ -87,7 +87,7 @@
                     <p>Face cards have a value of 10, ace has value of 11 and any other card has a number value as shown
                         of the card.</p>
                     <div class="modal-img">
-                        <img class="modal-img modal-img-sm" src="/assets/images/figures_modal.png" alt="figures">
+                        <img class="modal-img modal-img-sm" src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/figures_modal.png?raw=true" alt="figures">
                     </div>
                     <br>
                     <br>
@@ -208,7 +208,7 @@
         </div>
         <div class="story-box" id="space-form">
             <form>
-                <label class="story-box" for="userName">What is your name?</label>
+                <label class="story-box" for="space-input">What is your name?</label>
                 <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required>
                 <button id="space-submit" type="submit" class="btn btn-info">SAVE</button>
             </form>
@@ -218,7 +218,7 @@
             <button id="space-newplayer" class="btn btn-info hidden">NEW PLAYER</button>
         </div>
     </div>
-    </div>
+
 
     <!-- game area -->
     <div class="container container-two" id="gameArea">
@@ -231,13 +231,13 @@
             <div class="player-side" id="playerOneSide"></div>
             <div class="player player-side">
                 <div>
-                    <button class="btn btn-warning" id="draw-btn" onclick="drawNewCard()" disabled>DRAW</button>
+                    <button class="btn btn-warning" id="draw-btn" disabled>DRAW</button>
                 </div>
                 <div id="middle-table" class="middle-table">
-                    <button class="btn btn-warning" id="start-btn" onclick="startGame()">START</button>
+                    <button class="btn btn-warning" id="start-btn">START</button>
                 </div>
                 <div>
-                    <button class="btn btn-warning" id="check-btn" onClick="check()" disabled>CHECK</button>
+                    <button class="btn btn-warning" id="check-btn" disabled>CHECK</button>
                 </div>
             </div>
 
@@ -251,9 +251,9 @@
             <div>
                 <p><span id="score" class="story-box"></span></p>
             </div>
-            <div id="starIcon" class="icon icon-img-star-1"></div>
-            <div id="starIcon" class="icon icon-img-star-2"></div>
-            <div id="starIcon" class="icon icon-img-star-3"></div>
+            <div class="icon icon-img-star-1"></div>
+            <div class="icon icon-img-star-2"></div>
+            <div class="icon icon-img-star-3"></div>
             <div class="timer">
                 <p id="timer"></p>
             </div>
@@ -279,8 +279,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="savescoreBtn" type="button" class="btn btn-secondary" data-dismiss="modal"
-                        onclick="saved()">Save my name!</button>
+                    <button id="savescoreBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Save my name!</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="renderNewGame()">Play
                         again!</button>
                 </div>

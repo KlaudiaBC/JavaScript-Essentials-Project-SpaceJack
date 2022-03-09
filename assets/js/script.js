@@ -17,8 +17,7 @@ const newPlayerBtn = document.getElementById("space-newplayer");
 const spaceName = document.getElementById("space-name");
 const goBtn = document.getElementById("goBtn");
 const spaceScoresName = document.querySelector("#heroName");
-const saveBtn = document.getElementById('saveBtn');
-const saveScoreBtn = document.getElementById('savescoreBtn')
+const saveScoreBtn = document.getElementById('savescoreBtn');
 const alienScore = document.getElementById('alienScore');
 const humanScore = document.getElementById('humanScore');
 const audio = document.getElementById("audio");
@@ -139,7 +138,7 @@ function createCardEl(whichCard, whichPlayer) {
   let playerSide = document.getElementById(whichPlayer);
   playerSide.appendChild(cardEl);
   let leftSuite = document.createElement("div");
-  leftSuite.classList.add("suite", "suite-left", whichCard.suite)
+  leftSuite.classList.add("suite", "suite-left", whichCard.suite);
   cardEl.appendChild(leftSuite);
   let middleSuite = document.createElement("div");
   middleSuite.classList.add("suite", "suite-middle", whichCard.suiteClass);
@@ -181,8 +180,8 @@ function totaValue(whichPlayer, cardGameValue) {
  * restart counter
  */
 function startGame() {
-  givePlayerSomeCards(2, "playerTwoSide"),
-    givePlayerSomeCards(2, "playerOneSide"),
+  givePlayerSomeCards(2, "playerTwoSide");
+    givePlayerSomeCards(2, "playerOneSide");
     enableBtn(drawBtn);
   enableBtn(checkBtn);
   showMessage("Your move!");
@@ -248,7 +247,7 @@ function check() {
   flipCard(1);
   checkScore();
   resetCounter();
-  showsetScore()
+  showsetScore();
 }
 
 /**
@@ -299,7 +298,7 @@ function addPoints() {
   if (sum < 9) {
     sum = sum + 1;
   } else {
-    intro()
+    intro();
     win();
   }
 }
@@ -312,7 +311,7 @@ function addPoints() {
 function substractPoints() {
   renderPoints();
   if (sum === 1) {
-    intro()
+    intro();
     lose();
   } else {
     sum = sum - 1;
@@ -332,7 +331,7 @@ function reloadDeck() {
     hideStarIcon();
     changeStarIcon();
     hideEl(alienScore);
-    hideEl(humanScore)
+    hideEl(humanScore);
   }, 2000);
 }
 
@@ -364,7 +363,7 @@ function flipCard(index) {
   let reverseCardsArray = document.querySelectorAll("#playerOneSide .card");
   let reverseCard = reverseCardsArray[index];
   if (reverseCard.classList.contains("card-back")) {
-    reverseCard.classList.remove("card-back")
+    reverseCard.classList.remove("card-back");
   } else reverseCard.classList.add("card-back");
 }
 
@@ -376,7 +375,7 @@ function showsetScore() {
   humanScore.innerText = player2Value;
   alienScore.innerText = player1Value;
   showEl(humanScore);
-  showEl(alienScore)
+  showEl(alienScore);
 }
 
 /**
@@ -459,7 +458,7 @@ function getSpaceName() {
  * change inner text
  */
 function saved() {
-  saveScoreBtn.innerText = "Saved!"
+  saveScoreBtn.innerText = "Saved!";
   disableBtn(saveScoreBtn);
 }
 
@@ -499,7 +498,7 @@ function hideInputArea() {
  * scores modal
  */
 function showScores() {
-  spaceScoresName.innerText = getSpaceName()
+  spaceScoresName.innerText = getSpaceName();
   document.querySelector('#modal').modal('show');
 }
 
@@ -540,7 +539,7 @@ function showTime(someText) {
   let timeBox = document.getElementById("timer");
   timeBox.innerHTML = someText;
   if (timeLeft < 5) {
-    showMessage("Time's up!")
+    showMessage("Time's up!");
   }
 }
 
@@ -577,9 +576,14 @@ function resetCounter() {
 }
 
 // event listeners
+startBtn.addEventListener("click", startGame);
+drawBtn.addEventListener("click", drawNewCard);
+checkBtn.addEventListener("click", check);
 spaceBtn.addEventListener("click", saveSpaceName);
 newPlayerBtn.addEventListener("click", removeSpaceUser);
-goBtn.addEventListener('click', musicPlay);
+goBtn.addEventListener("click", musicPlay);
+saveScoreBtn.addEventListener("click", saved);
+icon.addEventListener("click", toggleAudio)
 
 
 buildCardsArray();
