@@ -22,10 +22,6 @@ It is an online game for children based on the rules of popular casino game Blac
 - <a href="#deploy">Deployment</a>
 - <a href="#test">Testing</a>
 
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mission.png?raw=true" alt="mission">
-</p>
-<p id="content"></p>
 
 ## Content
 Card games are as old as the world we live in and there are multiple reasons why they are still practiced nowadays. They teach various important skills like focus, decision making, humility and many more. I chose the blackjack game and decided to slightly change the rules to suit the mind of a child. This game is a perfect metaphor of life: the oponents hidden card symbolises the things we don't know once we are making our decisions in general. Our opponent, our faith, always has some of the cards hidden and it requires focus, patience and a bit of luck to guess what card is it. Yet, sometimes there is no way to guess, as in our life there are situations we couldn't possibly be prepared for. And sometimes, our life goes a different path than we thought it will and we also have to learn to accept it, to transfer the loss into a motivation to become better. Life is a sequence of trials, wins and loses and the balance of those gives us the possibility to learn, feel, experience and simply live.
@@ -108,11 +104,11 @@ The theme of this webpage is: space. Therefore there were multiple actions taken
 4. Strong contrast: In the light box and in the modals (light background colour) the text is in the dark blue colour. In the places where the background colour is dark (header, module buttons) the colour of the text is white.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures01.jpg?raw=true" alt="cards illustrations">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures01.png?raw=true" alt="cards illustrations">
 </p>
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures02.jpg?raw=true" alt="cards illustrations">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/figures02.png?raw=true" alt="cards illustrations">
 </p>
 
 ### Typography:
