@@ -2,7 +2,7 @@
 ## Welcome!
 
 ## This is my Portfolio 2 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
-It is an online game for children based on the rules of popular casino game Blackjack.
+It is an online game for children based on the rules of popular casino game Blackjack. The webpage is built with HTML5, CSS3, vanilla JavaScript and Bootstrap v4.6.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/responsive.png?raw=true" alt="responsive design">
@@ -28,15 +28,33 @@ Card games are as old as the world we live in and there are multiple reasons why
 <p id="uj"></p>
 
 ## User journey
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logo.png?raw=true" alt="SpaceJack logo">
+</p>
+
 At first the user lands on the intro page. In the introduction he is informed about a special mission to save the Earth from Aliens invasion. This should make him feel curious and motivated to play.
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logged_box.png?raw=true" alt="Intro box">
+</p>
+
 Above the message, next to the logo, there are three buttons, which after clicking will display a modal with additional information: the rules of the game, the mission and the scores. There is also a mute button displayed as a sound icon.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
+</p>
+
 Inside the introduction box there is also an input form which allows User to set his name, which later will be rendered in the game area. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game game area.
 
 Game area has the same layout as an intro page, thanks to which users can easily access all the provided features like: menu buttons which contain mentioned modals. Also the deck is in the same shape like the container on the into page.
 Decks have 3 vertical parts, starting from the top: Alien side, middle of the deck with initially 3 buttons (while the game is live, in the middle part of the deck User will receive the messages about his results).
 
 At first User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gametable.png?raw=true" alt="game page">
+</p>
 
 After pressing a Start button, the actual game starts. Button "Start" is no longer visible and two other buttons are active (in the main colour). Both players receive 2 random cards. User can see his cards but he can not see the second card of the Alien (is flipped over).
 He is provided with a choice: to draw the card and add extra value to his score or to "check" which is aligned with the end of the set. The score of the User is compared to the score of Alien and depending on the results, the User can gain one star when win (the score is visible under Users name) or lose one star when loses.
@@ -58,15 +76,7 @@ In this case, User will receive the message about results displayed in the modal
 ## UX Design
 All the practises that serve improving the user experience including:
 - Easy navigation - all content fits on the screen (on the mobile devices it may be needed to scroll in order to see the top or bottom part of the page but the game area will all fit on the mobile screen). Buttons with additional information are placed on the top of the page.
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logo.png?raw=true" alt="SpaceJack logo">
-</p>
-
 - Logo- placed on the top of the page
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
-</p>
-
 - High contrast between background and elements placed on this background.
 - Social media links - placed in the footer
 - Introduction content - displayed as an onload page.
@@ -74,8 +84,7 @@ All the practises that serve improving the user experience including:
 - Score area - included in one of the modals, allows the user to see his previous scores.
 - Background sound - should add the feeling of adventure and moving into a game world. It is possible to mute the sound if the user finds it bothersome.
 
-Wireframe projects were designed on the Balsamiq Wireframe Software. See the projects below.
-Wireframe project for the desktop:
+Wireframe projects were designed on the Balsamiq Wireframe Software. Wireframe project for the desktop:
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/SpaceJack_BW.png?raw=true" alt="wireframe project">
 </p>
