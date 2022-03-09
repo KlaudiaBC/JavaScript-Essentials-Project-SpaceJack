@@ -1,6 +1,8 @@
 # JavaScript Essentials: "SpaceJack" Portfolio Project
 ## Welcome!
 
+<p id="welcome"></p>
+
 ## This is my Portfolio 2 Project regarding the Code Institute's Diploma in Software Development (E-commerce Applications).
 It is an online game for children based on the rules of popular casino game Blackjack. The webpage is built with HTML5, CSS3, vanilla JavaScript and Bootstrap v4.6.
 
@@ -25,6 +27,7 @@ It is an online game for children based on the rules of popular casino game Blac
 ## Content
 Card games are as old as the world we live in and there are multiple reasons why they are still practiced nowadays. They teach various important skills like focus, decision making, humility and many more. I chose the blackjack game and decided to slightly change the rules to suit the mind of a child. This game is a perfect metaphor of life: the oponents hidden card symbolises the things we don't know once we are making our decisions in general. Our opponent, our faith, always has some of the cards hidden and it requires focus, patience and a bit of luck to guess what card is it. Yet, sometimes there is no way to guess, as in our life there are situations we couldn't possibly be prepared for. And sometimes, our life goes a different path than we thought it will and we also have to learn to accept it, to transfer the loss into a motivation to become better. Life is a sequence of trials, wins and loses and the balance of those gives us the possibility to learn, feel, experience and simply live.
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="uj"></p>
 
 ## User journey
@@ -71,6 +74,7 @@ In this case, User will receive the message about results displayed in the modal
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gamelogic.drawio.png?raw=true" alt="user journey map">
 </p>
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="ux"></p>
 
 ## UX Design
@@ -89,6 +93,7 @@ Wireframe projects were designed on the Balsamiq Wireframe Software. Wireframe p
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/SpaceJack_BW.png?raw=true" alt="wireframe project">
 </p>
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="layout"></p>
 
 ## Layout
@@ -110,6 +115,7 @@ The theme of this webpage is: space. Therefore there were multiple actions taken
 ### Typography:
 According to John Hughes, author of the article "12 best kids fonts for children's websites and design projects" on the portal "Elegant themes" - Bubblegum Sans is "highly readable and subtle". This is why I chose it over my first choice which was 'Orbitron'.
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="ip"></p>
 
 ## Implementation process:
@@ -178,6 +184,18 @@ According to John Hughes, author of the article "12 best kids fonts for children
 49. I also changed the settings of my autoplay as I found out that some browsers (eg. Chrome) does not support that function. To avoid any issues with a sound display, I have resigned from the autoplay and created a new function which will play the audio once the button "Ready to play" was clicked. This means, User will land on the muted page and invoke the play music function once the actual game.
 50. I added a footer. I have tried a different approach this time in terms of adding icons for social media anchor tags. In the previous project I used Font Awesome and discovered that among Bootstrap, Pooper and other implementations of data, an additional library was affecting my performance score and significantly slowing down the process of rendering the page. To avoid adding more unused code to my webpage, I stored the chosen icons of social media (converted into a small size) in my internal file and styled them manually.
 
+### Future implementations:
+There are a great amount of improvements, which can be added to this game. Below I listed a few of them:
+1. A new player.
+2. A choice of character (Alien or Human).
+3. A shuffle cards css animation.
+4. An animation which will pass the card to the user.
+5. Interactive content to the modals: "win" and "loose".
+6. A choice of music.
+7. The high contrast mode.
+8. Add voice messages (connected with messages visible in the middle of the deck).
+
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="us"></p>
 
 ## User stories
@@ -185,7 +203,7 @@ According to John Hughes, author of the article "12 best kids fonts for children
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/userstories.jpg?raw=true" alt="user stories">
 </p>
 
-
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="tu"></p>
 
 ## Technologies used:
@@ -202,6 +220,7 @@ According to John Hughes, author of the article "12 best kids fonts for children
 - <a href="https://www.adobe.com/products/photoshop-express.html">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
 - <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a>
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="ack"></p>
 
 ## Acknowledgement:
@@ -223,6 +242,7 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - Kamila Halat for the figures and numbers illustrations
 - "Clean Code - A Handbook of Agile Software Craftsmanship" by Robert Martin
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="deploy"></p>
 
 ## Deployment:
@@ -235,6 +255,7 @@ The project was deployed to GitHub Pages using the following steps:
 4. Click the dropdown button called "None" and select "Master Branch".
 5. The page will automatically refresh and provide you with a link to the "GitHub Pages" deploying your project in the live-view.
 
+<p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="test"></p>
 
 ## Testing:
