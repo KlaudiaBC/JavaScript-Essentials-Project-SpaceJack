@@ -22,6 +22,9 @@ It is an online game for children based on the rules of popular casino game Blac
 - <a href="#deploy">Deployment</a>
 - <a href="#test">Testing</a>
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mission.png?raw=true" alt="mission">
+</p>
 <p id="content"></p>
 
 ## Content
@@ -306,9 +309,18 @@ The project was deployed to GitHub Pages using the following steps:
 
 ## Testing:
 
-Tests have been performed on the:
+Tests have been performed on the Google Chrome, Firefox, Internet Explorer, Opera and Safari.
 Testing also included different devices:
-The features, which was taken into a testing:
+- Samsung Galaxy S20
+- Samsung Note ???
+
+Webpage display also in the dark mode mobile settings. See below the classing mode on Chrome and dark mode on the Samsung Internet Browser (Galaxy S20+):
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mobile_display.png?raw=true" alt="mobile display">
+</p>
+
+The features, which was taken into a testing in both scenarios: on the desktop and on the devices listed below.
 
 <table>
   <tr>
@@ -415,4 +427,12 @@ The features, which was taken into a testing:
 
 ### Lighthouse
 
-### W3C validator:
+### W3C validator - HTML:
+
+### W3C validator - CSS:
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/css_validator.png?raw=true" alt="css validator">
+</p>
+
+
