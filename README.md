@@ -199,9 +199,55 @@ There are a great amount of improvements, which can be added to this game. Below
 <p id="us"></p>
 
 ## User stories
-<p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/userstories.jpg?raw=true" alt="user stories">
-</p>
+
+<table>
+  <tr>
+    <th>User stories</th>
+    <th>Acceptance criteria</th>
+  </tr>
+  <tr>
+    <td>As a player I want to play a game which allows me to improve my focus and mathematics skills so that I can learn something new.</td>
+    <td>Given that I am a player, in order to win the game I will be provided with tasks including adding numbers as well as memorising the value assigned to the figures. Game also encourages me to practice decision making by giving me only 10 seconds for the choice.</td>
+  </tr>
+  <tr>
+    <td>As a player I want to play a game with a responsive design so that I can easily use it on my mobile devices.</td>
+    <td>Given that I am a player, the web application will display a clear interface on my device, no matter what device I use.</td>
+  </tr>
+   <tr>
+    <td>As a user I want to be able to mute the sound or turn it back if I wish so that I don't have to mute sound on my device.</th>
+    <td>Given that I am a user, I can toggle the sound in the background by clicking on the sound icon.</th>
+  </tr>
+  <tr>
+    <td>As a player I want to know how to play the game so that I can play it even if I have never played it before.</td>
+    <td>Given that I am a player I can access the rules of the game modal at any time by clicking the button: "Rules". The modal will pop up on my screen.s</td>
+  </tr>
+  <tr>
+    <td>As a player I want to close the modal in an easy way so that I do not have to search for the close button.</td>
+    <td>Given that I am a player I can easily access the close buttons: one of them is on top (X) and second one on the bottom of the modal.</td>
+  </tr>
+    <tr>
+    <td>As a user I want to know the reasons why should I play this game so that I can share it with others.</td>
+    <td>Given that I am a user, I can access the mission modal at any time by clicking the "Mission" in the menu panel. I can find out about positive sides coming out of this 
+      game as well as information about the authors. Modal will pop up on my screen.</td>
+  </tr>
+    <tr>
+    <td>As a player I want to see my points so that I know how many of them I have.</td>
+    <td>Given that I am a player I can see the score displayed below my name and it will update after each set.</td>
+  </tr>
+    <tr>
+    <td>As a player I want to know, who won the set so that I can compare it with my guess.</td>
+    <td>Given that I am a player I will see the information about results after the set is over, rendered in the middle of the deck. Message is visible and easily readable.</td>
+  </tr>
+      <tr>
+    <td>As a player, who won the game I want to save my score so that I can access it later.</td>
+    <td>Given that I am a player, who won the game, I can save my score by clicking the button "save" included in the modal "win" which will render automatically on my screen when I hit the score = 10. I can easily access the scores list at any moment by clicking the button "Scores" in the menu panel.</td>
+  </tr>
+        <tr>
+    <td>As a user I want to enjoy a clear layout so that I can read the text and access all the features in an easy way.</td>
+    <td>Given that I am a user I will be provided with a high contrast, clear web page. All the features are easily accessible. Provided buttons change the colour when
+      enabled/disabled. Card images and icons have a good quality so there is no confusion about what they show.</td>
+  </tr>
+</table>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="tu"></p>
@@ -263,6 +309,109 @@ The project was deployed to GitHub Pages using the following steps:
 Tests have been performed on the:
 Testing also included different devices:
 The features, which was taken into a testing:
+
+<table>
+  <tr>
+    <th>Element</th>
+    <th>Expected result</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>Logo and navbar</td>
+    <td>Make sure that logo is displayed correctly in the top-left corner of the page and buttons of the modals are: on the left top side on desktop/ below the logo,centered on the mobile devices.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td>Background video and the light box placed on top</td>
+    <td>Make sure that dynamics of background video does not interfere with the events in the light box. Check if the opacity of the box is strong enough to dispatch correctly text and images.</td>
+    <td>Pass</td>
+  </tr>
+    <tr>
+    <td>Modals</td>
+    <td>Make sure each of three modals provided for a User are showing on page and are hidden when User clicks: close button on the top of the modal, close button on the bottom of the modal as well as any other place on the page outside of this modal.</td>
+    <td>Pass</td>
+  </tr>
+    <tr>
+    <td>Input field</td>
+    <td>Check if the button save does not work unless the User provides the value in the input field.</td>
+    <td>Pass</td>
+  </tr>
+    <tr>
+    <td>User name</td>
+    <td>Check if user name provided by user in the input field is displayed on the game page.</td>
+    <td>Pass</td>
+  </tr>
+    <tr>
+    <td>Background audio</td>
+    <td>Check if the audio plays once the User clicks the "I am ready" button. Check if the mute button works to mute as well as to unmute the sound.</td>
+    <td>Pass</td>
+  </tr>
+    <tr>
+    <td>"New player" button</td>
+    <td>Check if the "New player" button renders an input field on the intro page.</td>
+    <td>Pass</td>
+  </tr>
+      <tr>
+    <td>Game buttons - stage one</td>
+    <td>When the user is sent to the game area: check if buttons "Check" and "Draw" do not work. Check if the button "Start" renders a card's images and gets hidden after click.</td>
+    <td>Pass</td>
+  </tr>
+      <tr>
+    <td>Game buttons - stage two</td>
+    <td>When the game is alive: check if the button "Draw" allows the User to draw a maximum of two new cards and then become not active.</td>
+    <td>Pass</td>
+  </tr>
+      <tr>
+    <td>Game buttons - stage two</td>
+    <td>When the game is alive: check if the "Check" button is active and invoke the end of the set once clicked.</td>
+    <td>Pass</td>
+  </tr>
+      <tr>
+    <td>"Check" button</td>
+    <td>Check if the check button invokes the start of the new set after 2 seconds since clicked.</td>
+    <td>Pass</td>
+  </tr>
+        <tr>
+    <td>Card</td>
+    <td>Check if all the images of the cards are in good quality and displayed correctly.</td>
+    <td>Pass</td>
+  </tr>
+        <tr>
+    <td>Message box</td>
+    <td>Check if the messages in the message box are changing and suit to the current stage of the game (render correct information).</td>
+    <td>Pass</td>
+  </tr>
+        <tr>
+    <td>Message box</td>
+    <td>Check if the message in the message box is visible and easily readable.</td>
+    <td>Pass</td>
+  </tr>
+          <tr>
+    <td>Star icon</td>
+    <td>Check if the star icon next to the User points changes once user points are =5, >5 or <5. Depending on the scenario, one of three icons should be displayed.</td>
+    <td>Pass</td>
+  </tr>
+          <tr>
+    <td>Timer</td>
+    <td>Check if the count down in the time box displays numbers in the correct order and invoke the check button when time=0.</td>
+    <td>Pass</td>
+  </tr>
+          <tr>
+    <td>Social media tags</td>
+    <td>Check if the social media tags open on the new page once clicked on the icon.</td>
+    <td>Pass</td>
+  </tr>
+            <tr>
+    <td>Modal "Win"</td>
+    <td>Check if win modal shows automatically when the Users points= 10. Check if the button "save" changes its inner text after clicked. Check if the button "Play again" sends the User back to the intro page.</td>
+    <td>Pass</td>
+  </tr>
+            <tr>
+    <td>Modal "Lose"</td>
+    <td>Check if lose modal shows automatically when the Users points=0. Check if the button "Play again" sends the User back to the intro page.</td>
+    <td>Pass</td>
+  </tr>
+</table>
 
 ### Lighthouse
 
