@@ -24,7 +24,7 @@ It is an online game for children based on the rules of popular casino game Blac
 
 
 ## Content
-Card games are as old as the world we live in and there are multiple reasons why they are still practiced nowadays. They teach various important skills like focus, decision making, humility and many more. I chose the blackjack game and decided to slightly change the rules to suit the mind of a child. This game is a perfect metaphor of life: the oponents hidden card symbolises the things we don't know once we are making our decisions in general. Our opponent, our faith, always has some of the cards hidden and it requires focus, patience and a bit of luck to guess what card is it. Yet, sometimes there is no way to guess, as in our life there are situations we couldn't possibly be prepared for. And sometimes, our life goes a different path than we thought it will and we also have to learn to accept it, to transfer the loss into a motivation to become better. Life is a sequence of trials, wins and loses and the balance of those gives us the possibility to learn, feel, experience and simply live.
+Card games are as old as the world we live in and there are multiple reasons why they are still practiced nowadays. They teach various important skills like focus, decision making, humility and many more. I chose the blackjack game and decided to slightly change the rules to suit the mind of a child. This game is a perfect metaphor of life: the oponent's hidden card symbolises the things we don't know once we are making our decisions in general. Our opponent, our faith, always has some of the cards hidden and it requires focus, patience and a bit of luck to guess what card is it. Yet, sometimes there is no way to guess, as in our life there are situations we couldn't possibly be prepared for. And sometimes, our life goes a different path than we thought it will and we also have to learn to accept it, to transfer the loss into a motivation to become better. Life is a sequence of trials, wins and loses and the balance of those gives us the possibility to learn, feel, experience and simply live.
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
 <p id="uj"></p>
@@ -47,12 +47,12 @@ Above the message, next to the logo, there are three buttons, which after clicki
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
 </p>
 
-Inside the introduction box there is also an input form which allows User to set his name, which later will be rendered in the game area. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game game area.
+Inside the introduction box there is also an input form which allows User to set his name, which later will be rendered in the game area. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game area.
 
 Game area has the same layout as an intro page, thanks to which users can easily access all the provided features like: menu buttons which contain mentioned modals. Also the deck is in the same shape like the container on the into page.
 Decks have 3 vertical parts, starting from the top: Alien side, middle of the deck with initially 3 buttons (while the game is live, in the middle part of the deck User will receive the messages about his results).
 
-At first User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
+In tge game User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gametable.png?raw=true" alt="game page">
@@ -67,7 +67,7 @@ Accordingly, the User points of the bottom of the deck will increase by 1 (in wo
 New set starts automatically after 2 seconds.
 
 The game is looping until the points of User become 10 or 0.
-In this case, User will receive the message about results displayed in the modal which will be activated automatically. Again, User is provided with a choice of two buttons: "Play again" button will render a new game, "Go back" will send User back to the intro page. There is additional button in the "win" modal which will save the Users score in the "Scores" modal.
+In this case, User will receive the message about results displayed in the modal which will be activated automatically. User is provided with a "Play again" button, which will render a new game. There is additional button in the "win" modal, which will save the Users score in the "Scores" modal.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gamelogic.drawio.png?raw=true" alt="user journey map">
@@ -77,14 +77,15 @@ In this case, User will receive the message about results displayed in the modal
 <p id="ux"></p>
 
 ## UX Design
-All the practises that serve improving the user experience including:
+All the practises that serve improving the user experience include:
 - Easy navigation - all content fits on the screen (on the mobile devices it may be needed to scroll in order to see the top or bottom part of the page but the game area will all fit on the mobile screen). Buttons with additional information are placed on the top of the page.
-- Logo- placed on the top of the page
+- Logo - placed on the top of the page
 - High contrast between background and elements placed on this background.
 - Social media links - placed in the footer
 - Introduction content - displayed as an onload page.
 - Introduction box includes an input field. The value User will provide will be rendered as a personalised name of a player.
 - Score area - included in one of the modals, allows the user to see his previous scores.
+- Background video - as an extra feature connected with a theme of the page
 - Background sound - should add the feeling of adventure and moving into a game world. It is possible to mute the sound if the user finds it bothersome.
 
 Wireframe projects were designed on the Balsamiq Wireframe Software. Wireframe project for the desktop:
@@ -252,8 +253,9 @@ There are a great amount of improvements, which can be added to this game. Below
 <p id="tu"></p>
 
 ## Technologies used:
-- HTML5, CSS3, JavaScript
-- VS code
+- <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML5</a>
+- <a href="https://www.w3schools.com/css/" target="_blank">CSS3</a>
+- <a href="https://www.javascripttutorial.net/" target="_blank">JavaScript</a>
 - <a href="https://github.com/" target="_blank">GitHub, Gitpod and Git</a>
 - <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
 - <a href="https://getbootstrap.com/" target="_blank">Bootstrap version 4</a>
@@ -262,7 +264,7 @@ There are a great amount of improvements, which can be added to this game. Below
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
 - <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
 - <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
-- <a href="https://www.adobe.com/products/photoshop-express.html">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
+- <a href="https://www.adobe.com/products/photoshop-express.html" target="_blank">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
 - <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -273,12 +275,14 @@ In this place I would like to thank everyone, who added an knowledge and value t
 - <a href="https://codeinstitute.net/" target="_blank">Code Institute</a> course materials and walkthroughs
 - lead and support of my Code Institute Mentor - Guido Cecilio
 - Code Institute Slack Community
-- Tutorials by <a href="https://www.youtube.com/c/programmingwithmosh" target="_blank">Mosh</a> and <a href="https://scrimba.com/dashboard?tab=overview" target="_blank">Scrimba</a>
+- Tutorials by <a href="https://www.youtube.com/watch?v=PFmuCDHHpwk" target="_blank">Mosh</a> and <a href="https://scrimba.com/playlist/p3py7U7" target="_blank">Scrimba</a>
 - <a href="https://www.w3schools.com/" target="_blank">W3schools</a>
 - <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
 - <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docks</a>
 - <a href="https://logrocket.com/" target="_blank">LogRocket</a>
-- <a href="https://www.javascripttutorial.net/">JavaScript Tutorial</a>
+- <a href="https://dev.to/" target="_blank">Dev Community</a>
+- <a href="https://www.javascripttutorial.net/" target="_blank">JavaScript Tutorial</a>
+- <a href="https://techstacker.com/" target="_blank">Techstacker</a>
 - <a href="https://www.pexels.com/" target="_blank">Pexels: </a> for the background video - author: Mr Borys
 - <a href="https://pixabay.com/" target="_blank">Pixabay: </a> for the background music - author: Lesfm
 - <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>
@@ -305,10 +309,15 @@ The project was deployed to GitHub Pages using the following steps:
 
 ## Testing:
 
-Tests have been performed on the Google Chrome, Firefox, Internet Explorer, Opera and Safari.
-Testing also included different devices:
-- Samsung Galaxy S20
-- Samsung Note ???
+Tests have been performed on:
+- different browsers: Google Chrome, Firefox, Internet Explorer, Opera and Safari
+- different devices: Samsung Galaxy S20+, Samsung Note 10+, Huawei P10, iPhone 11, Lenovo TAB m10.
+
+See the screenshots from the various devices/systems:
+- <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/desktop_windows.png" target="_blank">Desktop / Windows</a>
+- <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/mobile_android.png" target="_blank">Mobile / Android / HuaweiP10</a>
+- <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/mobile_ios.png" target="_blank">Mobile / IOS / iPhone11</a>
+- <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/tablet.png" target="_blank">Tablet / Android / LenovoTAB m10</a>
 
 Webpage display also in the dark mode mobile settings. See below the classing mode on Chrome and dark mode on the Samsung Internet Browser (Galaxy S20+):
 
@@ -424,11 +433,22 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 ### Lighthouse
 
 ### W3C validator - HTML:
+ - At the first check:
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/validator_errors.png?raw=true" alt="html validator">
+</p>
+
+- After fixing the errors:
+<p align="center">
+  <img src="" alt="html validator">
+</p>
 
 ### W3C validator - CSS:
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/css_validator.png?raw=true" alt="css validator">
+  <img src="" alt="js validator">
 </p>
+
+### Javascript Validator:
 
 
