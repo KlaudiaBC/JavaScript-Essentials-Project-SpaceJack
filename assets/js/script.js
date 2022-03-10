@@ -354,7 +354,6 @@ function intro() {
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
-  renderSpaceName();
 }
 
 /**
@@ -468,7 +467,6 @@ function getSpaceName() {
 function saved() {
   saveScoreBtn.innerText = "Saved!";
   disableBtn(saveScoreBtn);
-  showEl(spaceScoresName);
 }
 
 /**
