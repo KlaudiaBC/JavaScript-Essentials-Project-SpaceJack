@@ -319,7 +319,7 @@ See the screenshots from the various devices/systems:
 - <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/mobile_ios.png" target="_blank">Mobile / IOS / iPhone11</a>
 - <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/tablet.png" target="_blank">Tablet / Android / LenovoTAB m10</a>
 
-Webpage display also in the dark mode mobile settings. See below the classing mode on Chrome and dark mode on the Samsung Internet Browser (Galaxy S20+):
+Webpage displays also in the dark mode mobile settings. See below the classic mode on Chrome and dark mode on the Samsung Internet Browser (Galaxy S20+):
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mobile_display.png?raw=true" alt="mobile display">
@@ -430,7 +430,6 @@ The features, which was taken into a testing in both scenarios: on the desktop a
   </tr>
 </table>
 
-### Lighthouse
 
 ### W3C validator - HTML:
  - At the first check:
@@ -440,15 +439,19 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 
 - After fixing the errors:
 <p align="center">
-  <img src="" alt="html validator">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/w3c_done.png?raw=true" alt="html validator">
 </p>
 
 ### W3C validator - CSS:
 
 <p align="center">
-  <img src="" alt="js validator">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/css_validator.png?raw=true" alt="js validator">
 </p>
 
 ### Javascript Validator:
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/js_validator.png?raw=true" alt="js validator">
+</p>
 
+### Lighthouse
