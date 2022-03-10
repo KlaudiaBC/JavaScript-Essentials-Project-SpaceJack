@@ -70,7 +70,7 @@ The game is looping until the points of User become 10 or 0.
 In this case, User will receive the message about results displayed in the modal which will be activated automatically. User is provided with a "Play again" button, which will render a new game. There is additional button in the "win" modal, which will save the Users score in the "Scores" modal.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gamelogic.drawio.png?raw=true" alt="user journey map">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/user_jouney.drawio.png?raw=true" alt="user journey map">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -128,11 +128,13 @@ According to John Hughes, author of the article "12 best kids fonts for children
 7. In order to reduce the amount of unloaded images and achieve clarity in the data structure, I created a special function for creating a card image. First of all I store the images as background for each class. This method allows for keeping the code clean and making it usable without changing the script in the .js file. I can change the images of the cards at any time and it will not affect any of the javascript code. To create a card element in a DOM I used a loop which contains two classes of the card element- suite and character. Thanks to this I reduced the amount of stored card images from 52 to 17.
 8. I added a new function, which creates an array of the card objects with 3 properties assigned to each of them: value, suite and suiteClass. This function contains two loops: one with a suite (4 elements) and second one with the figure (13 elements). Those loops loop through each other and create an array of 52 cards.
 
-
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/cardEl.jpg?raw=true" alt="card element">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/cardEl.png?raw=true" alt="card element">
 </p>
 
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/console_cardsarray.png?raw=true" alt="cards array">
+</p>
                                                                                                                                                       
 9. Instead of creating an element in the HTML, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random object only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
 10. The following step towards the game component was to create a function which will give a player a random card. In order to get a random card from the cards array that was just created in the DOM, it was needed to refer to the index of the object from this array, while using the Math.random() and Math.floor methods. This function took the place of the function choosePic().
@@ -256,12 +258,15 @@ There are a great amount of improvements, which can be added to this game. Below
 - <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML5</a>
 - <a href="https://www.w3schools.com/css/" target="_blank">CSS3</a>
 - <a href="https://www.javascripttutorial.net/" target="_blank">JavaScript</a>
-- <a href="https://github.com/" target="_blank">GitHub, Gitpod and Git</a>
-- <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
-- <a href="https://getbootstrap.com/" target="_blank">Bootstrap version 4</a>
-- <a href="https://fonts.google.com/" target="_blank">GoogleFonts</a>
-- <a href="https://balsamiq.com/" target="_blank">Wireframe Software Balsamiq</a>
-- <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
+- <a href="https://git-scm.com/" target="_blank">Git</a> (for managing and keeping track of my source code history)
+- <a href="https://github.com/" target="_blank">GitHub</a> (for hosting and managing my Git repositories)
+- <a href="https://www.gitpod.io/" target="_blank">Gitpod</a> (for the development, main workspace)
+- <a href="https://getbootstrap.com/" target="_blank">Bootstrap version 4.6</a> (for adding modals and buttons)
+- <a href="https://fonts.google.com/" target="_blank">GoogleFonts</a> (for adding the fonts)
+- <a href="https://balsamiq.com/" target="_blank">Wireframe Software Balsamiq</a> (for wireframe projects)
+- <a href="https://pythontutor.com/" target="_blank">Python Tutor</a> (for testing throughout the workflow)
+- <a href="https://developer.chrome.com/docs/devtools/">Chrome DevTools</a> (for testing throughout the workflow)
+- <a href="https://app.diagrams.net/" target="_blank">Draw.io</a> (for diagrams included in Readme)
 - <a href="https://www.freeconvert.com/" target="_blank">Free Convert</a> (for converting the background video)
 - <a href="https://www.remove.bg/" target="_blank">Remove.bg</a> (for removal of background in card images)
 - <a href="https://www.adobe.com/products/photoshop-express.html" target="_blank">Adobe Photoshop Express</a> (for improving the quality of photographs of cards)
@@ -325,7 +330,7 @@ Webpage displays also in the dark mode mobile settings. See below the classic mo
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mobile_display.png?raw=true" alt="mobile display">
 </p>
 
-The features, which was taken into a testing in both scenarios: on the desktop and on the devices listed below.
+The features, which was taken into a testing in both scenarios: on the desktop and on the devices are listed below.
 
 <table>
   <tr>
