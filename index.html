@@ -39,8 +39,8 @@
         <div class="modals">
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rules">RULES</button>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mission">MISSION</button>
-            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores" onclick="showScores()">SCORES</button>
-
+            <button type="button" class="btn btn-info open-modal" data-toggle="modal" data-target="#scores"
+                onclick="renderScores()">SCORES</button>
             <!-- navbar / audio console -->
             <audio id="audio" loop>
                 <source
@@ -72,15 +72,18 @@
                         <img class="modal-img-icon" src="assets/images/superhero02.png" alt="superhero" />
                     </div>
                     <h3>OBJECT OF THE GAME</h3>
-                    <p>A Human can save the Earth by collecting 10 magic stars. To do so, he shall attempt to beat Alien
-                        in SpaceJack by getting a count as close to 21 as possible, without going over 21. The value of
-                        the cards will appear next to the Player name once set is over.</p>
+                    <p>A Human can save the Earth by playing SpaceJack 10 times with an Alien and keeping 5 magic stars.
+                        To do so, he shall attempt to beat Alien in SpaceJack by getting a count as close to 21 as
+                        possible, without going over 21. The value of the cards will appear next to the players names
+                        once the set is over.</p>
                     <br>
                     <h3>WINS AND LOSES</h3>
-                    <p>The winner is a player whose total value of cards is closer or equal 21. If an Alien goes over
-                        21, he automatically loses. After each game the Human will: receive 1 star if won or lose 1 star
-                        if defeated. Humans have 5 stars in the beginning of the game. The goal is to collect 10 stars
-                        in total. Humans can see the amount of stars below his name.</p>
+                    <p>The winner of the set is a player whose total value of cards is closer or equal 21. If an Alien
+                        goes over 21, he automatically loses. After each game the Human will: receive 1 star if won or
+                        lose 1 star if defeated. Humans have 5 stars in the beginning of the game. The goal is to keep
+                        the amount of 5 or go above that. The more stars, the higher score! Human lose the assignment if
+                        amount of his stars will be equal to 0 or - after full game (10 sets), he will have less than 5
+                        stars in total. Humans can see the amount of stars below his name.</p>
                     <br>
                     <h3>CARD VALUES</h3>
                     <p>Face cards have a value of 10, ace has value of 11 and any other card has a number value as shown
@@ -175,9 +178,8 @@
                         <table id="scoreTable" class="table table-striped">
                             <thead>
                                 <tr>
+                                    <th>Position:</th>
                                     <th>Name of a Hero:</th>
-                                </tr>
-                                <tr>
                                     <th>Score:</th>
                                 </tr>
                             </thead>
@@ -199,8 +201,10 @@
             <h2>Help!</h2>
             <p>The aliens attack the Earth!</p>
             <p>You received a special mission.</p>
-            <p>The only way to send them back to space is possession of 10 magic stars.</p>
-            <p>To collect them, you have to win the SpaceJack.</p>
+            <p>You have to play with Alien Jack 10 times.</p>
+            <p>After each set you will gain or lose the star.</p>
+            <p>To save the Earth, you shall keep those 5 stars.</p>
+            <p>The more stars, the futher to space they go.</p>
             <p>You must be careful!</p>
             <p>Aliens are really tricky!</p>
         </div>
@@ -216,7 +220,6 @@
             <button id="space-newplayer" class="btn btn-info hidden">NEW PLAYER</button>
         </div>
     </div>
-
 
     <!-- game area -->
     <div class="container container-two" id="gameArea">

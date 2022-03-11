@@ -12,12 +12,9 @@ const modalLose = document.getElementById("modalLose");
 const messageWrapper = document.querySelector("#middle-table");
 const spaceFormWrapper = document.getElementById("space-form-wrapper");
 const spaceInput = document.getElementById("space-input");
-const spaceBtn = document.getElementById("space-submit");
 const newPlayerBtn = document.getElementById("space-newplayer");
 const spaceName = document.getElementById("space-name");
 const goBtn = document.getElementById("goBtn");
-const spaceScoresName = document.querySelector("#heroName");
-const heroScore = document.querySelector("#heroScore");
 const saveScoreBtn = document.getElementById("savescoreBtn");
 const alienScore = document.getElementById("alienScore");
 const humanScore = document.getElementById("humanScore");
@@ -25,7 +22,7 @@ const audio = document.getElementById("audio");
 const icon = document.getElementById("sound");
 const alienSide = document.getElementById("playerOneSide");
 const humanSide = document.getElementById("playerTwoSide");
-const totalRounds = 3;
+const totalRounds = 10;
 
 // array with suite:
 const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
@@ -285,19 +282,23 @@ function checkScore() {
   checkRound();
 }
 
+/**
+ * Checks how mny rounds if left;
+ * if there is 0 rounds left - end the game
+ */
 function checkRound() {
   if (rounds > 0) {
     rounds--;
   } else {
     intro();
-    if (sum > 5) {
+    if (sum > 4) {
       win();
     } else {
       lose();
     }
     const config = getConfig();
     config.scores.push({ heroName: config.playerName, score: sum * 100 });
-    // sort the scores by score decendant and slice it in 10
+    // sort the scores by score descendant and slice it in 10
     config.scores.sort((a, b) => {
       if (a.score < b.score) {
         return -1;
@@ -322,7 +323,6 @@ function checkRound() {
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
- // heroScore.textContent = sum * 100;
 }
 
 /**
@@ -388,6 +388,7 @@ function intro() {
 function showDeck() {
   showEl(containerTwo);
   hideEl(containerOne);
+  renderSpaceName();
 }
 
 /**
@@ -544,14 +545,9 @@ function hideInputArea() {
 }
 
 /**
- * Render a name of a User in the
- * scores modal
+ * Render the name and te score
+ * in the scores modal
  */
-function showScores() {
-//  document.getElementById("scores").modal("show");
-  renderScores();
-}
-
 function renderScores() {
   const config = getConfig();
   let tblBody = document.getElementById("scoresBody");
@@ -639,7 +635,6 @@ function resetCounter() {
 startBtn.addEventListener("click", startGame);
 drawBtn.addEventListener("click", drawNewCard);
 checkBtn.addEventListener("click", check);
-// spaceBtn.addEventListener("click", saveSpaceName);
 document.getElementById("space-form").addEventListener("submit", saveSpaceName);
 newPlayerBtn.addEventListener("click", removeSpaceUser);
 goBtn.addEventListener("click", musicPlay);
