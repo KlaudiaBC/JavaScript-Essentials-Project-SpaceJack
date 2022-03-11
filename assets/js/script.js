@@ -300,10 +300,10 @@ function checkRound() {
     config.scores.push({ heroName: config.playerName, score: sum * 100 });
     // sort the scores by score descendant and slice it in 10
     config.scores.sort((a, b) => {
-      if (a.score < b.score) {
+      if (a.score > b.score) {
         return -1;
       }
-      if (a.score > b.score) {
+      if (a.score < b.score) {
         return 1;
       }
       return 0;
