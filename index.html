@@ -177,11 +177,11 @@
                                 <tr>
                                     <th>Name of a Hero:</th>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <tr>
-                                    <td id="heroName"></td>
+                                    <th>Score:</th>
                                 </tr>
+                            </thead>
+                            <tbody id="scoresBody">
                             </tbody>
                         </table>
                     </div>
@@ -204,8 +204,8 @@
             <p>You must be careful!</p>
             <p>Aliens are really tricky!</p>
         </div>
-        <div class="story-box" id="space-form">
-            <form>
+        <div class="story-box" id="space-form-wrapper">
+            <form id="space-form" action="#">
                 <label class="story-box" for="space-input">What is your name?</label>
                 <input id="space-input" name="userName" type="text" maxlength="10" placeholder="hero name" required>
                 <button id="space-submit" type="submit" class="btn btn-info">SAVE</button>

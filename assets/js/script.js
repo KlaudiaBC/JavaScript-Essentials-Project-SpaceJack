@@ -10,20 +10,22 @@ const starThree = document.querySelector(".icon-img-star-3");
 const modalWin = document.getElementById("modalWin");
 const modalLose = document.getElementById("modalLose");
 const messageWrapper = document.querySelector("#middle-table");
-const spaceForm = document.getElementById("space-form");
+const spaceFormWrapper = document.getElementById("space-form-wrapper");
 const spaceInput = document.getElementById("space-input");
 const spaceBtn = document.getElementById("space-submit");
 const newPlayerBtn = document.getElementById("space-newplayer");
 const spaceName = document.getElementById("space-name");
 const goBtn = document.getElementById("goBtn");
 const spaceScoresName = document.querySelector("#heroName");
-const saveScoreBtn = document.getElementById('savescoreBtn');
-const alienScore = document.getElementById('alienScore');
-const humanScore = document.getElementById('humanScore');
+const heroScore = document.querySelector("#heroScore");
+const saveScoreBtn = document.getElementById("savescoreBtn");
+const alienScore = document.getElementById("alienScore");
+const humanScore = document.getElementById("humanScore");
 const audio = document.getElementById("audio");
 const icon = document.getElementById("sound");
 const alienSide = document.getElementById("playerOneSide");
 const humanSide = document.getElementById("playerTwoSide");
+const totalRounds = 3;
 
 // array with suite:
 const suite = ["suite-img-1", "suite-img-2", "suite-img-3", "suite-img-4"];
@@ -36,7 +38,7 @@ let player2Value;
 let sum = 5;
 let timer;
 let timeLeft = 10;
-
+let rounds = totalRounds;
 
 /**
  * Activate the button of choice
@@ -183,8 +185,8 @@ function totaValue(whichPlayer, cardGameValue) {
  */
 function startGame() {
   givePlayerSomeCards(2, "playerTwoSide");
-    givePlayerSomeCards(2, "playerOneSide");
-    enableBtn(drawBtn);
+  givePlayerSomeCards(2, "playerOneSide");
+  enableBtn(drawBtn);
   enableBtn(checkBtn);
   showMessage("Your move!");
   renderPoints();
@@ -269,7 +271,8 @@ function checkScore() {
     message = "Human: SpaceJack!";
     addPoints();
   } else if (
-    player1Value < 21 && player2Value < 21 && player1Value < player2Value || player1Value > 21
+    (player1Value < 21 && player2Value < 21 && player1Value < player2Value) ||
+    player1Value > 21
   ) {
     message = "Human: WIN!";
     addPoints();
@@ -279,6 +282,38 @@ function checkScore() {
   }
   showMessage(message);
   reloadDeck();
+  checkRound();
+}
+
+function checkRound() {
+  if (rounds > 0) {
+    rounds--;
+  } else {
+    intro();
+    if (sum > 5) {
+      win();
+    } else {
+      lose();
+    }
+    const config = getConfig();
+    config.scores.push({ heroName: config.playerName, score: sum * 100 });
+    // sort the scores by score decendant and slice it in 10
+    config.scores.sort((a, b) => {
+      if (a.score < b.score) {
+        return -1;
+      }
+      if (a.score > b.score) {
+        return 1;
+      }
+      return 0;
+    });
+
+    if (config.scores.lenght > 10) {
+      config.scores.pop();
+    }
+
+    localStorage.setItem("spaceJack", JSON.stringify(config));
+  }
 }
 
 /**
@@ -287,8 +322,8 @@ function checkScore() {
 function renderPoints() {
   let sumEl = document.getElementById("score");
   sumEl.textContent = "You have " + sum + " stars!";
+ // heroScore.textContent = sum * 100;
 }
-
 
 /**
  * Add 1 point and render the score,
@@ -336,7 +371,6 @@ function reloadDeck() {
     hideEl(humanScore);
   }, 2000);
 }
-
 
 // functions connected with display of elements in the game
 
@@ -427,7 +461,7 @@ function deleteItems() {
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+    parent.removeChild(parent.firstChild);
   }
 }
 
@@ -439,7 +473,6 @@ function renderNewGame() {
   location.reload(true);
 }
 
-
 // functions connected with local storage
 
 /**
@@ -447,7 +480,9 @@ function renderNewGame() {
  * in the local storage
  */
 function saveSpaceName() {
-  localStorage.setItem("spaceUser", JSON.stringify(spaceInput.value));
+  const config = getConfig();
+  config.playerName = spaceInput.value;
+  localStorage.setItem("spaceJack", JSON.stringify(config));
 }
 
 /**
@@ -455,8 +490,12 @@ function saveSpaceName() {
  * and convert it into a javascript
  * @returns spaceUser
  */
-function getSpaceName() {
-  return JSON.parse(localStorage.getItem("spaceUser"));
+function getConfig() {
+  let config = localStorage.getItem("spaceJack");
+  if (config === null) {
+    return { playerName: null, scores: [] };
+  }
+  return JSON.parse(config);
 }
 
 /**
@@ -478,14 +517,18 @@ function renderSpaceName() {
   spaceName.innerText = "Human " + storedSpaceName;
 }
 
+function getSpaceName() {
+  const config = getConfig();
+  return config.playerName;
+}
+
 /**
  * Removes the data from the local storage
  */
 function removeSpaceUser() {
-  localStorage.removeItem("spaceUser");
   hideEl(newPlayerBtn);
   hideEl(goBtn);
-  showEl(spaceForm);
+  showEl(spaceFormWrapper);
 }
 
 /**
@@ -493,8 +536,8 @@ function removeSpaceUser() {
  * there is an existing data in the local storage
  */
 function hideInputArea() {
-  if (localStorage.getItem("spaceUser") != null) {
-    hideEl(spaceForm);
+  if (getSpaceName() !== null) {
+    hideEl(spaceFormWrapper);
     showEl(newPlayerBtn);
     showEl(goBtn);
   }
@@ -505,8 +548,20 @@ function hideInputArea() {
  * scores modal
  */
 function showScores() {
-  spaceScoresName.innerText = getSpaceName();
-  document.querySelector('#modal').modal('show');
+//  document.getElementById("scores").modal("show");
+  renderScores();
+}
+
+function renderScores() {
+  const config = getConfig();
+  let tblBody = document.getElementById("scoresBody");
+  config.scores.forEach((score, index) => {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td class="position">${index + 1}</td>
+                      <td class="hero-name">${score.heroName}</td>
+                      <td class="hero-score">${score.score}</td>`;
+    tblBody.appendChild(tr);
+  });
 }
 
 // functios connected with audio
@@ -516,7 +571,7 @@ function showScores() {
  */
 function musicPlay() {
   audio.play();
-  goBtn.removeEventListener('click', musicPlay);
+  goBtn.removeEventListener("click", musicPlay);
 }
 
 /*
@@ -533,7 +588,6 @@ function toggleAudio() {
     icon.setAttribute("class", "icon icon-img-off");
   }
 }
-
 
 // functions connected with the time coundown
 
@@ -585,7 +639,8 @@ function resetCounter() {
 startBtn.addEventListener("click", startGame);
 drawBtn.addEventListener("click", drawNewCard);
 checkBtn.addEventListener("click", check);
-spaceBtn.addEventListener("click", saveSpaceName);
+// spaceBtn.addEventListener("click", saveSpaceName);
+document.getElementById("space-form").addEventListener("submit", saveSpaceName);
 newPlayerBtn.addEventListener("click", removeSpaceUser);
 goBtn.addEventListener("click", musicPlay);
 saveScoreBtn.addEventListener("click", saved);
