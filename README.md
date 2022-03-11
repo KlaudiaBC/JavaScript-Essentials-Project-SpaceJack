@@ -32,27 +32,31 @@ Card games are as old as the world we live in and there are multiple reasons why
 ## User journey
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logo.png?raw=true" alt="SpaceJack logo">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/mission.png?raw=true" alt="mission">
 </p>
 
 At first the user lands on the intro page. In the introduction he is informed about a special mission to save the Earth from Aliens invasion. This should make him feel curious and motivated to play.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logged_box.png?raw=true" alt="Intro box">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/logo.png?raw=true" alt="SpaceJack logo">
+</p>
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
 </p>
 
 Above the message, next to the logo, there are three buttons, which after clicking will display a modal with additional information: the rules of the game, the mission and the scores. There is also a mute button displayed as a sound icon.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/menubuttons.png?raw=true" alt="menu buttons">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/intro.png?raw=true" alt="Intro box">
 </p>
 
-Inside the introduction box there is also an input form which allows User to set his name, which later will be rendered in the game area. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game area.
+
+Inside the introduction box there is also an input form which allows User to set his name, that later will be rendered in the game area. The personalized outcome will make a User feel involved and unique. After providing the name, User is sent to the game area.
 
 Game area has the same layout as an intro page, thanks to which users can easily access all the provided features like: menu buttons which contain mentioned modals. Also the deck is in the same shape like the container on the into page.
 Decks have 3 vertical parts, starting from the top: Alien side, middle of the deck with initially 3 buttons (while the game is live, in the middle part of the deck User will receive the messages about his results).
 
-In tge game User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
+In the game User is provided with 3 buttons: Draw, Start and Check but he can click only the "Start" button, which will trigger the game. Two other buttons have the lighter colour which indicates to the User that they are not active.
 
 <p align="center">
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/gametable.png?raw=true" alt="game page">
@@ -66,11 +70,10 @@ The choice of Check automatically compares the scores of both players and render
 Accordingly, the User points of the bottom of the deck will increase by 1 (in won), decrease by 1 (if lose) or stay the same if the players cards results are equal.
 New set starts automatically after 2 seconds.
 
-The game is looping until the points of User become 10 or 0.
-In this case, User will receive the message about results displayed in the modal which will be activated automatically. User is provided with a "Play again" button, which will render a new game. There is additional button in the "win" modal, which will save the Users score in the "Scores" modal.
+The game is looping until the points of User 0 are the amount of played sets equal 10. In this case, User will receive the message about results displayed in the modal which will be activated automatically. Users are provided with a "Play again" button, which will render a new game. There is an additional button in the "win" modal, which will save the Users score in the "Scores" modal.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/user_jouney.drawio.png?raw=true" alt="user journey map">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/user_journey.drawio.png?raw=true" alt="user journey map">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
@@ -136,7 +139,7 @@ According to John Hughes, author of the article "12 best kids fonts for children
   <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/console_cardsarray.png?raw=true" alt="cards array">
 </p>
                                                                                                                                                       
-9. Instead of creating an element in the HTML, I used the function: "document.createElement" and assigned it to the card element. The card will be created as a random object only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
+9. Instead of creating an element in the HTML, I used the function: "document.createElement" and assigned created div to the card class. The card will be created as a random object only when the game is alive and the user presses one of the function buttons ("Start", "Draw" or "Check").
 10. The following step towards the game component was to create a function which will give a player a random card. In order to get a random card from the cards array that was just created in the DOM, it was needed to refer to the index of the object from this array, while using the Math.random() and Math.floor methods. This function took the place of the function choosePic().
 11. The next function I built was "givePlayerCard". The logic behind this function lies not only in rendering a random index number (of the card object located in cards array) for a player but also - before that action takes place, it checks if any player already has this index number assigned. If so, it will repeatedly search for another random number. Thanks to that, I made sure that any card will not be displayed twice.
 12. Next function I created is responsible for giving a player the specific amount of cards and includes parameters: howMany and whichPlayer. Using these parameters will allow the desired amount of cards to be rendered for a chosen player.
@@ -155,7 +158,7 @@ According to John Hughes, author of the article "12 best kids fonts for children
 
 
 20. I created a new function called "amount" which should return the value of the card = 11  if the expectedValue = 1 and 10 if the expectedValue is greater than 10. The first figure in the array of cards (index=0, expected value=1) has assigned the class in the css which contains an image of Ace as a background. Every following card has a background image compatible with expected value number (or index number + 1) which gives exactly the same value as the presented on the card image for the User. The cards with figures (queen, king and jack) in the actual game have a value of 10, therefore I placed them in the end of the array of figures, which means their expected value will be: 11, 12, 13... The function "amount" is responsible for adjustment of the value assigned in the cards array with the value required in the game.
-21. I adjusted names for html files, keeping only the main file called index and named a second one "game_page" because naming two files with index could interfere with the server while rendering a page. I also add some styling to modals, card elements and input fields.I realised that the function "amount" wasn't working because I hadn't specified the card out of the array of cards for each player. Therefore I created a new variable ("cardGameValue") in order to point out the one chosen card and then store inside this variable a function "amount".
+21. I adjusted names for html files, keeping only the main file called index and named a second one "game_page" because naming two files with index could interfere with the server while rendering a page. I also add some styling to modals, card elements and input fields.I realised that the function "amount" wasn't working because I haven't specified the card out of the array of cards for each player. Therefore I created a new variable ("cardGameValue") in order to point out the one chosen card and then store inside this variable a function "amount".
 22. The next function I created is called "totalValue". It takes two parameters into account: "whichPlayer" and "cardGameValue". It is a universal function, which will be called every time when a player will receive a card and sum the game values of the cards added. Those separate sums are stored in variables called: "player1Value" and "player2Value".
 23. In order to create the next function "drawNewCard" I used the function givePlayerSomeCards and specified the amount to 1. I placed this function inside another function which will disable the "Draw" after the user meets the maximum number of cards he can draw (in this case it is 2 cards). Thanks to a new variable I declared called "count", this function is more reusable- at any point it is possible to change the maximum number of cards.I also created a function "drawCardPlayerOne" which is supposed to add one random card to the player one (computer) only if the sum of his cards is smaller than 17. The function will be called when User decides to end the set and click the "Check" button.
 24. Function "showMessage" is called everytime there is an event of click happening on the page and will render a message for a User in the middle part of the deck. I used the "innerText" property of the element paragraph existing in my HTML and accessed this element via the document method "getElemenyById".
@@ -184,6 +187,11 @@ According to John Hughes, author of the article "12 best kids fonts for children
 43. I added missing images to the background properties in figure and suite classes. Also rewrite the content in the modals "win" and "lose".
 44. After a consultation with my mentor, I proceed with further implementations: at first I added a time count and set its value to 10 seconds. I added a countdown div to the game area so the user can be notified how much time he has left. I also changed my jquery code into a vanilla javascript in order to standardize the syntax and make it easier to read, access in the future.
 45. The next feature I created was a score system which will connect with local storage using. By using the JavaScript built in functions: JSON.parse() and JSON.stringify I could convert the format of the data into a string (lightweight format) and leter retrieve this data back into a js format. I added a third button to the menu buttons which will display the modal with scores. Because I used the local storage, the scores will not be saved and shown in the global frame, but the user will be able to access his score on the device he used to play the game.
+
+<p align="center">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/scores_img.png?raw=true" alt="scores">
+</p>
+
 46. Once the user wins the game, he will be provided with a save button in the "win" modal. The button is only an UX feature to make User feel like he decided about saving his achievements, when in reality, the data is pushed into a score while it's created.
 47. Remaining function in the actual game area was the one responsible for toggling the hidden card. According to the rules, players should not see the opponent card until check. Therefore I added a class containing a back-card image set as a background and created a function which will add this class to the card and remove it once the card is shown (check).
 48. According to my mentor code review, I also changed the syntax of the "createCardEl()" function and removed empty spaces in the code. Before I used the method setAttribute() and added the classes to the element by placing the space before the class name. This action allowed me to add classes without overwriting the ones already added to the element. In order to remove those extra spaces, I changed this method to the classList.add() method, which turned out to work exactly the same but allow me to simplify my code syntax.
@@ -468,6 +476,7 @@ The features, which was taken into a testing in both scenarios: on the desktop a
 
 ### Lighthouse
 
+See more results <a href="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/main/assets/images/readme/lighthouse_results.png">here.</a>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/23bb3b20b79f44b55585e98a14f8ef825d204eff/assets/images/readme/Lighthouse01.png" alt="lighthouse">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/lighthouse.png?raw=true" alt="lighthouse">
 </p>
