@@ -73,7 +73,7 @@ New set starts automatically after 2 seconds.
 The game is looping until the points of User 0 are the amount of played sets equal 10. In this case, User will receive the message about results displayed in the modal which will be activated automatically. Users are provided with a "Play again" button, which will render a new game. There is an additional button in the "win" modal, which will save the Users score in the "Scores" modal.
 
 <p align="center">
-  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/user_journey.drawio.png?raw=true" alt="user journey map">
+  <img src="https://github.com/KlaudiaBC/JavaScript-Essentials-Project-SpaceJack/blob/main/assets/images/readme/user_map.drawio.png?raw=true" alt="user journey map">
 </p>
 
 <p align="right"><a href="#welcome">Bact to top</a></p>
